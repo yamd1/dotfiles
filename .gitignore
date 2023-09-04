@@ -33,3 +33,6 @@
 !/README.md
 !/LICENSE
 !.gitignore
+
+!/AppData/
+!/AppData/**
