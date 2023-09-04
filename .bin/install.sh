@@ -6,6 +6,7 @@ helpmsg() {
   command echo ""
 }
 
+#TODO: シンボリックリンク作成用関数を修正する
 link_to_homedir() {
   command echo "backup old dotfiles..."
   if [ ! -d "$HOME/.dotbackup" ];then
@@ -47,5 +48,5 @@ while [ $# -gt 0 ];do
 done
 
 link_to_homedir
-command echo -e "\e[1;36m Install completed!!!! \e[m"
+command echo -e "Install completed!!!!"
 
