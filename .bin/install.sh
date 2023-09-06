@@ -47,7 +47,5 @@ while [ $# -gt 0 ];do
 done
 
 link_to_homedir
-echo .zshrc.local >> .zshrc
-
 command echo -e "\e[1;36m Install completed!!!! \e[m"
 

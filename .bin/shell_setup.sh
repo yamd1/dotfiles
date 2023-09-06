@@ -50,6 +50,11 @@ if [ ! -d "~/../linuxbrew" ]; then
 fi
 
 #----------------------------#
+# Install brew 
+#----------------------------#
+brew install nvim
+
+#----------------------------#
 # Install lazygit
 #----------------------------#
 brew install lazygit
@@ -61,12 +66,19 @@ brew install tmux
 if [ ! -d "~/.tmux.conf" ]; then 
     ln -s ~/.setup/.tmux.conf ~/.tmux.conf
 fi
+
 #----------------------------#
 # WSL 用の調整
 #----------------------------#
 if [[ "$(uname -r)" == *microsoft* ]]; then
     echo 'Install settings for WSL2'
 fi
+
+
+#----------------------------#
+# 環境変数を追加
+#----------------------------#
+echo $(cat $HOME/dotfiles/.zshrc.local) >> $HOME/.zshrc
 
 #----------------------------#
 # TODO: suggetion
