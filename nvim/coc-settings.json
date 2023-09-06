@@ -1,0 +1,60 @@
+{
+    "suggest.triggerAfterInsertEnter": true,
+    "suggest.noselect": false,
+    "suggest.minTriggerInputLength": 2,
+    "suggest.acceptSuggestionOnCommitCharacter": true,
+    "suggest.snippetIndicator": " ►",
+    "suggest.enablePreview": true,
+    "coc.preferences.hoverTarget": "float",
+    "coc.preferences.formatOnType": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "typescript",
+        "typescriptreact",
+        "javascript",
+        "javascriptreact"
+    ],
+    "tsserver.formatOnType": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.filetypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "csharp-ls": {
+      "command": "csharp-ls",
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+    },
+    "intelephense": {
+      "command": "intelephense",
+      "args": ["--stdio"],
+      "filetypes": ["php"],
+      "initializationOptions": {
+        "storagePath": "/tmp/intelephense"
+      }
+   },
+    "intelephense.phpdoc.textFormat": "snippet",
+    "intelephense.format.enable": true,
+    "intelephense.diagnostics.enable": true,
+    "intelephense.diagnostics.typeErrors": true,
+    "intelephense.diagnostics.languageConstraints": true,
+    "intelephense.diagnostics.unusedSymbols": true,
+    "intelephense.diagnostics.implementationErrors": true,
+    "intelephense.diagnostics.embeddedLanguages": true,
+    "intelephense.diagnostics.deprecated": true,
+    "intelephense.diagnostics.run": "onType",
+    "intelephense.completion.triggerParameterHints": true,
+    "intelephense.diagnostics.undefinedClassConstants": false,
+    "intelephense.diagnostics.undefinedConstants": false,
+    "intelephense.diagnostics.undefinedFunctions": false,
+    "intelephense.diagnostics.undefinedMethods": false,
+    "intelephense.diagnostics.undefinedProperties": false,
+    "intelephense.diagnostics.undefinedTypes": false,
+    "jedi": {
+        "enable": true,
+        "startupMessage": false,
+        "executable.command": "jedi-language-server"
+    }
+}
