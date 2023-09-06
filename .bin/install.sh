@@ -15,7 +15,7 @@ link_to_homedir() {
 
   local script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
   local dotdir=$(dirname ${script_dir})
-  if [[ "$/tmp/vscode-remote-containers-ipc-455e6d24-22bc-47fd-a5ea-0f0f90c7f1c1.sockHOME" != "$dotdir" ]];then
+  if [[ "$HOME" != "$dotdir" ]];then
     for f in $dotdir/.??*; do
       [[ `basename $f` == ".git" ]] && continue
       if [[ -L "$HOME/`basename $f`" ]];then
@@ -47,11 +47,7 @@ while [ $# -gt 0 ];do
 done
 
 link_to_homedir
-
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
+echo .zshrc.local >> .zshrc
 
 command echo -e "\e[1;36m Install completed!!!! \e[m"
 

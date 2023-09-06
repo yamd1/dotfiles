@@ -3,12 +3,12 @@
 #----------------------------#
 # Install prezto
 #----------------------------#
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+#git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
+#setopt EXTENDED_GLOB
+#for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+#  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+#done
 
 #----------------------------#
 # Install fzf
@@ -62,13 +62,6 @@ fi
 #----------------------------#
 if [[ "$(uname -r)" == *microsoft* ]]; then
     echo 'Install settings for WSL2'
-
-    curl -LJo "https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x86.zip" > "$HOME/dotfiles/bin/win32yank-x86.zip"
-    cd "$HOME/dotfiles/bin"
-    pwd
-    unzip "win32yank-x86.zip"
-    chmod +x ./bin/win32yank.exe
-    echo export PATH='$HOME/dotfiles/bin:/usr/local/bin:$PATH' >> "${ZDOTDIR:-$HOME}/runcoms/zshrc"
 fi
 
 #----------------------------#
