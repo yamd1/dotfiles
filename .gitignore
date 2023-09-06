@@ -33,4 +33,4 @@
 !/README.md
 !/LICENSE
 !.gitignore
-
+!/.zshrc.local
