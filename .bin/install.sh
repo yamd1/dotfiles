@@ -47,5 +47,11 @@ while [ $# -gt 0 ];do
 done
 
 link_to_homedir
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
 command echo -e "\e[1;36m Install completed!!!! \e[m"
 
