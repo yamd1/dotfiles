@@ -10,7 +10,6 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
-
 #----------------------------#
 # Install fzf
 #----------------------------#
@@ -32,7 +31,7 @@ fi
 #----------------------------#
 # Install gitgutter
 #----------------------------#
-if [ ! -d "~/.vim/pack/airblade/start/vim-gitgutter"]; then
+if [ ! -d "~/.vim/pack/airblade/start/vim-gitgutter" ]; then
     mkdir -p ~/.vim/pack/airblade/start
     cd ~/.vim/pack/airblade/start
     git clone https://github.com/airblade/vim-gitgutter.git
@@ -55,10 +54,9 @@ brew install lazygit
 # Install tmux
 #----------------------------#
 brew install tmux
-if [! -d "~/.tmux.conf" ]; then 
+if [ ! -d "~/.tmux.conf" ]; then 
     ln -s ~/.setup/.tmux.conf ~/.tmux.conf
 fi
-
 #----------------------------#
 # WSL 用の調整
 #----------------------------#
@@ -72,8 +70,6 @@ if [[ "$(uname -r)" == *microsoft* ]]; then
     chmod +x ./bin/win32yank.exe
     echo export PATH='$HOME/dotfiles/bin:/usr/local/bin:$PATH' >> "${ZDOTDIR:-$HOME}/runcoms/zshrc"
 fi
-
-
 
 #----------------------------#
 # TODO: suggetion
