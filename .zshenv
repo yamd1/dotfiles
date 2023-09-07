@@ -6,6 +6,6 @@ alias dcu="docker compose up -d"
 alias dce="docker compose exec -it"
 alias dvd="devcontainer down"
 alias dvu="devcontainer up --workspace-folder"
-alias dve="devcontainer exec --workspace . /bin/zsh"
+alias dve="devcontainer exec --workspace-folder . /bin/zsh"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/dotfiles/.bin:/usr/local/bin:$PATH
