@@ -30,3 +30,6 @@ vim.keymap.set('n', '<Leader>j', '<C-w>j',{noremap = true})
 vim.keymap.set('n', '<Leader>k', '<C-w>k',{noremap = true})
 vim.keymap.set('n', '<Leader>v', '<C-w>v',{noremap = true})
 vim.keymap.set('n', '<Leader>s', '<C-w>s',{noremap = true})
+
+--vim.api.nvim_set_keymap('n', '+', ':let @+ = @@<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '+', ':let @+ = @@<CR>', { noremap = true, silent = true })

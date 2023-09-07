@@ -80,7 +80,14 @@ fi
 
 #----------------------------#
 # 環境変数を追加
-#----------------------------#
+#vim.keymap.set('n', '<Leader>h', '<C-w>h',{noremap = true})
+vim.keymap.set('n', '<Leader>l', '<C-w>l',{noremap = true})
+vim.keymap.set('n', '<Leader>j', '<C-w>j',{noremap = true})
+vim.keymap.set('n', '<Leader>k', '<C-w>k',{noremap = true})
+vim.keymap.set('n', '<Leader>v', '<C-w>v',{noremap = true})
+vim.keymap.set('n', '<Leader>s', '<C-w>s',{noremap = true})
+
+----------------------------#
 cat $HOME/dotfiles/.zshenv >> $HOME/.zshenv
 cat $HOME/dotfiles/.zshrc >> $HOME/.zshrc
 
