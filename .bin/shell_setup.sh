@@ -79,6 +79,6 @@ fi
 
 
 #----------------------------#
-cat $HOME/dotfiles/.zshenv >> $HOME/.zshenv
-cat $HOME/dotfiles/.zshrc >> $HOME/.zshrc
+cat $HOME/dotfiles/zshenv >> $HOME/.zshenv
+cat $HOME/dotfiles/zshrc >> $HOME/.zshrc
 
