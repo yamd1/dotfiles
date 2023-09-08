@@ -64,7 +64,7 @@ brew install lazygit
 #----------------------------#
 brew install tmux
 if [ ! -d "~/.tmux.conf" ]; then 
-    ln -s ~/.setup/.tmux.conf ~/.tmux.conf
+    ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 fi
 
 #----------------------------#
