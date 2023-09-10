@@ -79,6 +79,7 @@ fi
 
 
 #----------------------------#
-cat $HOME/dotfiles/zshenv >> $HOME/.zshenv
-cat $HOME/dotfiles/zshrc >> $HOME/.zshrc
+# 
+#----------------------------#
+npm install -g @devcontainers/cli
 
