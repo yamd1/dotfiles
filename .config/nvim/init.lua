@@ -4,7 +4,7 @@ require("colorscheme")
 require("keymap")
 require("lspsetting")
 require("plugins")
--- require("forWindows")
+require("forWindows")
 require('nvim-tree').setup {
     hijack_cursor = true,
     diagnostics = {
