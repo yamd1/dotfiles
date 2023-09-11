@@ -36,3 +36,5 @@
 
 !/AppData/
 !/AppData/**
+!/.fzf.zsh
+!/.fzf.bash
