@@ -165,6 +165,11 @@ _G.packer_plugins = {
     path = "/home/y-yamada/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/y-yamada/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   ["vim-buftabline"] = {
     loaded = true,
     path = "/home/y-yamada/.local/share/nvim/site/pack/packer/start/vim-buftabline",

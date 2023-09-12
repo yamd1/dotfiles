@@ -49,6 +49,7 @@ vim.opt.re=0
 vim.opt.hidden = true
 vim.g.netrw_dirhistmax = 0
 
--- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
+vim.opt.winblend = 0 -- ウィンドウの不透明度
+vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
 

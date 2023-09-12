@@ -46,6 +46,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use({ "EdenEast/nightfox.nvim" }) -- Color scheme
+  use({ "folke/tokyonight.nvim" })
 
 	use({ "nvim-lualine/lualine.nvim" }) -- Statusline
 	use({ "akinsho/bufferline.nvim" })
