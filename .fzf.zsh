@@ -2,14 +2,14 @@
 # ---------
 if [[ ! "$PATH" == */home/yosky/.fzf/bin* ]]; then
 
-  PATH="${PATH:+${PATH}:}/home/yosky/.fzf/bin"
+  PATH="${PATH:+${PATH}:}/home/$USER/.fzf/bin"
 
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/home/yosky/.fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "/home/$USRE/.fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "/home/yosky/.fzf/shell/key-bindings.zsh"
+source "/home/$USER/.fzf/shell/key-bindings.zsh"
