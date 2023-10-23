@@ -38,13 +38,12 @@ fi
 #----------------------------#
 # Install brew
 #----------------------------#
-if [ ! -d "$HOME/../linuxbrew" ]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> $HOME/.profile
-        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    sudo apt-get update && sudo apt-get install build-essential
-    brew install gcc
-fi
+rm -rf $HOME/../linuxbrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> $HOME/.profile
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+sudo apt-get update && sudo apt-get install build-essential
+brew install gcc
 
 #----------------------------#
 # Install brew
