@@ -1,4 +1,4 @@
-ormat = """
+format = """
 $directory \
 $cmd_duration\
 $line_break\
