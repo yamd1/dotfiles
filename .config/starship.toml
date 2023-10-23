@@ -1,17 +1,8 @@
 ormat = """
-$username\
 $directory \
 $cmd_duration\
 $line_break\
 $character"""
-
-[username]
-format = "[$user](bold blue)"
-show_always = true
-
-[hostname]
-format = "[@$hostname](bold blue)"
-ssh_only = false
 
 [directory]
 truncation_length = 0
