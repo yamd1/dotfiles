@@ -70,13 +70,3 @@ fi
 #  SEE: https://sheldon.cli.rs/Introduction.html
 #----------------------------#
 brew install sheldon
-
-#----------------------------#
-# WSL 用の調整
-#----------------------------#
-if [[ "$(uname -r)" == *microsoft* ]]; then
-    echo 'Install settings for WSL2'
-    # TODO
-    echo "以下よりNertFontのダウンロードが必要"
-    echo "https://github.com/nvim-tree/nvim-tree.lua#:~:text=nvim%2Dweb%2Ddevicons%20is%20optional%20and%20used%20to%20display%20file%20icons.%20It%20requires%20a%20patched%20font.%20Your%20terminal%20emulator%20must%20be%20configured%20to%20use%20that%20font%2C%20usually%20%22Hack%20Nerd%20Font%22"
-fi
