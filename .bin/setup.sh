@@ -1,14 +1,11 @@
 #!/bin/bash
 
-#----------------------------#
-# Install prezto
-#----------------------------#
-#git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+if [ ! -d "~/.local/bin" ]; then
+    mkdir -p $HOME/.local/bin
+fi
 
-#setopt EXTENDED_GLOB
-#for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-#  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-#done
+[[ -e $HOME/.local/bin/starship ]] || curl -sS https://starship.rs/install.sh | sh -s -- --yes --bin-dir $HOME/.local/bin
+
 
 #----------------------------#
 # Install fzf
@@ -39,7 +36,7 @@ if [ ! -d "~/.vim/pack/airblade/start/vim-gitgutter" ]; then
 fi
 
 #----------------------------#
-# Install brew 
+# Install brew
 #----------------------------#
 if [ ! -d "~/../linuxbrew" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -50,7 +47,7 @@ if [ ! -d "~/../linuxbrew" ]; then
 fi
 
 #----------------------------#
-# Install brew 
+# Install brew
 #----------------------------#
 brew install nvim
 
@@ -63,9 +60,16 @@ brew install lazygit
 # Install tmux
 #----------------------------#
 brew install tmux
-if [ ! -d "~/.tmux.conf" ]; then 
+if [ ! -d "~/.tmux.conf" ]; then
     ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 fi
+
+
+#----------------------------#
+#  Install Sheldon
+#  SEE: https://sheldon.cli.rs/Introduction.html
+#----------------------------#
+brew install sheldon
 
 #----------------------------#
 # WSL 用の調整
@@ -76,12 +80,3 @@ if [[ "$(uname -r)" == *microsoft* ]]; then
     echo "以下よりNertFontのダウンロードが必要"
     echo "https://github.com/nvim-tree/nvim-tree.lua#:~:text=nvim%2Dweb%2Ddevicons%20is%20optional%20and%20used%20to%20display%20file%20icons.%20It%20requires%20a%20patched%20font.%20Your%20terminal%20emulator%20must%20be%20configured%20to%20use%20that%20font%2C%20usually%20%22Hack%20Nerd%20Font%22"
 fi
-
-
-#----------------------------#
-#  Install Sheldon
-#  SEE: https://sheldon.cli.rs/Introduction.html
-#----------------------------#
-curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-    | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
-

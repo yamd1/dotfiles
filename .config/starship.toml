@@ -1,0 +1,29 @@
+ormat = """
+$username\
+$directory \
+$cmd_duration\
+$line_break\
+$character"""
+
+[username]
+format = "[$user](bold blue)"
+show_always = true
+
+[hostname]
+format = "[@$hostname](bold blue)"
+ssh_only = false
+
+[directory]
+truncation_length = 0
+format = "[$path](bold yellow)[$read_only](bold red)"
+read_only = " [READ_ONLY]"
+
+[cmd_duration]
+format = "[took](yellow) [$duration](yellow)"
+
+[character]
+success_symbol = "[\\$](bold black)"
+error_symbol = "[\\$](bold red)"
+
+format = "[$output]($style) [in](bold black)"
+style = "bold purple"
