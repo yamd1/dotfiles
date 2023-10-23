@@ -41,7 +41,7 @@ fi
 rm -rf $HOME/../linuxbrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> $HOME/.profile
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 sudo apt-get update && sudo apt-get install build-essential
 brew install gcc
 
@@ -69,3 +69,5 @@ fi
 #  SEE: https://sheldon.cli.rs/Introduction.html
 #----------------------------#
 brew install sheldon
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
