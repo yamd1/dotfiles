@@ -48,6 +48,69 @@ while [ $# -gt 0 ];do
 done
 
 link_to_homedir
-command echo -e "Install completed!!!!"
 
-source $HOME/dotfiles/.bin/setup.sh
+
+if [ ! -d "~/.local/bin" ]; then
+    mkdir -p $HOME/.local/bin
+fi
+
+[[ -e $HOME/.local/bin/starship ]] || curl -sS https://starship.rs/install.sh | sh -s -- --yes --bin-dir $HOME/.local/bin
+
+#----------------------------#
+# Install fzf
+#----------------------------#
+if [ ! -d "$HOME/.fzf" ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+    $HOME/.fzf/install
+fi
+
+#----------------------------#
+# Install commentary
+#----------------------------#
+if [ ! -d "$HOME/.vim/pack/tpope/start/commentary" ]; then
+    mkdir -p $HOME/.vim/pack/tpope/start
+    cd $HOME/.vim/pack/tpope/start
+    git clone https://tpope.io/vim/commentary.git
+    # vim -u NONE -c "helptags commentary/doc" -c q
+fi
+
+#----------------------------#
+# Install gitgutter
+#----------------------------#
+if [ ! -d "$HOME/.vim/pack/airblade/start/vim-gitgutter" ]; then
+    mkdir -p $HOME/.vim/pack/airblade/start
+    cd $HOME/.vim/pack/airblade/start
+    git clone https://github.com/airblade/vim-gitgutter.git
+    # vim -u NONE -c "helptags vim-gitgutter/doc" -c q
+fi
+
+#----------------------------#
+# Install brew
+#----------------------------#
+# brew install nvim
+
+#----------------------------#
+# Install lazygit
+#----------------------------#
+# brew install lazygit
+
+#----------------------------#
+# Install tmux
+#----------------------------#
+# brew install tmux
+# if [ ! -e "$HOME/.tmux.conf" ]; then
+#     ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+# fi
+
+
+#----------------------------#
+#  Install Sheldon
+#  SEE: https://sheldon.cli.rs/Introduction.html
+#----------------------------#
+
+if [ ! -e "$HOME/.local/bin/sheldon" ]; then
+  curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
+      | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+fi
+
+command echo -e "Install completed!!!!"

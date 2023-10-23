@@ -8,3 +8,5 @@ alias dcu="docker compose up -d"
 alias dce="docker compose exec -it"
 alias avr='task --taskfile /path/to/repo/Taskfile.yml'
 eval "$(sheldon source)"
+
+eval "$(starship init zsh)"
