@@ -50,3 +50,4 @@ done
 link_to_homedir
 command echo -e "Install completed!!!!"
 
+source $HOME/dotfiles/.bin/setup.sh

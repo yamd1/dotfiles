@@ -10,17 +10,17 @@ fi
 #----------------------------#
 # Install fzf
 #----------------------------#
-if [ ! -d "~/.fzf" ]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install
+if [ ! -d "$HOME/.fzf" ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+    $HOME/.fzf/install
 fi
 
 #----------------------------#
 # Install commentary
 #----------------------------#
-if [ ! -d "~/.vim/pack/tpope/start/commentary" ]; then
-    mkdir -p ~/.vim/pack/tpope/start
-    cd ~/.vim/pack/tpope/start
+if [ ! -d "$HOME/.vim/pack/tpope/start/commentary" ]; then
+    mkdir -p $HOME/.vim/pack/tpope/start
+    cd $HOME/.vim/pack/tpope/start
     git clone https://tpope.io/vim/commentary.git
     vim -u NONE -c "helptags commentary/doc" -c q
 fi
@@ -28,9 +28,9 @@ fi
 #----------------------------#
 # Install gitgutter
 #----------------------------#
-if [ ! -d "~/.vim/pack/airblade/start/vim-gitgutter" ]; then
-    mkdir -p ~/.vim/pack/airblade/start
-    cd ~/.vim/pack/airblade/start
+if [ ! -d "$HOME/.vim/pack/airblade/start/vim-gitgutter" ]; then
+    mkdir -p $HOME/.vim/pack/airblade/start
+    cd $HOME/.vim/pack/airblade/start
     git clone https://github.com/airblade/vim-gitgutter.git
     vim -u NONE -c "helptags vim-gitgutter/doc" -c q
 fi
@@ -38,8 +38,8 @@ fi
 #----------------------------#
 # Install brew
 #----------------------------#
-if [ ! -d "~/../linuxbrew" ]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if [ ! -d "$HOME/../linuxbrew" ]; then
+    /bin/bash -cy "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> $HOME/.profile
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     sudo apt-get install build-essential
@@ -60,8 +60,8 @@ brew install lazygit
 # Install tmux
 #----------------------------#
 brew install tmux
-if [ ! -d "~/.tmux.conf" ]; then
-    ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+if [ ! -e "$HOME/.tmux.conf" ]; then
+    ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 fi
 
 
