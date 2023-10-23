@@ -22,7 +22,7 @@ if [ ! -d "$HOME/.vim/pack/tpope/start/commentary" ]; then
     mkdir -p $HOME/.vim/pack/tpope/start
     cd $HOME/.vim/pack/tpope/start
     git clone https://tpope.io/vim/commentary.git
-    vim -u NONE -c "helptags commentary/doc" -c q
+    # vim -u NONE -c "helptags commentary/doc" -c q
 fi
 
 #----------------------------#
@@ -32,7 +32,7 @@ if [ ! -d "$HOME/.vim/pack/airblade/start/vim-gitgutter" ]; then
     mkdir -p $HOME/.vim/pack/airblade/start
     cd $HOME/.vim/pack/airblade/start
     git clone https://github.com/airblade/vim-gitgutter.git
-    vim -u NONE -c "helptags vim-gitgutter/doc" -c q
+    # vim -u NONE -c "helptags vim-gitgutter/doc" -c q
 fi
 
 #----------------------------#
