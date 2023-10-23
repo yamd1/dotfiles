@@ -59,10 +59,7 @@ fi
 #----------------------------#
 # Install fzf
 #----------------------------#
-if [ ! -d "$HOME/.fzf" ]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
-    $HOME/.fzf/install
-fi
+curl -fsSL https://github.com/junegunn/fzf/releases/download/0.43.0/fzf-0.43.0-linux_amd64.tar.gz | tar xz -C $HOME/.local/bin
 
 #----------------------------#
 # Install commentary
