@@ -38,3 +38,4 @@
 !/AppData/**
 !/.fzf.zsh
 !/.fzf.bash
+!/.gitconfig

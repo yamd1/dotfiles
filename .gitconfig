@@ -1,0 +1,19 @@
+[credential "https://github.com"]
+    helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+[credential "https://gist.github.com"]
+    helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+[core]
+	editor = vim
+[sequence]
+	editor = vim
+[rebase]
+  autoSquash = true
+  autoStash = true
+[commit]
+  verbose = true
+[fetch]
+  prune = true
+[push]
+  default = simple
