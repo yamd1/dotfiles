@@ -34,8 +34,15 @@
 !/LICENSE
 !.gitignore
 
-!/AppData/
-!/AppData/**
-!/.fzf.zsh
-!/.fzf.bash
+!/files/
+!/files/.zshrc
+!/files/.zshenv
+!/files/.tmux.conf
+!/files/.bin/
+!/files/.bin/**
+!/files/AppData/
+!/files/AppData/**
+!/files/.fzf.zsh
+!/files/.fzf.bash
 !/.gitconfig
+!/install.sh
