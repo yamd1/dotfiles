@@ -111,7 +111,7 @@ if [ ! -e "$HOME/.local/bin/sheldon" ]; then
       | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
 fi
 
-curl -fsSL https://github.com/sharkdp/bat/releases/download/v0.24.0/bat-v0.24.0-x86_64-unknown-linux-gnu.tar.gz | tar xz -C $HOME/.local/bin
-
+curl -fsSL https://github.com/sharkdp/bat/releases/download/v0.24.0/bat-v0.24.0-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /tmp \
+    && mv /tmp/bat-v0.24.0-x86_64-unknown-linux-gnu/bat $HOME/.local/bin
 
 command echo -e "Install completed!!!!"
