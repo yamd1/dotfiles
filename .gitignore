@@ -46,3 +46,5 @@
 !/files/.fzf.bash
 !/.gitconfig
 !/install.sh
+!/Dockerfile
+!/compose.yml
