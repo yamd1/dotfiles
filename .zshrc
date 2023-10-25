@@ -6,7 +6,11 @@ alias vi="nvim"
 alias dcd="docker compose down"
 alias dcu="docker compose up -d"
 alias dce="docker compose exec -it"
-alias avr='task --taskfile /path/to/repo/Taskfile.yml'
+
+if [ -e "$HOME/dotfiles/.zshrc.local" ]; then
+  source "$HOME/dotfiles/.zshrc.local"
+fi
+
 eval "$(sheldon source)"
 
 eval "$(starship init zsh)"

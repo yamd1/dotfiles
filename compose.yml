@@ -1,8 +1,4 @@
 services:
   container:
     build: .
-    volumes:
-      - type: bind 
-        source: .
-        target: /home/appuser
     tty: true
