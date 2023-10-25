@@ -46,14 +46,14 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use({ "EdenEast/nightfox.nvim" }) -- Color scheme
-  use({ "folke/tokyonight.nvim" })
+	use({ "folke/tokyonight.nvim" })
 
 	use({ "nvim-lualine/lualine.nvim" }) -- Statusline
 	use({ "akinsho/bufferline.nvim" })
-  use({ "neoclide/coc.nvim", branch='release' })
-  use({ "OmniSharp/omnisharp-vim" })
-  use({ "junegunn/fzf.vim" })
-  use({ "MunifTanjim/nui.nvim" })
+	use({ "neoclide/coc.nvim", branch='release' })
+	use({ "OmniSharp/omnisharp-vim" })
+	use({ "junegunn/fzf.vim" })
+	use({ "MunifTanjim/nui.nvim" })
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
@@ -68,11 +68,11 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } })
 	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
-  use({ 'nvim-tree/nvim-tree.lua' })
-  use({ 'nvim-tree/nvim-web-devicons' })
+	use({ 'nvim-tree/nvim-tree.lua' })
+	use({ 'nvim-tree/nvim-web-devicons' })
 
-  use({ 'ap/vim-buftabline' })
-  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+	use({ 'ap/vim-buftabline' })
+	use { "akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()
   end}
 

@@ -6,7 +6,6 @@ helpmsg() {
   command echo ""
 }
 
-#TODO: シンボリックリンク作成用関数を修正する
 link_to_homedir() {
   command echo "backup old dotfiles..."
   if [ ! -d "$HOME/.dotbackup" ];then
@@ -57,54 +56,8 @@ fi
 
 [[ -e $HOME/.local/bin/starship ]] || curl -sS https://starship.rs/install.sh | sh -s -- --yes --bin-dir $HOME/.local/bin
 
-#----------------------------#
-# Install fzf
-#----------------------------#
 curl -fsSL https://github.com/junegunn/fzf/releases/download/0.43.0/fzf-0.43.0-linux_amd64.tar.gz | tar xz -C $HOME/.local/bin
 
-#----------------------------#
-# Install commentary
-#----------------------------#
-if [ ! -d "$HOME/.vim/pack/tpope/start/commentary" ]; then
-    mkdir -p $HOME/.vim/pack/tpope/start
-    cd $HOME/.vim/pack/tpope/start
-    git clone https://tpope.io/vim/commentary.git
-    # vim -u NONE -c "helptags commentary/doc" -c q
-fi
-
-#----------------------------#
-# Install gitgutter
-#----------------------------#
-if [ ! -d "$HOME/.vim/pack/airblade/start/vim-gitgutter" ]; then
-    mkdir -p $HOME/.vim/pack/airblade/start
-    cd $HOME/.vim/pack/airblade/start
-    git clone https://github.com/airblade/vim-gitgutter.git
-    # vim -u NONE -c "helptags vim-gitgutter/doc" -c q
-fi
-
-#----------------------------#
-# Install brew
-#----------------------------#
-# brew install nvim
-
-#----------------------------#
-# Install lazygit
-#----------------------------#
-# brew install lazygit
-
-#----------------------------#
-# Install tmux
-#----------------------------#
-# brew install tmux
-# if [ ! -e "$HOME/.tmux.conf" ]; then
-#     ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
-# fi
-
-
-#----------------------------#
-#  Install Sheldon
-#  SEE: https://sheldon.cli.rs/Introduction.html
-#----------------------------#
 
 if [ ! -e "$HOME/.local/bin/sheldon" ]; then
   curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
@@ -113,5 +66,27 @@ fi
 
 curl -fsSL https://github.com/sharkdp/bat/releases/download/v0.24.0/bat-v0.24.0-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /tmp \
     && mv /tmp/bat-v0.24.0-x86_64-unknown-linux-gnu/bat $HOME/.local/bin
+
+curl -fsSL https://github.com/eza-community/eza/releases/download/v0.15.0/eza_x86_64-unknown-linux-gnu.tar.gz | tar xz -C /tmp \
+    && mv /tmp/eza $HOME/.local/bin
+
+#---------
+# WSL2環境でインストールするときは引数にwsl2をいれる
+# unameで判定する方法だと、wsl2上で作動するDockerコンテナ内でもwsl2だと認識するため
+#---------
+env = $1 || ""
+if [[ $env == wsl2 ]]; then
+  echo 'Install settings for WSL2'
+  curl -fsSL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz | tar xz -C /tmp \
+      && mv /tmp/nvim-linux64/bin/nvim $HOME/.local/bin
+
+  curl -fsSL https://github.com/jesseduffield/lazygit/releases/download/v0.40.2/lazygit_0.40.2_Linux_x86_64.tar.gz | tar xz -C /tmp \
+      && mv /tmp/lazygit $HOME/.local/bin
+
+  if [ ! -e "$HOME/.tmux.conf" ]; then
+      ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+  fi
+fi
+
 
 command echo -e "Install completed!!!!"
