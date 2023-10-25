@@ -35,8 +35,10 @@
 !.gitignore
 
 !/files/
-!/files/.zshrc
-!/files/.zshenv
+!/.zshrc
+/.zshrc.local
+!/.zshenv
+/zshenv.local
 !/files/.tmux.conf
 !/files/.bin/
 !/files/.bin/**
