@@ -1,10 +1,6 @@
-#!/usr/bin/env bash
-set -ue
+#!/bin/bash
 
-helpmsg() {
-  command echo "Usage: $0 [--help | -h]" 0>&2
-  command echo ""
-}
+set -ue
 
 link_to_homedir() {
   command echo "backup old dotfiles..."
@@ -31,21 +27,6 @@ link_to_homedir() {
     command echo "same install src dest"
   fi
 }
-
-while [ $# -gt 0 ];do
-  case ${1} in
-    --debug|-d)
-      set -uex
-      ;;
-    --help|-h)
-      helpmsg
-      exit 1
-      ;;
-    *)
-      ;;
-  esac
-  shift
-done
 
 link_to_homedir
 
@@ -74,7 +55,7 @@ curl -fsSL https://github.com/eza-community/eza/releases/download/v0.15.0/eza_x8
 # WSL2環境でインストールするときは引数にwsl2をいれる
 # unameで判定する方法だと、wsl2上で作動するDockerコンテナ内でもwsl2だと認識するため
 #---------
-if [[ $# == "1" ]] && [[ $1 == "wsl2" ]]; then
+if [[ "$#" == "1" && "$1" == "wsl2" ]]; then
   echo 'Install settings for WSL2'
   curl -fsSL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz | tar xz -C /tmp \
       && mv /tmp/nvim-linux64/bin/nvim $HOME/.local/bin
@@ -86,6 +67,5 @@ if [[ $# == "1" ]] && [[ $1 == "wsl2" ]]; then
       ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
   fi
 fi
-
 
 command echo -e "Install completed!!!!"
