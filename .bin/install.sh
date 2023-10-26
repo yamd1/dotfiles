@@ -74,8 +74,7 @@ curl -fsSL https://github.com/eza-community/eza/releases/download/v0.15.0/eza_x8
 # WSL2環境でインストールするときは引数にwsl2をいれる
 # unameで判定する方法だと、wsl2上で作動するDockerコンテナ内でもwsl2だと認識するため
 #---------
-env = $1 || ""
-if [[ $env == wsl2 ]]; then
+if [[ $# == "1" ]] && [[ $1 == "wsl2" ]]; then
   echo 'Install settings for WSL2'
   curl -fsSL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz | tar xz -C /tmp \
       && mv /tmp/nvim-linux64/bin/nvim $HOME/.local/bin
