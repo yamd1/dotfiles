@@ -60,7 +60,10 @@ if [[ "$#" == "1" && "$1" == "wsl2" ]]; then
   curl -fsSL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz | tar xz -C /tmp \
       && mv /tmp/nvim-linux64/bin/nvim $HOME/.local/bin
 
-  curl -fsSL https://github.com/jesseduffield/lazygit/releases/download/v0.40.2/lazygit_0.40.2_Linux_x86_64.tar.gz | tar xz -C /tmp \
+  # curl -fsSL https://nodejs.org/dist/v20.9.0/node-v20.9.0-linux-x64.tar.xz | tar xz -C /tmp \
+  #     && mv /tmp/node $HOME/.local/bin
+
+  curl -fsSL https://github.com/jesseduffield/lazygit/releases/download/v0.40.2/lazygit_0.40.2_Linux_x86_64.tar.gz | tar Jx -C /tmp \
       && mv /tmp/lazygit $HOME/.local/bin
 
   if [ ! -e "$HOME/.tmux.conf" ]; then
