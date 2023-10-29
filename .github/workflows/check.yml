@@ -12,6 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install required packages
-        run: apt-get update && apt-get install -y git sudo
+        run: apt-get update && apt-get install -y git sudo curl zsh
       - name: Install dotfiles
         run: .bin/install.sh
