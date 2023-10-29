@@ -4,7 +4,7 @@ set -ue
 
 link_to_homedir() {
   command echo "backup old dotfiles..."
-  if [ ! -d "$HOME/.dotbackup" ];then
+  if [[ ! -d "$HOME/.dotbackup" ]];then
     command echo "$HOME/.dotbackup not found. Auto Make it"
     command mkdir "$HOME/.dotbackup"
   fi
@@ -31,7 +31,7 @@ link_to_homedir() {
 link_to_homedir
 
 
-if [ ! -d "~/.local/bin" ]; then
+if [[ ! -d "~/.local/bin" ]]; then
     mkdir -p $HOME/.local/bin
 fi
 
@@ -40,7 +40,7 @@ fi
 curl -fsSL https://github.com/junegunn/fzf/releases/download/0.43.0/fzf-0.43.0-linux_amd64.tar.gz | tar xz -C $HOME/.local/bin
 
 
-if [ ! -e "$HOME/.local/bin/sheldon" ]; then
+if [[ ! -e "$HOME/.local/bin/sheldon" ]]; then
   curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
       | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
 fi
@@ -55,7 +55,7 @@ curl -fsSL https://github.com/eza-community/eza/releases/download/v0.15.0/eza_x8
 # WSL2環境でインストールするときは引数にwsl2をいれる
 # unameで判定する方法だと、wsl2上で作動するDockerコンテナ内でもwsl2だと認識するため
 #---------
-if [[ "$#" == "1" && "$1" == "wsl2" ]]; then
+if [[ "$#" = "1" && "$1" = "wsl2" ]]; then
   echo 'Install settings for WSL2'
   curl -fsSL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz | tar xz -C /tmp \
       && mv /tmp/nvim-linux64/bin/nvim $HOME/.local/bin
@@ -66,7 +66,7 @@ if [[ "$#" == "1" && "$1" == "wsl2" ]]; then
   curl -fsSL https://github.com/jesseduffield/lazygit/releases/download/v0.40.2/lazygit_0.40.2_Linux_x86_64.tar.gz | tar Jx -C /tmp \
       && mv /tmp/lazygit $HOME/.local/bin
 
-  if [ ! -e "$HOME/.tmux.conf" ]; then
+  if [[ ! -e "$HOME/.tmux.conf" ]]; then
       ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
   fi
 fi
