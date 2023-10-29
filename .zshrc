@@ -8,7 +8,7 @@ alias dcu="docker compose up -d"
 alias dce="docker compose exec -it"
 alias ls="eza -lago --icons"
 
-if [[ -e "$HOME/dotfiles/.zshrc.local" ]]; then
+if [[ -f "$HOME/dotfiles/.zshrc.local" ]]; then
   source "$HOME/dotfiles/.zshrc.local"
 fi
 
