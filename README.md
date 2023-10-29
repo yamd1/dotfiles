@@ -1,3 +1,3 @@
 # dotfiles
 
-https://github.com/yamd1/dotfiles/actions/workflows/WORKFLOW-FILE/badge.svg
+https://github.com/yamd1/dotfiles/actions/workflows/main.yml/badge.svg
