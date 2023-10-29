@@ -9,11 +9,12 @@ RUN apt-get update -y \
 
 
 ARG USER_UID=1000
+ARG USER_GID=1000
 
 RUN \
   useradd --shell /bin/bash --user-group --create-home appuser && \
   usermod --non-unique --uid ${USER_UID} appuser && \
-  groupmod --non-unique --gid ${USER_UID} appuser
+  groupmod --non-unique --gid ${USER_GID} appuser
 
 COPY . /home/appuser/dotfiles
 
