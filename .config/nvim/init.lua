@@ -1,9 +1,10 @@
 -- https://zenn.dev/hisasann/articles/neovim-settings-to-lua
 require("base")
+require("plugins")
+require("toggleterm")
 require("colorscheme")
 require("keymap")
 require("lspsetting")
-require("plugins")
 require("forWindows")
 require('nvim-tree').setup {
     hijack_cursor = true,
@@ -52,4 +53,3 @@ vim.g.netrw_dirhistmax = 0
 vim.opt.termguicolors = true
 vim.opt.winblend = 0 -- ウィンドウの不透明度
 vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
-
