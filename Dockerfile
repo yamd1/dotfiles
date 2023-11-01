@@ -5,7 +5,7 @@ WORKDIR /tmp
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
-    && apt-get install -y zsh curl git
+    && apt-get install -y zsh curl git sudo
 
 
 ARG USER_UID=1000
