@@ -45,8 +45,16 @@ return packer.startup(function(use)
 	use({ "nvim-lua/plenary.nvim" }) -- Common utilities
 
 	-- Colorschemes
-	use({ "EdenEast/nightfox.nvim" }) -- Color scheme
-	use({ "folke/tokyonight.nvim" })
+	-- use({ "EdenEast/nightfox.nvim" }) -- Color scheme
+	use { "folke/tokyonight.nvim" , config = function ()
+		require("tokyonight").setup({
+				transparent = true,
+				styles = {
+						sidebars = "transparent",
+						floats = "transparent",
+				},
+		})
+	end}
 
 	use({ "nvim-lualine/lualine.nvim" }) -- Statusline
 	use({ "akinsho/bufferline.nvim" })
