@@ -12,6 +12,8 @@ if [[ -f "$HOME/dotfiles/.zshrc.local" ]]; then
   source "$HOME/dotfiles/.zshrc.local"
 fi
 
+eval "$($HOME/.local/bin/rtx activate zsh)"
+
 eval "$(sheldon source)"
 
 eval "$(starship init zsh)"

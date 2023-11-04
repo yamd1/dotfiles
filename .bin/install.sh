@@ -31,7 +31,7 @@ link_to_homedir() {
 link_to_homedir
 
 
-if [[ ! -d "~/.local/bin" ]]; then
+if [[ ! -d "$HOME/.local/bin" ]]; then
     mkdir -p $HOME/.local/bin
 fi
 
@@ -60,10 +60,14 @@ if [[ "$#" = "1" && "$1" = "wsl2" ]]; then
   curl -fsSL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz | tar xz -C /tmp \
       && mv /tmp/nvim-linux64/bin/nvim $HOME/.local/bin
 
-  # curl -fsSL https://nodejs.org/dist/v20.9.0/node-v20.9.0-linux-x64.tar.xz | tar xz -C /tmp \
-  #     && mv /tmp/node $HOME/.local/bin
+  if [[ ! -d "$HOME/.config/rtx" ]]; then
+      mkdir -p $HOME/.config/rtx
+  fi
+  curl -fsSL https://github.com/jdx/rtx/releases/download/v2023.11.0/rtx-v2023.11.0-linux-x64 > $HOME/.local/bin/rtx
+  chmod +x $HOME/.local/bin/rtx
+  $HOME/.local/bin/rtx use --global node@18
 
-  curl -fsSL https://github.com/jesseduffield/lazygit/releases/download/v0.40.2/lazygit_0.40.2_Linux_x86_64.tar.gz | tar Jx -C /tmp \
+  curl -fsSL https://github.com/jesseduffield/lazygit/releases/download/v0.40.2/lazygit_0.40.2_Linux_x86_64.tar.gz | tar xz -C /tmp \
       && mv /tmp/lazygit $HOME/.local/bin
 
   if [[ ! -e "$HOME/.tmux.conf" ]]; then
