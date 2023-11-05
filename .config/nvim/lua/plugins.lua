@@ -44,17 +44,15 @@ return packer.startup(function(use)
 	use({ "wbthomason/packer.nvim" })
 	use({ "nvim-lua/plenary.nvim" }) -- Common utilities
 
+	-- Telescope
+	use({ "nvim-telescope/telescope.nvim" })
+
+	-- Treesitter
+	-- use({ "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } })
+	use({ "nvim-telescope/telescope-file-browser.nvim" })
+
 	-- Colorschemes
-	-- use({ "EdenEast/nightfox.nvim" }) -- Color scheme
-	use { "folke/tokyonight.nvim" , config = function ()
-		require("tokyonight").setup({
-				transparent = true,
-				styles = {
-						sidebars = "transparent",
-						floats = "transparent",
-				},
-		})
-	end}
+	use({ "EdenEast/nightfox.nvim" }) -- Color scheme
 
 	use({ "nvim-lualine/lualine.nvim" }) -- Statusline
 	use({ "akinsho/bufferline.nvim" })
@@ -68,13 +66,6 @@ return packer.startup(function(use)
 
 	-- Formatter
 	use({ "MunifTanjim/prettier.nvim" })
-
-	-- Telescope
-	use({ "nvim-telescope/telescope.nvim" })
-
-	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } })
-	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
 	use({ 'nvim-tree/nvim-tree.lua' })
 	use({ 'nvim-tree/nvim-web-devicons' })

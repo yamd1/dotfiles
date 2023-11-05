@@ -1,5 +1,6 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/share:/usr/local/bin:$PATH
 export PATH=$HOME/dotfiles/.bin:/usr/local/bin:$PATH
 export HISTSIZE=1000
 export SAVEHIST=100000
