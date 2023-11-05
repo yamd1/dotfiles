@@ -48,11 +48,11 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim" })
 
 	-- Treesitter
-	-- use({ "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } })
+	use({ "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } })
 	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
 	-- Colorschemes
-	use({ "EdenEast/nightfox.nvim" }) -- Color scheme
+	-- use({ "EdenEast/nightfox.nvim" }) -- Color scheme
 
 	use({ "nvim-lualine/lualine.nvim" }) -- Statusline
 	use({ "akinsho/bufferline.nvim" })

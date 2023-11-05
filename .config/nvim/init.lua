@@ -2,22 +2,22 @@
 require("base")
 require("plugins")
 require("toggleterm")
-require("colorscheme")
+-- require("colorscheme")
 require("keymap")
 require("lspsetting")
 require("forWindows")
 require('nvim-tree').setup {
     hijack_cursor = true,
-    diagnostics = {
-        enable = true,
-        show_on_dirs = true,
-        icons = {
-            hint = "",
-            info = "",
-            warning = "",
-            error = "",
-        },
-    },
+    -- diagnostics = {
+    --     enable = true,
+    --     show_on_dirs = true,
+    --     icons = {
+    --         hint = "",
+    --         info = "",
+    --         warning = "",
+    --         error = "",
+    --     },
+    -- },
     view = {
         width = 40,
         side = 'left',
@@ -27,7 +27,7 @@ require('nvim-tree').setup {
         enable = true,
         truncate = true,
         types = {
-           diagnostics = true,
+        --    diagnostics = true,
         },
     },
 }
