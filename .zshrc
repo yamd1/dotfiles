@@ -12,7 +12,9 @@ if [[ -f "$HOME/dotfiles/.zshrc.local" ]]; then
   source "$HOME/dotfiles/.zshrc.local"
 fi
 
-eval "$($HOME/.local/bin/rtx activate zsh)"
+if [[ -f "$HOME/.local/bin/rtx" ]]; then
+  eval "$($HOME/.local/bin/rtx activate zsh)"
+fi
 
 eval "$(sheldon source)"
 
