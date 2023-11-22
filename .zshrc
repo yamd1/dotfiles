@@ -1,5 +1,7 @@
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
+bindkey \^U backward-kill-line
+
 alias v="nvim"
 alias vim="nvim"
 alias vi="nvim"

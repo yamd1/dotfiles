@@ -51,6 +51,11 @@ curl -fsSL https://github.com/sharkdp/bat/releases/download/v0.24.0/bat-v0.24.0-
 curl -fsSL https://github.com/eza-community/eza/releases/download/v0.15.0/eza_x86_64-unknown-linux-gnu.tar.gz | tar xz -C /tmp \
     && mv /tmp/eza $HOME/.local/bin
 
+YQ_VERSION="v4.40.2"
+YQ_BINARY="yq_linux_amd64"
+curl -fsSL https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/${YQ_BINARY}.tar.gz | tar xz -C /tmp \
+  && mv /tmp/${YQ_BINARY} $HOME/.local/bin/yq
+
 #---------
 # WSL2環境でインストールするときは引数にwsl2をいれる
 # unameで判定する方法だと、wsl2上で作動するDockerコンテナ内でもwsl2だと認識するため
