@@ -35,7 +35,11 @@ if [[ ! -d "$HOME/.local/bin" ]]; then
     mkdir -p $HOME/.local/bin
 fi
 
-cp "$HOME/dotfiles/.config/task/_task" $HOME/.local/share/sheldon/repos/github.com/zsh-users/zsh-completions/src/_task
+if [[ ! -d "$HOME/.local/share/zsh/site-functions" ]]; then
+    mkdir -p $HOME/.local/share/zsh/site-functions
+fi
+
+cp "$HOME/dotfiles/.config/task/_task" $HOME/.local/share/zsh/site-functions/_task
 
 
 # TODO: 以下処理をループ化する
