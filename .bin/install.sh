@@ -35,6 +35,11 @@ if [[ ! -d "$HOME/.local/bin" ]]; then
     mkdir -p $HOME/.local/bin
 fi
 
+cp "$HOME/dotfiles/.config/task/_task" $HOME/.local/share/sheldon/repos/github.com/zsh-users/zsh-completions/src/_task
+
+
+# TODO: 以下処理をループ化する
+
 [[ -e $HOME/.local/bin/starship ]] || curl -sS https://starship.rs/install.sh | sh -s -- --yes --bin-dir $HOME/.local/bin
 
 curl -fsSL https://github.com/junegunn/fzf/releases/download/0.43.0/fzf-0.43.0-linux_amd64.tar.gz | tar xz -C $HOME/.local/bin
@@ -55,6 +60,9 @@ YQ_VERSION="v4.40.2"
 YQ_BINARY="yq_linux_amd64"
 curl -fsSL https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/${YQ_BINARY}.tar.gz | tar xz -C /tmp \
   && mv /tmp/${YQ_BINARY} $HOME/.local/bin/yq
+
+# curl -fsSL https://github.com/tstack/lnav/releases/download/v0.11.2/lnav-0.11.2-x86_64-linux-musl.zip | tar x -C /tmp \
+#     && mv /tmp/lnav $HOME/.local/bin
 
 #---------
 # WSL2環境でインストールするときは引数にwsl2をいれる
