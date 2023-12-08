@@ -39,7 +39,7 @@ if [[ ! -d "$HOME/.local/share/zsh/site-functions" ]]; then
     mkdir -p $HOME/.local/share/zsh/site-functions
 fi
 
-if [[ -e "$HOME/.dotfiles/.config/task/_task" ]]; then
+if [[ -e "$HOME/dotfiles/.config/task/_task" ]]; then
   cp "$HOME/dotfiles/.config/task/_task" $HOME/.local/share/zsh/site-functions/_task
 fi
 
