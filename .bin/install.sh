@@ -39,7 +39,9 @@ if [[ ! -d "$HOME/.local/share/zsh/site-functions" ]]; then
     mkdir -p $HOME/.local/share/zsh/site-functions
 fi
 
-cp "$HOME/dotfiles/.config/task/_task" $HOME/.local/share/zsh/site-functions/_task
+if [[ -e "$HOME/.dotfiles/.config/task/_task" ]]; then
+  cp "$HOME/dotfiles/.config/task/_task" $HOME/.local/share/zsh/site-functions/_task
+fi
 
 
 # TODO: 以下処理をループ化する
