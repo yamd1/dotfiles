@@ -10,6 +10,7 @@ alias dcu="docker compose up -d"
 alias dce="docker compose exec -it"
 alias ls="eza -lago --icons"
 alias tmp='cd "$(mktemp -d)"'
+alias grb="navi --query rb"
 
 export LS_COLORS="$(vivid generate ayu)"
 export FZF_DEFAULT_OPTS="--reverse --cycle --ansi --no-info --no-hscroll --no-sort --no-mouse"
