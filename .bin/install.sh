@@ -72,7 +72,7 @@ curl -fsSL https://github.com/sharkdp/vivid/releases/download/v0.9.0/vivid-v0.9.
 
 curl -fsSL https://github.com/denisidoro/navi/releases/download/v2.22.1/navi-v2.22.1-x86_64-unknown-linux-musl.tar.gz | tar xz -C /tmp \
     && mv /tmp/navi $HOME/.local/bin \
-    && mv $HOME/dotfiles/.config/navi $HOME/.local/share
+    && cp -R $HOME/dotfiles/.config/navi $HOME/.local/share
 
 # curl -fsSL https://github.com/tstack/lnav/releases/download/v0.11.2/lnav-0.11.2-x86_64-linux-musl.zip | tar x -C /tmp \
 #     && mv /tmp/lnav $HOME/.local/bin
