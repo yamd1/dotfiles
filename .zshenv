@@ -1,12 +1,14 @@
-export PATH=$HOME/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.local/share:$PATH
-export PATH=$HOME/dotfiles/.bin:$PATH
-export FPATH=$HOME/.local/share/zsh/site-functions:$FPATH
-export HISTSIZE=1000
-export SAVEHIST=100000
-setopt hist_ignore_dups
+path=(
+  "$HOME/bin"(N-/)
+  "$HOME/.local/bin"(N-/)
+  "$HOME/.local/share"(N-/)
+  "$HOME/dotfiles/.bin"(N-/)
+  "$path[@]"
+)
 
-if [[ -f "$HOME/dotfiles/.zshenv.local" ]]; then
-  source "$HOME/dotfiles/.zshenv.local"
-fi
+fpath=(
+  "$HOME/.local/share/zsh/site-functions"(N-/)
+  "$fpath[@]"
+)
+
+[[ -f "$HOME/dotfiles/.zshenv.local" ]] && source "$HOME/dotfiles/.zshenv.local"
