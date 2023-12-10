@@ -31,18 +31,10 @@ link_to_homedir() {
 link_to_homedir
 
 
-if [[ ! -d "$HOME/.local/bin" ]]; then
-    mkdir -p $HOME/.local/bin
-fi
-
-if [[ ! -d "$HOME/.local/share/zsh/site-functions" ]]; then
-    mkdir -p $HOME/.local/share/zsh/site-functions
-fi
-
-if [[ -e "$HOME/dotfiles/.config/task/_task" ]]; then
-  cp "$HOME/dotfiles/.config/task/_task" $HOME/.local/share/zsh/site-functions/_task
-fi
-
+[[ ! -d "$HOME/.local/bin" ]] && mkdir -p $HOME/.local/bin
+[[ ! -d "$HOME/.local/share/zsh/site-functions" ]] && mkdir -p $HOME/.local/share/zsh/site-functions
+[[ -e "$HOME/dotfiles/.config/task/_task" ]] && cp "$HOME/dotfiles/.config/task/_task" $HOME/.local/share/zsh/site-functions/_task
+[[ -d "$HOME/dotfiles/.config/navi" ]] && cp -R $HOME/dotfiles/.config/navi $HOME/.local/share
 
 # TODO: 以下処理をループ化する
 
@@ -71,8 +63,7 @@ curl -fsSL https://github.com/sharkdp/vivid/releases/download/v0.9.0/vivid-v0.9.
     && mv /tmp/vivid-v0.9.0-x86_64-unknown-linux-gnu/vivid $HOME/.local/bin
 
 curl -fsSL https://github.com/denisidoro/navi/releases/download/v2.22.1/navi-v2.22.1-x86_64-unknown-linux-musl.tar.gz | tar xz -C /tmp \
-    && mv /tmp/navi $HOME/.local/bin \
-    && cp -R $HOME/dotfiles/.config/navi $HOME/.local/share
+    && mv /tmp/navi $HOME/.local/bin
 
 # curl -fsSL https://github.com/tstack/lnav/releases/download/v0.11.2/lnav-0.11.2-x86_64-linux-musl.zip | tar x -C /tmp \
 #     && mv /tmp/lnav $HOME/.local/bin
