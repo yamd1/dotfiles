@@ -1,3 +1,13 @@
+% git, git-switch,sw
+@ git
+
+# Switch local branch
+git switch <local_branch_name>
+
+# Switch a new local branch
+git Switch -c <new_local_branch_name>
+
+
 % git, git-checkout, ck
 @ git
 
