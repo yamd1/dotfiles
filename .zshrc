@@ -8,17 +8,19 @@ alias vi="nvim"
 alias dcd="docker compose down"
 alias dcu="docker compose up -d"
 alias dce="docker compose exec -it"
-alias ls="eza -lago --icons"
+alias ls=" eza -lago --icons"
 alias tmp='cd "$(mktemp -d)"'
-alias rb="navi --query rb"
-alias sw="git switch"
-alias co="git commit"
 alias ad="git add -A"
+alias co="git commit"
+alias sw="git switch"
+alias rb="navi --query rb"
 
 export LS_COLORS="$(vivid generate ayu)"
 export FZF_DEFAULT_OPTS="--reverse --cycle --ansi --no-info --no-hscroll --no-sort --no-mouse"
 
-bindkey \^U backward-kill-line
+bindkey '^U' backward-kill-line
+bindkey '^[[Z' reverse-menu-complete
+
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' list-packed yes
