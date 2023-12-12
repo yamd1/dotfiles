@@ -2,12 +2,10 @@
 [[ -f "$HOME/dotfiles/.zshrc.local" ]] && source "$HOME/dotfiles/.zshrc.local"
 [[ -f "$HOME/.local/bin/rtx" ]] && eval "$($HOME/.local/bin/rtx activate zsh)"
 
-alias v="nvim"
-alias vim="nvim"
-alias vi="nvim"
 alias dcd="docker compose down"
 alias dcu="docker compose up -d"
 alias dce="docker compose exec -it"
+alias stash_ls="ls"
 alias ls=" eza -lago --icons"
 alias tmp='cd "$(mktemp -d)"'
 alias ad="git add -A"

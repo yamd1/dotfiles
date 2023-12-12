@@ -1,9 +1,7 @@
 #!/bin/bash
-
 set -ue
 
 # SEE: https://aquaproj.github.io/docs/products/aqua-installer#shell-script
-
 if [[ ! -x "$HOME/.local/share/aquaproj-aqua/bin/aqua" ]]; then
   curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.2.0/aqua-installer
   echo "d13118c3172d90ffa6be205344b93e8621de9bf47c852d80da188ffa6985c276  aqua-installer" | sha256sum -c
@@ -11,4 +9,6 @@ if [[ ! -x "$HOME/.local/share/aquaproj-aqua/bin/aqua" ]]; then
   ./aqua-installer
 fi
 
-command "$(aqua i -a)"
+AQUA_CONFIG=$HOME/.config/aquaproj-aqua
+export AQUA_POLICY_CONFIG=$AQUA_CONFIG/policy.yaml
+exec $HOME/.local/share/aquaproj-aqua/bin/aqua -c $AQUA_CONFIG/aqua.yaml i
