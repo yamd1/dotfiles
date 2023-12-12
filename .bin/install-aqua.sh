@@ -10,3 +10,5 @@ if [[ ! -x "$HOME/.local/share/aquaproj-aqua/bin/aqua" ]]; then
   chmod +x aqua-installer
   ./aqua-installer
 fi
+
+command "$(aqua i -a)"
