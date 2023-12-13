@@ -13,7 +13,7 @@ alias co="git commit"
 alias sw="git switch"
 alias rb="navi --query rb"
 
-export LS_COLORS="$(vivid generate ayu)"
+[[ -x "$(command -v vivid)" ]] && export LS_COLORS="$(vivid generate ayu)"
 export FZF_DEFAULT_OPTS="--reverse --cycle --ansi --no-info --no-hscroll --no-sort --no-mouse"
 
 bindkey '^U' backward-kill-line
@@ -39,6 +39,6 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 unsetopt BEEP
 
-eval "$(navi widget zsh)"
-eval "$(sheldon source)"
-eval "$(starship init zsh)"
+[[ -x "$(command -v navi)" ]] && eval "$(navi widget zsh)"
+[[ -x "$(command -v sheldon)" ]] && eval "$(sheldon source)"
+[[ -x "$(command -v starship)" ]] && eval "$(starship init zsh)"
