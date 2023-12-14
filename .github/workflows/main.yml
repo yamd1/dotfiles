@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     container: ubuntu:latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Install required packages
         run: apt-get update && apt-get install -y git sudo curl
       - name: Install dotfiles
