@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ue
 
-[[ -d "$HOME/.local" ]] && rm -rf "$HOME/.local"
+# [[ -d "$HOME/.local" ]] && rm -rf "$HOME/.local"
 cp -R $HOME/dotfiles/.local $HOME
 
 [[ -d "$HOME/.config" ]] && rm -rf "$HOME/.config"
