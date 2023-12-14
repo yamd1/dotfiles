@@ -14,13 +14,4 @@ jobs:
       - name: Install required packages
         run: apt-get update && apt-get install -y git sudo curl
       - name: Install dotfiles
-        run: .bin/install.sh
-  wsl2:
-    runs-on: ubuntu-latest
-    container: ubuntu:latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Install required packages
-        run: apt-get update && apt-get install -y git sudo curl
-      - name: Install dotfiles
-        run: .bin/install.sh wsl2
+        run: $HOME/dotfiles/.bin/install.sh
