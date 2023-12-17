@@ -16,8 +16,5 @@ RUN \
   usermod --non-unique --uid ${USER_UID} appuser && \
   groupmod --non-unique --gid ${USER_GID} appuser
 
-COPY . /home/appuser/dotfiles
-RUN chown -R appuser:appuser /home/appuser/dotfiles
-
 WORKDIR /home/appuser
 USER appuser
