@@ -1,4 +1,10 @@
 services:
   container:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: .
+        target: $HOME/dotfiles
     tty: true
