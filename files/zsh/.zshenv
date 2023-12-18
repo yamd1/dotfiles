@@ -1,4 +1,4 @@
-[[ -f "$HOME/dotfiles/.zshenv.local" ]] && source "$HOME/dotfiles/.zshenv.local"
+[[ -f "$HOME/dotfiles/files/zsh/.zshenv.local" ]] && source "$HOME/dotfiles/files/zsh/.zshenv.local"
 
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
