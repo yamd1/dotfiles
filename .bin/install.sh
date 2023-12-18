@@ -10,5 +10,6 @@ cp -R $HOME/dotfiles/.config $HOME
 ln -snf $HOME/dotfiles/files/zsh/.zshrc $HOME
 ln -snf $HOME/dotfiles/files/zsh/.zshenv $HOME
 ln -snf $HOME/dotfiles/files/git/.gitconfig $HOME
+ln -snf $HOME/dotfiles/files/.lnav $HOME
 
 $HOME/dotfiles/.bin/install-aqua.sh
