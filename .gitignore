@@ -48,3 +48,4 @@
 /files/zsh/.zshrc.local
 !/files/zsh/.zshenv
 /files/zsh/.zshenv.local
+/.bin/aqua-installer
