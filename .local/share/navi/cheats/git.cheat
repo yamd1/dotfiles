@@ -49,6 +49,13 @@ git commit --fixup=<fixup_target>
 git rebase -i <commit_hash>
 
 
+% git, git-reset, rs
+@ git
+
+# Reset(mixed)
+git reset --mixed <reflog_hash>
+
+
 % git, git-update-index
 @ git
 
@@ -101,3 +108,8 @@ $ commit_hash: git log --color=always --graph --format="%C(auto)%h%d %s %C(black
   --- \
   --map "grep -o '[a-f0-9]\{7\}'" \
   --preview "echo {} | grep -o '[a-f0-9]\{7\}' | xargs -I_ git log --color=always --reverse --format='%C(auto)%h %s' _..HEAD"
+
+$ reflog_hash: git reflog --color=always --graph --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" \
+  --- \
+  --map "grep -o '[a-f0-9]\{7\}'" \
+  --preview "echo {} | grep -o '[a-f0-9]\{7\}' | xargs -I_ git reflog --color=always --reverse --format='%C(auto)%h %s' _..HEAD"
