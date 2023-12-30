@@ -1,8 +1,7 @@
 -- https://zenn.dev/hisasann/articles/neovim-settings-to-lua
 require("base")
 require("plugins")
-require("toggleterm")
--- require("colorscheme")
+require("colorscheme")
 require("keymap")
 require("lspsetting")
 require("forWindows")
