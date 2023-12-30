@@ -24,5 +24,7 @@ packages:
   - name: go-task/task@v3.31.0
   - name: starship/starship@v1.16.0
   - name: rossmacarthur/sheldon@0.7.4
+  - name: jdxcode/rtx@v2023.12.39
+  - name: neovim/neovim@v0.9.4
   - name: tstack/lnav@v0.11.2
     registry: local
