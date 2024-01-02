@@ -5,31 +5,33 @@ require("colorscheme")
 require("keymap")
 require("lspsetting")
 require("forWindows")
-require('nvim-tree').setup {
-    hijack_cursor = true,
-    -- diagnostics = {
-    --     enable = true,
-    --     show_on_dirs = true,
-    --     icons = {
-    --         hint = "",
-    --         info = "",
-    --         warning = "",
-    --         error = "",
-    --     },
-    -- },
-    view = {
-        width = 40,
-        side = 'left',
-        signcolumn = 'yes',
-    },
-    log = {
-        enable = true,
-        truncate = true,
-        types = {
-        --    diagnostics = true,
+if pcall(require, 'nvim-tree') then
+    require('nvim-tree').setup {
+        hijack_cursor = true,
+        diagnostics = {
+            enable = true,
+            show_on_dirs = true,
+            icons = {
+                hint = "",
+                info = "",
+                warning = "",
+                error = "",
+            },
         },
-    },
-}
+        view = {
+            width = 40,
+            side = 'left',
+            signcolumn = 'yes',
+        },
+        log = {
+            enable = true,
+            truncate = true,
+            types = {
+            --    diagnostics = true,
+            },
+        },
+    }
+end
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
