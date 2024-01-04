@@ -38,7 +38,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 unsetopt BEEP
 
-[[ -x "$(command -v rtx)" && ! -x "$(command -v node)" ]] && eval "$(rtx activate zsh)" && eval "$(rtx install --log-level error)"
+[[ ! -x "$(command -v node)" && -x "$(command -v rtx)" ]] && eval "$(rtx activate zsh)" && eval "$(rtx install --log-level error)"
 [[ -x "$(command -v navi)" ]] && eval "$(navi widget zsh)"
 [[ -x "$(command -v sheldon)" ]] && eval "$(sheldon source)"
 [[ -x "$(command -v starship)" ]] && eval "$(starship init zsh)"
