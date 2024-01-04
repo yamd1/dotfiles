@@ -12,6 +12,7 @@ path=(
   "$HOME/.local/share"(N-/)
   "$HOME/dotfiles/.bin"(N-/)
   "$AQUA_ROOT_DIR/bin"(N-/)
+  "$HOME/.cargo/bin"(N-/)
   "$path[@]"
 )
 
