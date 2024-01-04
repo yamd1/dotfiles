@@ -1,0 +1,1 @@
+alias mytask='task --taskfile $HOME/Taskfile.yml'
