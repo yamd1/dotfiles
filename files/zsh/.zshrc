@@ -1,6 +1,5 @@
 [[ -f "$HOME/dotfiles/files/zsh/fzf.zsh" ]] && source "$HOME/dotfiles/files/zsh/fzf.zsh"
 [[ -f "$HOME/dotfiles/files/zsh/.zshrc.local" ]] && source "$HOME/dotfiles/files/zsh/.zshrc.local"
-[[ -f "$HOME/.local/bin/rtx" ]] && eval "$($HOME/.local/bin/rtx activate zsh)"
 
 alias vim="nvim"
 alias dcd="docker compose down"
