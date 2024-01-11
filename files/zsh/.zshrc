@@ -1,7 +1,7 @@
 [[ -f "$HOME/dotfiles/files/zsh/fzf.zsh" ]] && source "$HOME/dotfiles/files/zsh/fzf.zsh"
 [[ -f "$HOME/dotfiles/files/zsh/.zshrc.local" ]] && source "$HOME/dotfiles/files/zsh/.zshrc.local"
 
-autoload -Uz git-switch
+autoload -Uz git-branch
 
 alias vim="nvim"
 alias dcd="docker compose down"
@@ -11,7 +11,7 @@ alias ls=" eza -lago --icons"
 alias tmp='cd "$(mktemp -d)"'
 alias ad="git add -A"
 alias co="git commit"
-alias sw="git-switch"
+alias sw="git switch"
 alias rb="navi --query rb"
 alias gd="pushd"
 alias pd="popd"
@@ -19,9 +19,9 @@ alias fd='pushd "$(find ${1:-.} -path "*/\.*" -prune -type d -print | fzf +m)"'
 alias dirs="dirs -v"
 alias slurp="pushd - && pushd"
 
-[[ -x "$(command -v vivid)" ]] && export LS_COLORS="$(vivid generate ayu)"
-export FZF_DEFAULT_OPTS="--reverse --cycle --ansi --no-info --no-hscroll --no-sort --no-mouse"
+zle -N git-branch
 
+bindkey '^G^B' git-branch
 bindkey '^U' backward-kill-line
 bindkey '^[[Z' reverse-menu-complete
 
@@ -45,6 +45,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 unsetopt BEEP
 
+[[ -x "$(command -v vivid)" ]] && export LS_COLORS="$(vivid generate ayu)"
 [[ ! -x "$(command -v node)" && -x "$(command -v rtx)" ]] && eval "$(rtx activate zsh)" && eval "$(rtx install --log-level warn)"
 [[ -x "$(command -v navi)" ]] && eval "$(navi widget zsh)"
 [[ -x "$(command -v sheldon)" ]] && eval "$(sheldon source)"

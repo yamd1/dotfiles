@@ -1,0 +1,5 @@
+local branches branch
+branches=$(git branch -vv) &&
+branch=$(echo "$branches" | fzf -m) &&
+BUFFER="${BUFFER} $(echo "$branch" | awk '{print $1}' | sed "s/.* //")"
+CURSOR=${#BUFFER}
