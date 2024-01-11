@@ -20,3 +20,11 @@ fpath=(
   "$HOME/.local/share/zsh/site-functions"(N-/)
   "$fpath[@]"
 )
+
+cdpath=(
+  ..
+  "$HOME"(N-/)
+  "$HOME/develop"(N-/)
+  "$HOME/sandobx"(N-/)
+  "$HOME/dotfiles"(N-/)
+)
