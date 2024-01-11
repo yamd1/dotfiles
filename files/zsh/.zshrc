@@ -2,6 +2,7 @@
 [[ -f "$HOME/dotfiles/files/zsh/.zshrc.local" ]] && source "$HOME/dotfiles/files/zsh/.zshrc.local"
 
 autoload -Uz git-branch
+autoload -Uz git-commit
 
 alias vim="nvim"
 alias dcd="docker compose down"
@@ -20,8 +21,10 @@ alias dirs="dirs -v"
 alias slurp="pushd - && pushd"
 
 zle -N git-branch
+zle -N git-commit
 
 bindkey '^G^B' git-branch
+bindkey '^G^G' git-commit
 bindkey '^U' backward-kill-line
 bindkey '^[[Z' reverse-menu-complete
 
