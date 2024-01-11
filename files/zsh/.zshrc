@@ -2,7 +2,7 @@
 [[ -f "$HOME/dotfiles/files/zsh/.zshrc.local" ]] && source "$HOME/dotfiles/files/zsh/.zshrc.local"
 
 autoload -Uz git-branch
-autoload -Uz git-commit
+autoload -Uz git-log-preview-rebase
 
 alias vim="nvim"
 alias dcd="docker compose down"
@@ -13,7 +13,8 @@ alias tmp='cd "$(mktemp -d)"'
 alias ad="git add -A"
 alias co="git commit"
 alias sw="git switch"
-alias rb="navi --query rb"
+alias rb="git rebase"
+alias nrb="navi --query rb"
 alias gd="pushd"
 alias pd="popd"
 alias fd='pushd "$(find ${1:-.} -path "*/\.*" -prune -type d -print | fzf +m)"'
@@ -21,10 +22,10 @@ alias dirs="dirs -v"
 alias slurp="pushd - && pushd"
 
 zle -N git-branch
-zle -N git-commit
+zle -N git-log-preview-rebase
 
 bindkey '^G^B' git-branch
-bindkey '^G^G' git-commit
+bindkey '^G^G' git-log-preview-rebase
 bindkey '^U' backward-kill-line
 bindkey '^[[Z' reverse-menu-complete
 
