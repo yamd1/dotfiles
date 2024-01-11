@@ -1,6 +1,8 @@
 [[ -f "$HOME/dotfiles/files/zsh/fzf.zsh" ]] && source "$HOME/dotfiles/files/zsh/fzf.zsh"
 [[ -f "$HOME/dotfiles/files/zsh/.zshrc.local" ]] && source "$HOME/dotfiles/files/zsh/.zshrc.local"
 
+autoload -Uz git-switch
+
 alias vim="nvim"
 alias dcd="docker compose down"
 alias dcu="docker compose up -d"
@@ -9,10 +11,11 @@ alias ls=" eza -lago --icons"
 alias tmp='cd "$(mktemp -d)"'
 alias ad="git add -A"
 alias co="git commit"
-alias sw="git switch"
+alias sw="git-switch"
 alias rb="navi --query rb"
 alias gd="pushd"
 alias pd="popd"
+alias fd='pushd "$(find ${1:-.} -path "*/\.*" -prune -type d -print | fzf +m)"'
 alias dirs="dirs -v"
 alias slurp="pushd - && pushd"
 
