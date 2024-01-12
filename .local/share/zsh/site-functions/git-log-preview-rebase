@@ -1,4 +1,4 @@
 local commitHash
-commitHash="$(git log --color=always --graph --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" | fzf -m --preview "echo {} | grep -o '[a-f0-9]\{7\}' | xargs -I_ git log --color=always --reverse --format='%C(auto)%h %s' _..HEAD")"
-BUFFER="${BUFFER} $(echo "$commitHash" | grep -o '[a-f0-9]\{7\}')"
+commitHash="$(git log --color=always --graph --format="%C(auto)%x00%h%x00%d %s %C(black)%C(bold)%cr" | fzf -m --preview "echo {} | grep -o '[a-f0-9]\{7\}' | xargs -I_ git log --color=always --reverse --format='%C(auto)%h %s' _..HEAD")"
+BUFFER="${BUFFER} $(echo "$commitHash" | grep -oaP '?=\00(.*)\00')"
 CURSOR=${#BUFFER}
