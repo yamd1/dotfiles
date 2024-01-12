@@ -1,1 +1,6 @@
 export AWS_DEFAULT_PROFILE=y-yamada
+
+cdpath=(
+  "$HOME/develop"(N-/)
+  "$HOME/sandbox"(N-/)
+)

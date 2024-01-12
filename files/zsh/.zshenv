@@ -25,7 +25,6 @@ fpath=(
 cdpath=(
   ..
   "$HOME"(N-/)
-  "$HOME/develop"(N-/)
-  "$HOME/sandobx"(N-/)
   "$HOME/dotfiles"(N-/)
+  "$cdpath[@]"
 )
