@@ -1,4 +1,4 @@
-local commitHash
-commitHash="$(git reflog --color=always --format="%C(auto)%gD %s %C(black)%C(bold)%cr" | fzf -m)" &&
-BUFFER="${BUFFER} $(echo "$commitHash" | awk '{print $2}')"
+local commit
+commit="$(git reflog --color=always --format="%C(auto)%gD %s %C(black)%C(bold)%cr" | fzf -m)" &&
+BUFFER="${BUFFER} $(echo "$commit" | awk '{print $1}')"
 CURSOR=${#BUFFER}

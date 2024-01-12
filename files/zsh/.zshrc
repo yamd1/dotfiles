@@ -2,6 +2,7 @@
 [[ -f "$HOME/dotfiles/files/zsh/.zshrc.local" ]] && source "$HOME/dotfiles/files/zsh/.zshrc.local"
 
 autoload -Uz git-branch
+autoload -Uz git-reflog
 autoload -Uz git-log-preview-rebase
 
 alias vim="nvim"
@@ -22,10 +23,12 @@ alias dirs="dirs -v"
 alias slurp="pushd - && pushd"
 
 zle -N git-branch
+zle -N git-reflog
 zle -N git-log-preview-rebase
 
 bindkey '^G^B' git-branch
 bindkey '^G^G' git-log-preview-rebase
+bindkey '^G^R' git-reflog
 bindkey '^U' backward-kill-line
 bindkey '^[[Z' reverse-menu-complete
 
