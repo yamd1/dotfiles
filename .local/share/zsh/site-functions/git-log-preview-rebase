@@ -1,10 +1,7 @@
 local commitHash
-commitHash="$(git log --color=always --graph --format="%C(auto)%x00%h%x00%d %s %C(black)%C(bold)%cr" | fzf -m --preview "echo {} | grep -o '[a-f0-9]\{7\}' | xargs -I_ git log --color=always --reverse --format='%C(auto)%h %s' _..HEAD")"
-
-# PCRE拡張正規表現なのでgnu-grepがないと動かない
-BUFFER="${BUFFER} $(echo "$commitHash" | grep -oaP '(?<=\00)(.*)(?=\00)')"
-
-# TODO:mac環境下でも動かしたいときは拡張正規表現(ERE)でsedを利用する
-# BUFFER="${BUFFER} $(echo "$commitHash" | sed -E 's/\00(.*)\00/\1/')"
-
+# fzf previewの中ではなぜか拡張正規表現が使えないので区切り文字でのマッチができていない。
+# 選択してコマンドラインに戻るときには正確にコミットハッシュを取得できるが、プレビューに表示されるコミットハッシュは不完全である可能性がある
+commitHash="$(git log --color=always --graph --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" \
+  | fzf -m --preview "echo {} | grep -o '[a-f0-9]\{7,8\}' | xargs -I_ git log --color=always --reverse --format='%C(auto)%h %s' _..HEAD")"
+BUFFER="${BUFFER} $(echo "$commitHash" | grep -oE '\b[a-f0-9]{7,8}\b')"
 CURSOR=${#BUFFER}
