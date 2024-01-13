@@ -2,7 +2,8 @@
 set -ue
 
 [[ -d "$HOME/.local" ]] && rm -rf "$HOME/.local"
-cp -R $HOME/dotfiles/.local $HOME
+# cp -R $HOME/dotfiles/.local $HOME
+ln -snf $HOME/dotfiles/.local $HOME
 
 [[ -d "$HOME/.config" ]] && rm -rf "$HOME/.config"
 cp -R $HOME/dotfiles/.config $HOME

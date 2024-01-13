@@ -42,7 +42,12 @@
 !/.github/**
 !/.local/
 !/.local/**
+/.local/share/aquaproj-aqua/**
+!/.local/share/aquaproj-aqua/.keep
 /.local/share/sheldon/**
+!/.local/share/sheldon/.keep
+/.local/share/rtx/**
+!/.local/share/rtx/.keep
 !/files/
 !/files/zsh/.zshrc
 /files/zsh/.zshrc.local
