@@ -1,5 +1,5 @@
-[[ -f "$HOME/dotfiles/files/zsh/fzf.zsh" ]] && source "$HOME/dotfiles/files/zsh/fzf.zsh"
-[[ -f "$HOME/dotfiles/files/zsh/.zshrc.local" ]] && source "$HOME/dotfiles/files/zsh/.zshrc.local"
+[[ -f "$DOT_DIR/files/zsh/fzf.zsh" ]] && source "$DOT_DIR/files/zsh/fzf.zsh"
+[[ -f "$DOT_DIR/files/zsh/.zshrc.local" ]] && source "$DOT_DIR/files/zsh/.zshrc.local"
 
 autoload -Uz git-branch
 autoload -Uz git-reflog
