@@ -13,3 +13,5 @@ ln -snf $HOME/dotfiles/files/git/.gitconfig $HOME
 ln -snf $HOME/dotfiles/files/.lnav $HOME
 
 $HOME/dotfiles/.bin/install-aqua.sh
+
+zsh
