@@ -12,7 +12,7 @@ cp -R $DOT_DIR/files/.config $HOME
 ln -snf $DOT_DIR/files/zsh/.zshrc $HOME
 ln -snf $DOT_DIR/files/zsh/.zshenv $HOME
 ln -snf $DOT_DIR/files/git/.gitconfig $HOME
-ln -snf $DOT_DIR/files/.lnav $HOME
+ln -snf $DOT_DIR/files/.config/.lnav $HOME
 
 $DOT_DIR/.bin/install-aqua.sh
 
