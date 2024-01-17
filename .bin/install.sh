@@ -7,13 +7,13 @@ DOT_DIR=$HOME/dotfiles
 ln -snf $DOT_DIR/files/.local $HOME
 
 [[ -d "$HOME/.config" ]] && rm -rf "$HOME/.config"
-cp -R $DOT_DIR/files/.config $HOME
+ln -snf $DOT_DIR/files/.config $HOME
 
-ln -snf $DOT_DIR/files/zsh/.zshrc $HOME
-ln -snf $DOT_DIR/files/zsh/.zshenv $HOME
-ln -snf $DOT_DIR/files/git/.gitconfig $HOME
+ln -snf $DOT_DIR/files/.config/zsh/.zshrc $HOME
+ln -snf $DOT_DIR/files/.config/zsh/.zshenv $HOME
+ln -snf $DOT_DIR/files/.config/git/.gitconfig $HOME
 ln -snf $DOT_DIR/files/.config/.lnav $HOME
 
 $DOT_DIR/.bin/install-aqua.sh
 
-zsh
+$(which zsh)

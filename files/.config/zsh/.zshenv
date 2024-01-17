@@ -28,4 +28,4 @@ cdpath=(
   "$cdpath[@]"
 )
 
-[[ -f "$DOT_DIR/files/zsh/.zshenv.local" ]] && source "$DOT_DIR/files/zsh/.zshenv.local"
+[[ -f "$XDG_CONFIG_HOME/zsh/.zshenv.local" ]] && source "$XDG_CONFIG_HOME/zsh/.zshenv.local"
