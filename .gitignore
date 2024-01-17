@@ -40,8 +40,8 @@
 /files/.local/share/rtx/**
 !/files/.local/share/rtx/.keep
 
-!/files/zsh/.zshrc
-/files/zsh/.zshrc.local
-!/files/zsh/.zshenv
-/files/zsh/.zshenv.local
+!/files/.config/zsh/.zshrc
+/files/.config/zsh/.zshrc.local
+!/files/.config/zsh/.zshenv
+/files/.config/zsh/.zshenv.local
 /.bin/aqua-installer
