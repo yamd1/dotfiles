@@ -21,6 +21,7 @@ alias pd="popd"
 alias fd='pushd "$(find ${1:-.} -path "*/\.*" -prune -type d -print | fzf +m)"'
 alias dirs="dirs -v"
 alias slurp="pushd - && pushd"
+alias e="explorer.exe"
 
 zle -N git-branch
 zle -N git-reflog
