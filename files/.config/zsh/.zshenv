@@ -13,6 +13,7 @@ path=(
   "$DOT_DIR/.bin"(N-/)
   "$AQUA_ROOT_DIR/bin"(N-/)
   "$HOME/.cargo/bin"(N-/)
+  "$HOME/.local/share/zsh/site-functions"(N-/)
   "$path[@]"
 )
 
