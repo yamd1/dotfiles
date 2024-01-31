@@ -1,8 +1,9 @@
-local branches branch
-branches=$(git branch -vv -a) &&
-branch=$(echo "$branches" | fzf -m) &&
-for item in "$branch" ; do
-  BUFFER="${BUFFER} $(echo "$item" | awk '{print $1}' | sed "s/.* //" | sed "s/\n/\ /")"
-done
+local branches branch list
+
+branches=$(git branch -vv -a)
+branch=$(echo "$branches" | fzf -m)
+list=$(echo "$branch" | awk '{print $1}' | sed "s/.* //" | tr "\n" " ")
+
+BUFFER="$BUFFER $list"
 
 CURSOR=${#BUFFER}
