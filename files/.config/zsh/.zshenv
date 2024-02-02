@@ -5,6 +5,7 @@ export AQUA_ROOT_DIR=$HOME/.local/share/aquaproj-aqua
 export AQUA_GLOBAL_CONFIG=$XDG_CONFIG_HOME/aquaproj-aqua/aqua.yaml
 export AQUA_POLICY_CONFIG=$XDG_CONFIG_HOME/aquaproj-aqua/policy.yaml
 export FZF_DEFAULT_OPTS="--reverse --cycle --ansi --no-info --no-scrollbar --no-hscroll --no-sort --no-mouse"
+export BROWSER=wslview
 
 path=(
   "$HOME/bin"(N-/)
