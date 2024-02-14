@@ -27,5 +27,6 @@ packages:
   - name: jdxcode/rtx@v2023.12.39
   - name: neovim/neovim@v0.9.4
   - name: stedolan/jq@jq-1.7.1
+  - name: direnv/direnv@v2.33.0
   - name: tstack/lnav@v0.11.2
     registry: local

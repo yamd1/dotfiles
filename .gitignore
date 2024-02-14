@@ -5,6 +5,7 @@ files/.local/share/nvim
 files/.local/share/aquaproj-aqua/**
 files/.local/share/sheldon/**
 files/.local/share/rtx/**
+files/.local/share/direnv/**
 files/.config/configstore/**
 files/.config/zsh/.zshrc.local
 files/.config/zsh/.zshenv.local
