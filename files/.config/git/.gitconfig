@@ -2,6 +2,7 @@
   helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [core]
 	editor = code --wait
+	quotepath = false
 [sequence]
 	editor = code --wait
 [rebase]
