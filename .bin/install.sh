@@ -16,4 +16,7 @@ ln -snf $DOT_DIR/files/.config/.lnav $HOME
 
 $DOT_DIR/.bin/install-aqua.sh
 
+# TODO: WSL2
+# cp $DOT_DIR/files/.config/wezterm/.wezterm.lua /mnt/c/Users/{{windows user name}}/.wezterm.lua
+
 $(which zsh)
