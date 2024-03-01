@@ -46,13 +46,14 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
 	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
 	-- Colorschemes
-	use({ "EdenEast/nightfox.nvim" }) -- Color scheme
+  use ({ "rebelot/kanagawa.nvim" })
 
 	use({ "nvim-lualine/lualine.nvim" }) -- Statusline
 	use({ "akinsho/bufferline.nvim" })
@@ -67,12 +68,18 @@ return packer.startup(function(use)
 	-- Formatter
 	use({ "MunifTanjim/prettier.nvim" })
 
+  use({ 'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  })
+
 	use({ 'nvim-tree/nvim-tree.lua' })
 	use({ 'nvim-tree/nvim-web-devicons' })
 
 	use({ 'ap/vim-buftabline' })
 
-  -- use({ 'github/copilot.vim' })
+  use({ 'github/copilot.vim' })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
