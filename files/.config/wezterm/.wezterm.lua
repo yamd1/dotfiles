@@ -11,20 +11,38 @@ local config = {}
 config.default_domain = "WSL:Ubuntu"
 config.wsl_domains = wsl_domains
 
-config.color_scheme = "Tokyo Night"
+config.color_scheme = 'Kanagawa (Gogh)'
+config.colors = {
+  foreground = "#dcd7ba",
+  background = "#1f1f28",
+
+  cursor_bg = "#c8c093",
+  cursor_fg = "#c8c093",
+  cursor_border = "#c8c093",
+
+  selection_fg = "#c8c093",
+  selection_bg = "#2d4f67",
+
+  scrollbar_thumb = "#16161d",
+  split = "#16161d",
+
+  ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
+  brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
+  indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
+}
 
 config.font = wezterm.font("UDEV Gothic 35NFLG", { weight = 600 })
 config.font_size = 8
 config.line_height = 1.3
 
 config.window_decorations = "RESIZE"
-config.initial_rows = 67
-config.initial_cols = 109
+config.initial_rows = 64
+config.initial_cols = 150
 config.window_padding = {
   left = "2cell",
   right = "2cell",
-  top = "1cell",
-  bottom = "1cell",
+  top = "0cell",
+  bottom = "0cell",
 }
 
 config.default_cursor_style = "BlinkingBlock"
@@ -43,6 +61,17 @@ config.use_fancy_tab_bar = false
 
 config.leader = { key = "a", mods = "CTRL" }
 config.keys = {
+  { key = "v", mods = "CTRL", action = act.PasteFrom 'Clipboard' },
+  { key = "c", mods = "CTRL", action = act.CopyTo 'Clipboard' },
+  -- { key = "t", mods = "CTRL", action = "SpawnTab" },
+  -- { key = "n", mods = "CTRL", action = "SpawnWindow" },
+  -- { key = "q", mods = "CTRL", action = "CloseCurrentPane" },
+  -- { key = "w", mods = "CTRL|SHIFT", action = "CloseCurrentTab" },
+  -- { key = "w", mods = "CTRL|SHIFT", action = "CloseCurrentTab" },
+  -- { key = "h", mods = "CTRL", action = "ActivatePaneLeft" },
+  -- { key = "j", mods = "CTRL", action = "ActivatePaneDown" },
+  -- { key = "k", mods = "CTRL", action = "ActivatePaneUp" },
+
   { key = "r", mods = "LEADER", action = wezterm.action.ReloadConfiguration },
   { key = "v", mods = "LEADER", action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } } },
   { key = '"', mods = "LEADER|SHIFT", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
