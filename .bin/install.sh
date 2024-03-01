@@ -16,7 +16,9 @@ ln -snf $DOT_DIR/files/.config/.lnav $HOME
 
 $DOT_DIR/.bin/install-aqua.sh
 
-# TODO: WSL2
-# cp $DOT_DIR/files/.config/wezterm/.wezterm.lua /mnt/c/Users/{{windows user name}}/.wezterm.lua
+if [[ "${1:-}" == "wsl" ]]; then
+  # Symbolic links don't work between WSL2 and Windows, so use cp instead
+  \ls /mnt/c/Users | fzf | xargs -I_ cp $DOT_DIR/files/.config/wezterm/.wezterm.lua /mnt/c/Users/_/.wezterm.lua
+fi
 
 $(which zsh)
