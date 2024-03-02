@@ -15,21 +15,21 @@ if pcall(require, 'nvim-tree') then
                 hint = "",
                 info = "",
                 warning = "",
-                error = "",
-            },
+                error = ""
+            }
         },
         view = {
             width = 40,
             side = 'left',
-            signcolumn = 'yes',
+            signcolumn = 'yes'
         },
         log = {
             enable = true,
             truncate = true,
             types = {
-            --    diagnostics = true,
-            },
-        },
+                --    diagnostics = true,
+            }
+        }
     }
 end
 
@@ -47,9 +47,16 @@ vim.opt.swapfile = false
 vim.opt.wrap = false
 vim.scriptencoding = 'utf-8'
 vim.opt.background = "dark"
-vim.opt.re=0
+vim.opt.re = 0
 vim.opt.hidden = true
 vim.g.netrw_dirhistmax = 0
+vim.g.editorconfig = true
+vim.opt.list = true
+vim.listchars = {
+    tab = '>>',
+    trail = '-',
+    nbsp = '+'
+}
 
 vim.opt.termguicolors = true
 vim.opt.winblend = 0 -- ウィンドウの不透明度
