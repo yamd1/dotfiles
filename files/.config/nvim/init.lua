@@ -4,7 +4,7 @@ require("plugins")
 require("colorscheme")
 require("keymap")
 require("lspsetting")
-require("forWindows")
+-- require("forWindows")
 if pcall(require, 'nvim-tree') then
     require('nvim-tree').setup {
         hijack_cursor = true,
@@ -32,6 +32,37 @@ if pcall(require, 'nvim-tree') then
         }
     }
 end
+require("telescope").setup({
+    defaults = {
+        file_ignore_patterns = {
+            "^.git/",
+            "^.cache/",
+            "^Library/",
+            "Parallels",
+            "^Movies",
+            "^Music",
+        },
+        vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "-uu",
+        },
+    },
+    extensions = {
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+        },
+    },
+})
+require("telescope").load_extension("fzf")
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -61,3 +92,4 @@ vim.listchars = {
 vim.opt.termguicolors = true
 vim.opt.winblend = 0 -- ウィンドウの不透明度
 vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
+vim.opt.clipboard:append({ 'unnamedplus' })

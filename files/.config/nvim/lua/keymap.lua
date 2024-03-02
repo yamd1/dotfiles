@@ -25,24 +25,12 @@ vim.keymap.set('n', '<C-k>', '<cmd>bnext<CR>', {
 })
 
 -- telescope
-require('telescope').setup({
-    defaults = {
-        file_ignore_patterns = {"^.git/", "^.cache/"},
-        vimgrep_arguments = {"rg", "--color=never", "--with-filename", "--line-number", "--column", "--smart-case",
-                             "-uu"}
-    },
-    extensions = {
-        fzf = {
-            override_generic_sorter = true,
-            override_file_sorter = true,
-            case_mode = "smart_case"
-
-        }
-    }
+require("telescope").setup({
 })
-local builtin = require('telescope.builtin')
--- vim.keymap.set('n', '<Leader>f', '<cmd>lua require("telescope.builtin").find_files({ hidden = true })<cr>',{noremap = true})
-vim.keymap.set('n', '<Leader>f', builtin.find_files, {})
+
+local builtin = require("telescope.builtin")
+
+vim.keymap.set('n', '<C-p>', ":Telescope find_files hidden=true<cr>", {})
 vim.keymap.set('n', '<Leader>d', builtin.git_status, {
     noremap = true
 }) -- different
@@ -52,6 +40,8 @@ vim.keymap.set('n', '<Leader>b', builtin.buffers, {
 vim.keymap.set('n', '<Leader><Leader>', builtin.help_tags, {
     noremap = true
 })
+
+vim.keymap.set("n", "<Leader>fn", ":Telescope find_files cwd=~/.config/nvim<cr>", {})
 
 -- nvim tree toggle setting
 vim.keymap.set('n', '<C-t>', '<cmd>NvimTreeToggle<CR>', {
@@ -83,3 +73,4 @@ vim.keymap.set('n', '+', ':let @+ = @@<CR>', {
     noremap = true,
     silent = true
 })
+
