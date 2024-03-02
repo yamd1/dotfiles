@@ -63,18 +63,11 @@ config.leader = { key = "a", mods = "CTRL" }
 config.keys = {
   { key = "v", mods = "CTRL", action = act.PasteFrom 'Clipboard' },
   { key = "c", mods = "CTRL", action = act.CopyTo 'Clipboard' },
-  -- { key = "t", mods = "CTRL", action = "SpawnTab" },
-  -- { key = "n", mods = "CTRL", action = "SpawnWindow" },
-  -- { key = "q", mods = "CTRL", action = "CloseCurrentPane" },
-  -- { key = "w", mods = "CTRL|SHIFT", action = "CloseCurrentTab" },
-  -- { key = "w", mods = "CTRL|SHIFT", action = "CloseCurrentTab" },
-  -- { key = "h", mods = "CTRL", action = "ActivatePaneLeft" },
-  -- { key = "j", mods = "CTRL", action = "ActivatePaneDown" },
-  -- { key = "k", mods = "CTRL", action = "ActivatePaneUp" },
+  { key = "t", mods = "LEADER", action = "SpawnTab" },
 
   { key = "r", mods = "LEADER", action = wezterm.action.ReloadConfiguration },
-  { key = "v", mods = "LEADER", action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } } },
-  { key = '"', mods = "LEADER|SHIFT", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
+  { key = "v", mods = "LEADER", action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" , cwd = '/home/yamd1', args = {'ls', '-al'} } } },
+  { key = '"', mods = "LEADER", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain", args = {'ls'} } } },
   { key = "h", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Left" } },
   { key = "j", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Down" } },
   { key = "k", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Up" } },
@@ -105,13 +98,13 @@ config.keys = {
   } },
 }
 config.key_tables = {
-  resize_pane = {
-    { key = "<", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Left", 1 } },
-    { key = ">", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Right", 1 } },
-    { key = "+", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Up", 1 } },
-    { key = "-", action = wezterm.action.AdjustPaneSize { "Down", 1 } },
-    { key = "Escape", action = "PopKeyTable" },
-  },
+  -- resize_pane = {
+  --   { key = "<", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Left", 1 } },
+  --   { key = ">", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Right", 1 } },
+  --   { key = "+", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Up", 1 } },
+  --   { key = "-", action = wezterm.action.AdjustPaneSize { "Down", 1 } },
+  --   { key = "Escape", action = "PopKeyTable" },
+  -- },
   copy_mode = {
     { key = "Escape", mods = "NONE", action = wezterm.action.CopyMode "Close" },
     {
