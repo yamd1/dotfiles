@@ -1,10 +1,9 @@
--- https://zenn.dev/hisasann/articles/neovim-settings-to-lua
 require("base")
 require("plugins")
 require("colorscheme")
 require("keymap")
 require("lspsetting")
--- require("forWindows")
+require("clipboard")
 if pcall(require, 'nvim-tree') then
     require('nvim-tree').setup {
         hijack_cursor = true,
@@ -92,4 +91,3 @@ vim.listchars = {
 vim.opt.termguicolors = true
 vim.opt.winblend = 0 -- ウィンドウの不透明度
 vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
-vim.opt.clipboard:append({ 'unnamedplus' })
