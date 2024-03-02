@@ -46,10 +46,10 @@ return packer.startup(function(use)
         'nvim-telescope/telescope-fzf-native.nvim',
         run = 'make'
     }
+    use({"nvim-telescope/telescope-file-browser.nvim"})
 
     -- Treesitter
     use({"nvim-treesitter/nvim-treesitter"})
-    use({"nvim-telescope/telescope-file-browser.nvim"})
 
     -- Colorschemes
     use({"rebelot/kanagawa.nvim"})
@@ -60,7 +60,6 @@ return packer.startup(function(use)
         "neoclide/coc.nvim",
         branch = 'release'
     })
-    use({"OmniSharp/omnisharp-vim"})
     use({"junegunn/fzf.vim"})
     use({"MunifTanjim/nui.nvim"})
 
