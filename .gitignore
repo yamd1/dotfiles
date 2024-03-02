@@ -11,3 +11,4 @@ files/.config/zsh/.zshrc.local
 files/.config/zsh/.zshenv.local
 files/.local/bin/**
 files/.local/lib/**
+files/.config/coc/**
