@@ -1,68 +1,13 @@
 require("base")
 require("plugins")
 require("colorscheme")
+require("_toggleterm")
+require("_telescope")
 require("keymap")
 require("lspsetting")
 require("git-settings")
 require("clipboard")
-if pcall(require, 'nvim-tree') then
-    require('nvim-tree').setup {
-        hijack_cursor = true,
-        diagnostics = {
-            enable = true,
-            show_on_dirs = true,
-            icons = {
-                hint = "",
-                info = "",
-                warning = "",
-                error = ""
-            }
-        },
-        view = {
-            width = 40,
-            side = 'left',
-            signcolumn = 'yes'
-        },
-        log = {
-            enable = true,
-            truncate = true,
-            types = {
-                --    diagnostics = true,
-            }
-        }
-    }
-end
-require("telescope").setup({
-    defaults = {
-        file_ignore_patterns = {
-            "^.git/",
-            "^.cache/",
-            "^Library/",
-            "Parallels",
-            "^Movies",
-            "^Music",
-        },
-        vimgrep_arguments = {
-            "rg",
-            "--color=never",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
-            "--column",
-            "--smart-case",
-            "-uu",
-        },
-    },
-    extensions = {
-        fzf = {
-            fuzzy = true,
-            override_generic_sorter = true,
-            override_file_sorter = true,
-            case_mode = "smart_case",
-        },
-    },
-})
-require("telescope").load_extension("fzf")
+require("_nvim-tree")
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
