@@ -1,35 +1,18 @@
 local wezterm = require "wezterm"
+wezterm.action.SpawnCommandInNewWindow {
+  cwd = '/home/yamd1'
+}
+
 local act = wezterm.action
 
 local wsl_domains = wezterm.default_wsl_domains()
-for idx, dom in ipairs(wsl_domains) do
-  dom.default_cwd = "~"
-end
 
 local config = {}
 
 config.default_domain = "WSL:Ubuntu"
 config.wsl_domains = wsl_domains
 
-config.color_scheme = 'Kanagawa (Gogh)'
-config.colors = {
-  foreground = "#dcd7ba",
-  background = "#1f1f28",
-
-  cursor_bg = "#c8c093",
-  cursor_fg = "#c8c093",
-  cursor_border = "#c8c093",
-
-  selection_fg = "#c8c093",
-  selection_bg = "#2d4f67",
-
-  scrollbar_thumb = "#16161d",
-  split = "#16161d",
-
-  ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
-  brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
-  indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
-}
+config.color_scheme = 'Nord (Gogh)'
 
 config.font = wezterm.font("UDEV Gothic 35NFLG", { weight = 600 })
 config.font_size = 8
@@ -66,8 +49,8 @@ config.keys = {
   { key = "t", mods = "LEADER", action = "SpawnTab" },
 
   { key = "r", mods = "LEADER", action = wezterm.action.ReloadConfiguration },
-  { key = "v", mods = "LEADER", action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" , cwd = '/home/yamd1', args = {'ls', '-al'} } } },
-  { key = '"', mods = "LEADER", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain", args = {'ls'} } } },
+  { key = "v", mods = "LEADER", action = wezterm.action { SplitHorizontal = { cwd = '/home/yamd1', domain = "CurrentPaneDomain" } } },
+  { key = '"', mods = "LEADER", action = wezterm.action { SplitVertical = { args = {'top'} } } },
   { key = "h", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Left" } },
   { key = "j", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Down" } },
   { key = "k", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Up" } },
@@ -98,13 +81,6 @@ config.keys = {
   } },
 }
 config.key_tables = {
-  -- resize_pane = {
-  --   { key = "<", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Left", 1 } },
-  --   { key = ">", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Right", 1 } },
-  --   { key = "+", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Up", 1 } },
-  --   { key = "-", action = wezterm.action.AdjustPaneSize { "Down", 1 } },
-  --   { key = "Escape", action = "PopKeyTable" },
-  -- },
   copy_mode = {
     { key = "Escape", mods = "NONE", action = wezterm.action.CopyMode "Close" },
     {
