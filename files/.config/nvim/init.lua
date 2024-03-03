@@ -3,6 +3,7 @@ require("plugins")
 require("colorscheme")
 require("keymap")
 require("lspsetting")
+require("git-settings")
 require("clipboard")
 if pcall(require, 'nvim-tree') then
     require('nvim-tree').setup {

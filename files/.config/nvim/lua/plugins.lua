@@ -39,6 +39,7 @@ return packer.startup(function(use)
     -- My plugins here
     use({"wbthomason/packer.nvim"})
     use({"nvim-lua/plenary.nvim"}) -- Common utilities
+    use({"MunifTanjim/nui.nvim"})
 
     -- Telescope
     use({"nvim-telescope/telescope.nvim"})
@@ -61,7 +62,6 @@ return packer.startup(function(use)
         branch = 'release'
     })
     use({"junegunn/fzf.vim"})
-    use({"MunifTanjim/nui.nvim"})
 
     -- snippets
     use({"L3MON4D3/LuaSnip"}) -- snippet engine
@@ -75,6 +75,8 @@ return packer.startup(function(use)
             require('Comment').setup()
         end
     })
+
+    use({ 'lewis6991/gitsigns.nvim' })
 
     use({'nvim-tree/nvim-tree.lua'})
     use({'nvim-tree/nvim-web-devicons'})
