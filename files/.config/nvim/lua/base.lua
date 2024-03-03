@@ -21,11 +21,11 @@ end
 
 -- Open hoge file
 vim.api.nvim_create_user_command("Note", function(opts)
-  openOrCreateDailyFile("note")
+    openOrCreateDailyFile("note")
 end, {})
 vim.api.nvim_create_user_command("Daily", function(opts)
-  openOrCreateDailyFile("daily")
+    openOrCreateDailyFile("daily")
 end, {})
 vim.api.nvim_create_user_command("Weekly", function(opts)
-	vim.cmd("e " .. "~/_/weekly.markdown")
+    vim.cmd("e " .. "~/_/weekly.markdown")
 end, {})

@@ -16,4 +16,8 @@ ln -snf $DOT_DIR/files/.config/.lnav $HOME
 
 $DOT_DIR/.bin/install-aqua.sh
 
+if [[ "${1:-}" == "wsl" ]]; then
+  $DOT_DIR/.bin/setup-windows.sh
+fi
+
 $(which zsh)

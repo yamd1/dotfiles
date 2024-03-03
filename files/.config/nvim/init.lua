@@ -1,10 +1,9 @@
--- https://zenn.dev/hisasann/articles/neovim-settings-to-lua
 require("base")
 require("plugins")
 require("colorscheme")
 require("keymap")
 require("lspsetting")
-require("forWindows")
+require("clipboard")
 if pcall(require, 'nvim-tree') then
     require('nvim-tree').setup {
         hijack_cursor = true,
@@ -15,23 +14,54 @@ if pcall(require, 'nvim-tree') then
                 hint = "",
                 info = "",
                 warning = "",
-                error = "",
-            },
+                error = ""
+            }
         },
         view = {
             width = 40,
             side = 'left',
-            signcolumn = 'yes',
+            signcolumn = 'yes'
         },
         log = {
             enable = true,
             truncate = true,
             types = {
-            --    diagnostics = true,
-            },
-        },
+                --    diagnostics = true,
+            }
+        }
     }
 end
+require("telescope").setup({
+    defaults = {
+        file_ignore_patterns = {
+            "^.git/",
+            "^.cache/",
+            "^Library/",
+            "Parallels",
+            "^Movies",
+            "^Music",
+        },
+        vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "-uu",
+        },
+    },
+    extensions = {
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+        },
+    },
+})
+require("telescope").load_extension("fzf")
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -47,9 +77,16 @@ vim.opt.swapfile = false
 vim.opt.wrap = false
 vim.scriptencoding = 'utf-8'
 vim.opt.background = "dark"
-vim.opt.re=0
+vim.opt.re = 0
 vim.opt.hidden = true
 vim.g.netrw_dirhistmax = 0
+vim.g.editorconfig = true
+vim.opt.list = true
+vim.listchars = {
+    tab = '>>',
+    trail = '-',
+    nbsp = '+'
+}
 
 vim.opt.termguicolors = true
 vim.opt.winblend = 0 -- ウィンドウの不透明度

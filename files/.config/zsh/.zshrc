@@ -5,6 +5,7 @@ autoload -Uz git-branch
 autoload -Uz git-reflog
 autoload -Uz git-log-preview-rebase
 
+alias v="nvim"
 alias vim="nvim"
 alias dcd="docker compose down"
 alias dcu="docker compose up -d"
