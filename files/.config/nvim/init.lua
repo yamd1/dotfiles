@@ -67,7 +67,7 @@ require("telescope").load_extension("fzf")
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.opt.expandtab = true
+vim.g.netrw_dirhistmax = 0
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
@@ -80,7 +80,6 @@ vim.scriptencoding = 'utf-8'
 vim.opt.background = "dark"
 vim.opt.re = 0
 vim.opt.hidden = true
-vim.g.netrw_dirhistmax = 0
 vim.g.editorconfig = true
 vim.opt.list = true
 vim.listchars = {
@@ -88,7 +87,6 @@ vim.listchars = {
     trail = '-',
     nbsp = '+'
 }
-
 vim.opt.termguicolors = true
 vim.opt.winblend = 0 -- ウィンドウの不透明度
 vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
