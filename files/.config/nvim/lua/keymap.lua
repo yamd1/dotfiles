@@ -24,10 +24,6 @@ vim.keymap.set('n', '<C-k>', '<cmd>bnext<CR>', {
     silent = true
 })
 
--- telescope
-require("telescope").setup({
-})
-
 local builtin = require("telescope.builtin")
 
 vim.keymap.set('n', '<C-p>', ":Telescope find_files hidden=true<cr>", {})
@@ -42,6 +38,8 @@ vim.keymap.set('n', '<Leader><Leader>', builtin.help_tags, {
 })
 
 vim.keymap.set("n", "<Leader>fn", ":Telescope find_files cwd=~/.config/nvim<cr>", {})
+
+vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>lua _terminal_toggle()<CR>", {noremap = true, silent = true})
 
 -- nvim tree toggle setting
 vim.keymap.set('n', '<C-t>', '<cmd>NvimTreeToggle<CR>', {
@@ -68,7 +66,6 @@ vim.keymap.set('n', '<Leader>s', '<C-w>s', {
     noremap = true
 })
 
--- vim.api.nvim_set_keymap('n', '+', ':let @+ = @@<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '+', ':let @+ = @@<CR>', {
     noremap = true,
     silent = true
