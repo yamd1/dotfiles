@@ -4,6 +4,7 @@
 autoload -Uz git-branch
 autoload -Uz git-reflog
 autoload -Uz git-log-preview-rebase
+autoload -Uz git-status
 
 alias v="nvim"
 alias vim="nvim"
@@ -28,12 +29,14 @@ alias e="explorer.exe"
 zle -N git-branch
 zle -N git-reflog
 zle -N git-log-preview-rebase
+zle -N git-status
 
 bindkey '^G^B' git-branch
 bindkey '^G^G' git-log-preview-rebase
 bindkey '^G^R' git-reflog
 bindkey '^U' backward-kill-line
 bindkey '^[[Z' reverse-menu-complete
+bindkey '^G^T' git-status
 
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose yes

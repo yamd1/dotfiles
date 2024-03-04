@@ -72,7 +72,7 @@ config.keys = {
   { key = "j", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Down" } },
   { key = "k", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Up" } },
   { key = "l", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Right" } },
-  { key = "c", mods = "LEADER", action = wezterm.action { SpawnTab = "CurrentPaneDomain", cwd = "~" } },
+  { key = "c", mods = "LEADER", action = wezterm.action { SpawnTab = "CurrentPaneDomain" } },
   { key = "n", mods = "LEADER", action = wezterm.action { ActivateTabRelative = 1 } },
   { key = "p", mods = "LEADER", action = wezterm.action { ActivateTabRelative = -1 } },
   { key = "[", mods = "LEADER", action = "ActivateCopyMode" },

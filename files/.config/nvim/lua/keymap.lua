@@ -5,6 +5,9 @@ vim.g.mapleader = " "
 vim.keymap.set('n', 'x', '\"_x')
 vim.keymap.set('s', 's', '\"_s')
 
+vim.keymap.set('n', '<C-s>', ':w<CR>')
+vim.keymap.set('n', '<C-q>', ':q<CR>')
+
 -- Double press the j key to Esc key
 vim.keymap.set('i', 'jk', '<Esc>', {
     silent = true
@@ -42,7 +45,7 @@ vim.keymap.set("n", "<Leader>fn", ":Telescope find_files cwd=~/.config/nvim<cr>"
 vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>lua _terminal_toggle()<CR>", {noremap = true, silent = true})
 
 -- nvim tree toggle setting
-vim.keymap.set('n', '<C-t>', '<cmd>NvimTreeToggle<CR>', {
+vim.keymap.set('n', '<C-e>', '<cmd>NvimTreeToggle<CR>', {
     silent = true
 })
 

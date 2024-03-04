@@ -22,7 +22,12 @@ if pcall(require, 'nvim-tree') then
             types = {
                 --    diagnostics = true,
             }
-        }
+        },
+        actions = {
+          change_dir = {
+            enable = false
+          }
+        },
     }
 end
 
