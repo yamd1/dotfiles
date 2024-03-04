@@ -1,10 +1,10 @@
 [credential]
   helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [core]
-	editor = code --wait
+	editor = nvim
 	quotepath = false
 [sequence]
-	editor = code --wait
+	editor = nvim
 [rebase]
   autoSquash = true
   autoStash = true
