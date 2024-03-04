@@ -74,4 +74,4 @@ vim.keymap.set('n', '+', ':let @+ = @@<CR>', {
     silent = true
 })
 
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n><cmd>lua _terminal_toggle()<CR>')

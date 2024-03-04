@@ -6,8 +6,8 @@ autoload -Uz git-reflog
 autoload -Uz git-log-preview-rebase
 autoload -Uz git-status
 
-alias v="nvimv.sh"
-alias vim="nvimv.sh"
+alias v="nvim.sh"
+alias vim="nvim.sh"
 alias dcd="docker compose down"
 alias dcu="docker compose up -d"
 alias dce="docker compose exec -it"
