@@ -74,3 +74,4 @@ vim.keymap.set('n', '+', ':let @+ = @@<CR>', {
     silent = true
 })
 
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
