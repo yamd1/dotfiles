@@ -12,7 +12,7 @@ if pcall(require, 'nvim-tree') then
             }
         },
         view = {
-            width = 40,
+            width = 35,
             side = 'left',
             signcolumn = 'yes'
         },
