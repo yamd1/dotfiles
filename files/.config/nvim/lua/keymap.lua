@@ -20,10 +20,10 @@ vim.keymap.set('i', 'kk', '<Esc>', {
 })
 
 -- Move Buffer Keymap
-vim.keymap.set('n', '<C-j>', '<cmd>bprev<CR>', {
+vim.keymap.set('n', '<C-h>', '<cmd>bprev<CR>', {
     silent = true
 })
-vim.keymap.set('n', '<C-k>', '<cmd>bnext<CR>', {
+vim.keymap.set('n', '<C-l>', '<cmd>bnext<CR>', {
     silent = true
 })
 
