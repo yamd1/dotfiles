@@ -34,14 +34,11 @@ packer.init({
     }
 })
 
--- Install your plugins here
 return packer.startup(function(use)
-    -- My plugins here
     use({"wbthomason/packer.nvim"})
     use({"nvim-lua/plenary.nvim"}) -- Common utilities
     use({"MunifTanjim/nui.nvim"})
 
-    -- Telescope
     use({"nvim-telescope/telescope.nvim"})
     use {
         'nvim-telescope/telescope-fzf-native.nvim',
@@ -49,21 +46,23 @@ return packer.startup(function(use)
     }
     use({"nvim-telescope/telescope-file-browser.nvim"})
 
-    -- Treesitter
     use({"nvim-treesitter/nvim-treesitter"})
 
     -- Colorschemes
     use({"rebelot/kanagawa.nvim"})
 
-    use({"nvim-lualine/lualine.nvim"}) -- Statusline
-    use({"akinsho/bufferline.nvim"})
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
+
     use({
         "neoclide/coc.nvim",
         branch = 'release'
     })
     use({"junegunn/fzf.vim"})
 
-    -- snippets
     use({"L3MON4D3/LuaSnip"}) -- snippet engine
 
     -- Formatter
@@ -84,6 +83,8 @@ return packer.startup(function(use)
     use({'nvim-tree/nvim-tree.lua'})
     use({'nvim-tree/nvim-web-devicons'})
 
+    use({"nvim-lualine/lualine.nvim"})
+    use({"akinsho/bufferline.nvim"})
     use({'ap/vim-buftabline'})
 
     use({'github/copilot.vim'})
