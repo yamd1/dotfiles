@@ -4,12 +4,12 @@
 autoload -Uz git-branch
 autoload -Uz git-reflog
 autoload -Uz git-log-preview-rebase
+autoload -Uz git-status
 
-alias v="nvim"
-alias vim="nvim"
-alias dcd="docker compose down"
-alias dcu="docker compose up -d"
-alias dce="docker compose exec -it"
+alias v="nvim.sh"
+alias vim="nvim.sh"
+alias devc="devcontainer up --working-dir ."
+alias de="docker exec -it"
 alias ls=" eza -lago --icons"
 alias tmp='cd "$(mktemp -d)"'
 alias ad="git add -A"
@@ -18,22 +18,19 @@ alias sw="git switch"
 alias rb="git rebase"
 alias bd="git-branch-bulk-delete"
 alias nrb="navi --query rb"
-alias gd="pushd"
-alias pd="popd"
-alias fd='pushd "$(find ${1:-.} -path "*/\.*" -prune -type d -print | fzf +m)"'
-alias dirs="dirs -v"
-alias slurp="pushd - && pushd"
 alias e="explorer.exe"
 
 zle -N git-branch
 zle -N git-reflog
 zle -N git-log-preview-rebase
+zle -N git-status
 
 bindkey '^G^B' git-branch
 bindkey '^G^G' git-log-preview-rebase
 bindkey '^G^R' git-reflog
 bindkey '^U' backward-kill-line
 bindkey '^[[Z' reverse-menu-complete
+bindkey '^G^T' git-status
 
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose yes

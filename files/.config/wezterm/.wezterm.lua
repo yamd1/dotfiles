@@ -1,8 +1,9 @@
 local wezterm = require "wezterm"
+
 local act = wezterm.action
 
 local wsl_domains = wezterm.default_wsl_domains()
-for idx, dom in ipairs(wsl_domains) do
+for _, dom in ipairs(wsl_domains) do
   dom.default_cwd = "~"
 end
 
@@ -14,17 +15,17 @@ config.wsl_domains = wsl_domains
 config.color_scheme = 'Kanagawa (Gogh)'
 config.colors = {
   foreground = "#dcd7ba",
-  background = "#1f1f28",
+  background = "#181616",
 
   cursor_bg = "#c8c093",
-  cursor_fg = "#c8c093",
+  cursor_fg = "#2d4f67",
   cursor_border = "#c8c093",
 
   selection_fg = "#c8c093",
   selection_bg = "#2d4f67",
 
   scrollbar_thumb = "#16161d",
-  split = "#16161d",
+  split = "#c8c093",
 
   ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
   brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
@@ -35,6 +36,8 @@ config.font = wezterm.font("UDEV Gothic 35NFLG", { weight = 600 })
 config.font_size = 8
 config.line_height = 1.3
 
+-- SEE: https://wezfurlong.org/wezterm/config/lua/config/canonicalize_pasted_newlines.html
+config.canonicalize_pasted_newlines = "LineFeed"
 config.window_decorations = "RESIZE"
 config.initial_rows = 64
 config.initial_cols = 150
@@ -59,15 +62,14 @@ config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 
-config.leader = { key = "a", mods = "CTRL" }
+config.leader = { key = "t", mods = "CTRL" }
 config.keys = {
-  { key = "v", mods = "CTRL", action = act.PasteFrom 'Clipboard' },
-  { key = "c", mods = "CTRL", action = act.CopyTo 'Clipboard' },
-  { key = "t", mods = "LEADER", action = "SpawnTab" },
+  { key = "v", mods = "CTRL",   action = act.PasteFrom 'Clipboard' },
+  { key = "c", mods = "CTRL",   action = act.CopyTo 'Clipboard' },
 
   { key = "r", mods = "LEADER", action = wezterm.action.ReloadConfiguration },
-  { key = "v", mods = "LEADER", action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" , cwd = '/home/yamd1', args = {'ls', '-al'} } } },
-  { key = '"', mods = "LEADER", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain", args = {'ls'} } } },
+  { key = "v", mods = "LEADER", action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain", cwd = "~" } } },
+  { key = "'", mods = "LEADER", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain", cwd = "~" } } },
   { key = "h", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Left" } },
   { key = "j", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Down" } },
   { key = "k", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Up" } },
@@ -77,36 +79,49 @@ config.keys = {
   { key = "p", mods = "LEADER", action = wezterm.action { ActivateTabRelative = -1 } },
   { key = "[", mods = "LEADER", action = "ActivateCopyMode" },
   { key = "]", mods = "LEADER", action = act.PasteFrom 'Clipboard' },
-  { key = "<", mods = "LEADER|SHIFT", action = wezterm.action.Multiple {
-    wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
-    wezterm.action.AdjustPaneSize { "Left", 1 },
-  } },
-  { key = ">", mods = "LEADER|SHIFT", action = wezterm.action.Multiple {
-    wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
-    wezterm.action.AdjustPaneSize { "Right", 1 },
-  } },
-  { key = "+", mods = "LEADER|SHIFT", action = wezterm.action.Multiple {
-    wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
-    wezterm.action.AdjustPaneSize { "Up", 1 },
-  } },
-  { key = "-", mods = "LEADER", action = wezterm.action.Multiple {
-    wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
-    wezterm.action.AdjustPaneSize { "Down", 1 },
-  } },
-  { key = "q", mods = "LEADER", action = wezterm.action.PaneSelect {
-    alphabet = "1234567890"
-  } },
+  {
+    key = "<",
+    mods = "LEADER|SHIFT",
+    action = wezterm.action.Multiple {
+      wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
+      wezterm.action.AdjustPaneSize { "Left", 1 },
+    }
+  },
+  {
+    key = ">",
+    mods = "LEADER|SHIFT",
+    action = wezterm.action.Multiple {
+      wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
+      wezterm.action.AdjustPaneSize { "Right", 1 },
+    }
+  },
+  {
+    key = "+",
+    mods = "LEADER|SHIFT",
+    action = wezterm.action.Multiple {
+      wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
+      wezterm.action.AdjustPaneSize { "Up", 1 },
+    }
+  },
+  {
+    key = "-",
+    mods = "LEADER",
+    action = wezterm.action.Multiple {
+      wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
+      wezterm.action.AdjustPaneSize { "Down", 1 },
+    }
+  },
+  {
+    key = "q",
+    mods = "LEADER",
+    action = wezterm.action.PaneSelect {
+      alphabet = "1234567890"
+    }
+  },
 }
 config.key_tables = {
-  -- resize_pane = {
-  --   { key = "<", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Left", 1 } },
-  --   { key = ">", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Right", 1 } },
-  --   { key = "+", mods = "SHIFT", action = wezterm.action.AdjustPaneSize { "Up", 1 } },
-  --   { key = "-", action = wezterm.action.AdjustPaneSize { "Down", 1 } },
-  --   { key = "Escape", action = "PopKeyTable" },
-  -- },
   copy_mode = {
-    { key = "Escape", mods = "NONE", action = wezterm.action.CopyMode "Close" },
+    { key = "Escape", mods = "NONE",  action = wezterm.action.CopyMode "Close" },
     {
       key = "Enter",
       mods = "NONE",
@@ -116,19 +131,19 @@ config.key_tables = {
         { CopyMode = "Close" },
       },
     },
-    { key = "0", mods = "NONE", action = wezterm.action.CopyMode "MoveToStartOfLine" },
-    { key = "$", mods = "SHIFT", action = wezterm.action.CopyMode "MoveToEndOfLineContent" },
-    { key = "h", mods = "NONE", action = wezterm.action.CopyMode "MoveLeft" },
-    { key = "j", mods = "NONE", action = wezterm.action.CopyMode "MoveDown" },
-    { key = "k", mods = "NONE", action = wezterm.action.CopyMode "MoveUp" },
-    { key = "l", mods = "NONE", action = wezterm.action.CopyMode "MoveRight" },
-    { key = "w", mods = "NONE", action = wezterm.action.CopyMode "MoveForwardWord" },
-    { key = "b", mods = "NONE", action = wezterm.action.CopyMode "MoveBackwardWord" },
-    { key = "e", mods = "NONE", action = wezterm.action.CopyMode "MoveForwardWordEnd" },
-    { key = "Space", mods = "NONE", action = wezterm.action.CopyMode { SetSelectionMode = "Cell" } },
-    { key = "v", mods = "NONE", action = wezterm.action.CopyMode { SetSelectionMode = "Cell" } },
-    { key = "v", mods = "CTRL", action = wezterm.action.CopyMode { SetSelectionMode = "Block" } },
-    { key = "V", mods = "SHIFT", action = wezterm.action.CopyMode { SetSelectionMode = "Line" } },
+    { key = "0",      mods = "NONE",  action = wezterm.action.CopyMode "MoveToStartOfLine" },
+    { key = "$",      mods = "SHIFT", action = wezterm.action.CopyMode "MoveToEndOfLineContent" },
+    { key = "h",      mods = "NONE",  action = wezterm.action.CopyMode "MoveLeft" },
+    { key = "j",      mods = "NONE",  action = wezterm.action.CopyMode "MoveDown" },
+    { key = "k",      mods = "NONE",  action = wezterm.action.CopyMode "MoveUp" },
+    { key = "l",      mods = "NONE",  action = wezterm.action.CopyMode "MoveRight" },
+    { key = "w",      mods = "NONE",  action = wezterm.action.CopyMode "MoveForwardWord" },
+    { key = "b",      mods = "NONE",  action = wezterm.action.CopyMode "MoveBackwardWord" },
+    { key = "e",      mods = "NONE",  action = wezterm.action.CopyMode "MoveForwardWordEnd" },
+    { key = "Space",  mods = "NONE",  action = wezterm.action.CopyMode { SetSelectionMode = "Cell" } },
+    { key = "v",      mods = "NONE",  action = wezterm.action.CopyMode { SetSelectionMode = "Cell" } },
+    { key = "v",      mods = "CTRL",  action = wezterm.action.CopyMode { SetSelectionMode = "Block" } },
+    { key = "V",      mods = "SHIFT", action = wezterm.action.CopyMode { SetSelectionMode = "Line" } },
   },
 }
 
