@@ -36,6 +36,8 @@ config.font = wezterm.font("UDEV Gothic 35NFLG", { weight = 600 })
 config.font_size = 8
 config.line_height = 1.3
 
+-- SEE: https://wezfurlong.org/wezterm/config/lua/config/canonicalize_pasted_newlines.html
+config.canonicalize_pasted_newlines = "LineFeed"
 config.window_decorations = "RESIZE"
 config.initial_rows = 64
 config.initial_cols = 150
