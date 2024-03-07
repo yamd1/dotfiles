@@ -7,6 +7,7 @@ vim.keymap.set('s', 's', '\"_s')
 
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 vim.keymap.set('n', '<C-q>', ':q<CR>')
+vim.keymap.set('n', '<C-Q>', ':q!<CR>')
 
 -- Double press the j key to Esc key
 vim.keymap.set('i', 'jk', '<Esc>', {

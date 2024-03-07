@@ -52,9 +52,26 @@ return packer.startup(function(use)
   use({ "rebelot/kanagawa.nvim" })
 
   use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+    'williamboman/mason.nvim',
+    requires = {
+      'williamboman/mason-lspconfig.nvim',
+      'neovim/nvim-lspconfig',
+      'hrsh7th/cmp-nvim-lsp'
+    }
+  }
+
+  use {
+   'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+   }
+  }
+
+  use {
+   'neovim/nvim-lspconfig',
+   'hrsh7th/cmp-buffer',
+   'hrsh7th/cmp-path',
+   'hrsh7th/cmp-cmdline',
   }
 
   use({
