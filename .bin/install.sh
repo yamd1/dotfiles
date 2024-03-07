@@ -9,6 +9,12 @@ ln -snf $DOT_DIR/files/.local $HOME
 [[ -d "$HOME/.config" ]] && rm -rf "$HOME/.config"
 ln -snf $DOT_DIR/files/.config $HOME
 
+if "${IS_CONTAINNER:-}"; then
+    cp $DOT_DIR/files/.config/starship/remote_starship.toml $XDG_CONFIG_HOME/starship.toml
+else
+    cp $DOT_DIR/files/.config/starship/host_starship.toml $XDG_CONFIG_HOME/starship.toml
+fi
+
 ln -snf $DOT_DIR/files/.config/zsh/.zshrc $HOME
 ln -snf $DOT_DIR/files/.config/zsh/.zshenv $HOME
 ln -snf $DOT_DIR/files/.config/git/.gitconfig $HOME
