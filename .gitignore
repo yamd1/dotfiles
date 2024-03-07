@@ -13,3 +13,4 @@ files/.local/bin/**
 files/.local/lib/**
 files/.config/coc/**
 files/.config/nvim/plugin/**
+files/.config/starship.toml
