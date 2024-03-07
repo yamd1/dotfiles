@@ -1,43 +1,38 @@
 require("mason").setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
     }
+  }
 })
 require("mason-lspconfig").setup {
-    ensure_installed = {
-      "intelephense",
-      "marksman",
-      "lua_ls",
-      "rust_analyzer",
-      "denols",
-      "jsonls",
-      "tsserver",
-      "bashls" -- bash
-    },
+  ensure_installed = {
+    "lua_ls",
+    "tsserver",
+    "bashls",
+    "jsonls",
+    "marksman",
+  },
 }
 
 require('mason-lspconfig').setup_handlers {
   function(server_name)
-   require('lspconfig')[server_name].setup {}
-   require('lspconfig')[server_name].setup {
-     capabilities = require('cmp_nvim_lsp').default_capabilities(),
-   }
+    require('lspconfig')[server_name].setup {}
+    require('lspconfig')[server_name].setup {
+      capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    }
   end,
 }
 
-local cmp = require'cmp'
+local cmp = require 'cmp'
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      vim.fn["vsnip#anonymous"](args.body)     -- For `vsnip` users.
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   window = {
@@ -54,12 +49,13 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
+    { name = 'luasnip' }, -- For luasnip users.
   }, {
     { name = 'buffer' },
-  })
+  }),
+  experimetal = {
+    ghost_text = true
+  },
 })
 
 -- Set configuration for specific filetype.
@@ -88,21 +84,3 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
-
--- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-  capabilities = capabilities
-}
-
--- After setting up mason-lspconfig you may set up servers via lspconfig
-require("lspconfig").lua_ls.setup {}
-require("lspconfig").rust_analyzer.setup {}
-require("lspconfig").intelephense.setup {}
-require("lspconfig").marksman.setup {}
-require("lspconfig").denols.setup {}
-require("lspconfig").jsonls.setup {}
-require("lspconfig").tsserver.setup {}
-require("lspconfig").bashls.setup {}
-
