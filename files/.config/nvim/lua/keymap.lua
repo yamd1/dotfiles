@@ -4,6 +4,9 @@
 vim.g.mapleader = " "
 vim.keymap.set('n', 'x', '\"_x')
 vim.keymap.set('s', 's', '\"_s')
+vim.keymap.set('n', '<Esc>', ':nohl<Esc>')
+vim.keymap.set('i', '<Esc>', ':nohl<Esc>')
+vim.keymap.set('v', '<Esc>', ':nohl<Esc>')
 
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 vim.keymap.set('n', '<C-q>', ':q<CR>')
