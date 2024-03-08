@@ -10,9 +10,9 @@ ln -snf $DOT_DIR/files/.local $HOME
 ln -snf $DOT_DIR/files/.config $HOME
 
 if "${IS_CONTAINER:-false}"; then
-  cp $DOT_DIR/files/.config/starship/remote_starship.toml $XDG_CONFIG_HOME/starship.toml
+  cp $DOT_DIR/files/.config/starship/remote_starship.toml $DOT_DIR/starship.toml
 else
-  cp $DOT_DIR/files/.config/starship/host_starship.toml $XDG_CONFIG_HOME/starship.toml
+  cp $DOT_DIR/files/.config/starship/host_starship.toml $DOT_DIR/starship.toml
 fi
 
 ln -snf $DOT_DIR/files/.config/zsh/.zshrc $HOME
