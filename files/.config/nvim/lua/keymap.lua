@@ -1,12 +1,7 @@
-----------------------
--- Key Bindings
-----------------------
 vim.g.mapleader = " "
 vim.keymap.set('n', 'x', '\"_x')
 vim.keymap.set('s', 's', '\"_s')
 vim.keymap.set('n', '<Esc>', ':nohl<Esc>')
-vim.keymap.set('i', '<Esc>', ':nohl<Esc>')
-vim.keymap.set('v', '<Esc>', ':nohl<Esc>')
 
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 vim.keymap.set('n', '<C-q>', ':q<CR>')
@@ -33,7 +28,7 @@ vim.keymap.set('n', '<C-l>', '<cmd>bnext<CR>', {
 
 local builtin = require("telescope.builtin")
 
-vim.keymap.set('n', '<C-p>', ":Telescope find_files hidden=true<CR>", {})
+vim.keymap.set('n', '<Leader>p', ":Telescope find_files hidden=true<CR>", {})
 vim.keymap.set('n', '<Leader>d', builtin.git_status, {
   noremap = true
 }) -- different
