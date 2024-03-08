@@ -61,16 +61,17 @@ return packer.startup(function(use)
   }
 
   use {
-   'hrsh7th/nvim-cmp',
+    'hrsh7th/nvim-cmp',
     requires = {
       'hrsh7th/cmp-nvim-lsp',
-   }
+    }
   }
 
   use {
-   'hrsh7th/cmp-buffer',
-   'hrsh7th/cmp-path',
-   'hrsh7th/cmp-cmdline',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'saadparwaiz1/cmp_luasnip'
   }
 
   use({
@@ -83,6 +84,7 @@ return packer.startup(function(use)
 
   -- Formatter
   use({ "MunifTanjim/prettier.nvim" })
+  use({ "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" }})
 
   use({
     'numToStr/Comment.nvim',

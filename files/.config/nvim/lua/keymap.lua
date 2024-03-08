@@ -4,6 +4,9 @@
 vim.g.mapleader = " "
 vim.keymap.set('n', 'x', '\"_x')
 vim.keymap.set('s', 's', '\"_s')
+vim.keymap.set('n', '<Esc>', ':nohl<Esc>')
+vim.keymap.set('i', '<Esc>', ':nohl<Esc>')
+vim.keymap.set('v', '<Esc>', ':nohl<Esc>')
 
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 vim.keymap.set('n', '<C-q>', ':q<CR>')
@@ -30,7 +33,7 @@ vim.keymap.set('n', '<C-l>', '<cmd>bnext<CR>', {
 
 local builtin = require("telescope.builtin")
 
-vim.keymap.set('n', '<C-p>', ":Telescope find_files hidden=true<cr>", {})
+vim.keymap.set('n', '<C-p>', ":Telescope find_files hidden=true<CR>", {})
 vim.keymap.set('n', '<Leader>d', builtin.git_status, {
   noremap = true
 }) -- different
@@ -41,11 +44,10 @@ vim.keymap.set('n', '<Leader><Leader>', builtin.help_tags, {
   noremap = true
 })
 
-vim.keymap.set("n", "<Leader>fn", ":Telescope find_files cwd=~/.config/nvim<cr>", {})
+vim.keymap.set("n", "<Leader>fn", ":Telescope find_files cwd=~/.config/nvim<CR>", {})
 
 vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>lua _terminal_toggle()<CR>", { noremap = true, silent = true })
 
--- nvim tree toggle setting
 vim.keymap.set('n', '<C-e>', '<cmd>NvimTreeToggle<CR>', {
   silent = true
 })
@@ -70,11 +72,6 @@ vim.keymap.set('n', '<Leader>s', '<C-w>s', {
   noremap = true
 })
 
-vim.keymap.set('n', '+', ':let @+ = @@<CR>', {
-  noremap = true,
-  silent = true
-})
-
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n><cmd>lua _terminal_toggle()<CR>')
 
 -- Global mappings.
@@ -97,16 +94,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wl', function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<space>f', function()
