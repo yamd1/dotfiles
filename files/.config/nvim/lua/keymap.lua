@@ -1,11 +1,14 @@
 vim.g.mapleader = " "
 vim.keymap.set('n', 'x', '\"_x')
-vim.keymap.set('s', 's', '\"_s')
+vim.keymap.set('v', 'x', '\"_x')
+vim.keymap.set('n', 's', '\"_s')
+vim.keymap.set('v', 's', '\"_s')
 vim.keymap.set('n', '<Esc>', ':nohl<Esc>')
 
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 vim.keymap.set('n', '<C-q>', ':q<CR>')
 vim.keymap.set('n', '<C-Q>', ':q!<CR>')
+vim.keymap.set('n', '<C-w>', ':bd<CR>')
 
 -- Double press the j key to Esc key
 vim.keymap.set('i', 'jk', '<Esc>', {
@@ -19,10 +22,10 @@ vim.keymap.set('i', 'kk', '<Esc>', {
 })
 
 -- Move Buffer Keymap
-vim.keymap.set('n', '<C-h>', '<cmd>bprev<CR>', {
+vim.keymap.set('n', '<C-h>', ':bprev<CR>', {
   silent = true
 })
-vim.keymap.set('n', '<C-l>', '<cmd>bnext<CR>', {
+vim.keymap.set('n', '<C-l>', ':bnext<CR>', {
   silent = true
 })
 
@@ -41,9 +44,9 @@ vim.keymap.set('n', '<Leader><Leader>', builtin.help_tags, {
 
 vim.keymap.set("n", "<Leader>fn", ":Telescope find_files cwd=~/.config/nvim<CR>", {})
 
-vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>lua _terminal_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>t", ":lua _terminal_toggle()<CR>", { noremap = true, silent = true })
 
-vim.keymap.set('n', '<C-e>', '<cmd>NvimTreeToggle<CR>', {
+vim.keymap.set('n', '<C-e>', ':NvimTreeToggle<CR>', {
   silent = true
 })
 
