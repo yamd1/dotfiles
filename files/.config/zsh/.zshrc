@@ -5,6 +5,7 @@ autoload -Uz git-branch
 autoload -Uz git-reflog
 autoload -Uz git-log-preview-rebase
 autoload -Uz git-status
+autoload -Uz gitmoji
 
 alias v="nvim.sh"
 alias vim="nvim.sh"
@@ -24,6 +25,7 @@ zle -N git-branch
 zle -N git-reflog
 zle -N git-log-preview-rebase
 zle -N git-status
+zle -N gitmoji
 
 bindkey '^G^B' git-branch
 bindkey '^G^G' git-log-preview-rebase
@@ -31,6 +33,7 @@ bindkey '^G^R' git-reflog
 bindkey '^U' backward-kill-line
 bindkey '^[[Z' reverse-menu-complete
 bindkey '^G^T' git-status
+bindkey '^M^J' gitmoji
 
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose yes
