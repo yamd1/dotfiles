@@ -14,3 +14,4 @@ files/.local/lib/**
 files/.config/coc/**
 files/.config/nvim/plugin/**
 files/.config/starship.toml
+files/.local/share/delta/**

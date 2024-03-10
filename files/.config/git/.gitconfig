@@ -3,10 +3,11 @@
 [credential "https://gist.github.com"]
   helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [core]
-	editor = nvim
-	quotepath = false
+  editor = nvim
+  quotepath = false
+  pager = delta
 [sequence]
-	editor = nvim
+  editor = nvim
 [rebase]
   autoSquash = true
   autoStash = true
@@ -18,3 +19,26 @@
   default = simple
 [user]
   useConfigOnly = true
+[alias]
+  ss = status
+  co = commit -m
+  push = push --force-with-lease --force-if-includes
+  log = log --graph --pretty=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --abbrev-commit --date=relative --color=always
+[diff]
+  indentHeuristic = true
+  colorMoved = default
+[delta]
+  navigate = true
+  true-color = always
+  features = line-numbers side-by-side
+[delta "line-numbers"]
+  line-numbers = true
+  line-numbers-left-style = "#34394E"
+  line-numbers-right-style = line-numbers-left-style
+  line-numbers-zero-style = "#454b68"
+  line-numbers-plus-style = line-numbers-zero-style
+  line-numbers-minus-style = line-numbers-zero-style
+[delta "side-by-side"]
+  side-by-side = true
+[interactive]
+  diffFilter = delta
