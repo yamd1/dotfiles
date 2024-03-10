@@ -8,7 +8,7 @@ vim.keymap.set('n', '<Esc>', ':nohl<Esc>')
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 vim.keymap.set('n', '<C-q>', ':q<CR>')
 vim.keymap.set('n', '<C-Q>', ':q!<CR>')
-vim.keymap.set('n', '<C-w>', ':bd<CR>')
+vim.keymap.set('n', '<C-w>', ':bd<CR>:bfirst<CR>')
 
 -- Double press the j key to Esc key
 vim.keymap.set('i', 'jk', '<Esc>', {
