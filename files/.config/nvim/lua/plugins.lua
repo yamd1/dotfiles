@@ -74,17 +74,14 @@ return packer.startup(function(use)
     'saadparwaiz1/cmp_luasnip'
   }
 
-  use({
-    "neoclide/coc.nvim",
-    branch = 'release'
-  })
   use({ "junegunn/fzf.vim" })
 
   use({ "L3MON4D3/LuaSnip" }) -- snippet engine
 
   -- Formatter
   use({ "MunifTanjim/prettier.nvim" })
-  use({ "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" }})
+  use({ "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } })
+  use({ "ntpeters/vim-better-whitespace" })
 
   use({
     'numToStr/Comment.nvim',
@@ -105,6 +102,7 @@ return packer.startup(function(use)
   use({ 'nvim-tree/nvim-tree.lua' })
   use({ 'nvim-tree/nvim-web-devicons' })
 
+  use({ "lukas-reineke/indent-blankline.nvim" })
   use({ "nvim-lualine/lualine.nvim" })
   use({ "akinsho/bufferline.nvim" })
   use({ 'ap/vim-buftabline' })

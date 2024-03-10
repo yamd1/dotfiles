@@ -9,4 +9,5 @@ require("git-settings")
 require("clipboard")
 require("_nvim-tree")
 require("options")
+require("_indent-blankline")
 
