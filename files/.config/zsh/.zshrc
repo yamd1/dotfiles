@@ -4,7 +4,7 @@
 autoload -Uz git-branch
 autoload -Uz git-reflog
 autoload -Uz git-log-preview-rebase
-autoload -Uz git-pickup-files
+autoload -Uz git-status-pickup-files
 autoload -Uz gitmoji
 
 alias v="nvim.sh"
@@ -13,7 +13,8 @@ alias devc="devcontainer up --working-dir ."
 alias de="docker exec -it"
 alias ls=" eza -lago --icons"
 alias tmp='cd "$(mktemp -d)"'
-alias ad="git add -A"
+alias gadd="git-add.sh"
+alias gss="git-status.sh"
 alias co="git commit"
 alias sw="git switch"
 alias rb="git rebase"
@@ -24,10 +25,10 @@ alias e="explorer.exe"
 zle -N git-branch
 zle -N git-reflog
 zle -N git-log-preview-rebase
-zle -N git-pickup-files
+zle -N git-status-pickup-files
 zle -N gitmoji
 
-bindkey '^Gs' git-pickup-files
+bindkey '^Gs' git-status-pickup-files
 bindkey '^Gm' gitmoji
 bindkey '^Gb' git-branch
 bindkey '^Gr' git-reflog
