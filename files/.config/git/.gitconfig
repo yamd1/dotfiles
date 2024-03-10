@@ -22,7 +22,7 @@
 [alias]
   ss = status
   co = commit -m
-  push = push
+  push = push --force-with-lease --force-if-includes
   log = log --graph --pretty=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --abbrev-commit --date=relative --color=always
 [diff]
   indentHeuristic = true
