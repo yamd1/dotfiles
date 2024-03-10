@@ -24,3 +24,21 @@
   co = commit -m
   push = push
   log = log --graph --pretty=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --abbrev-commit --date=relative --color=always
+[diff]
+  indentHeuristic = true
+  colorMoved = default
+[delta]
+  navigate = true
+  true-color = always
+  features = line-numbers side-by-side
+[delta "line-numbers"]
+  line-numbers = true
+  line-numbers-left-style = "#34394E"
+  line-numbers-right-style = line-numbers-left-style
+  line-numbers-zero-style = "#454b68"
+  line-numbers-plus-style = line-numbers-zero-style
+  line-numbers-minus-style = line-numbers-zero-style
+[delta "side-by-side"]
+  side-by-side = true
+[interactive]
+  diffFilter = delta
