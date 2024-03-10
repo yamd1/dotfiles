@@ -4,7 +4,7 @@
 autoload -Uz git-branch
 autoload -Uz git-reflog
 autoload -Uz git-log-preview-rebase
-autoload -Uz git-status
+autoload -Uz git-pickup-files
 autoload -Uz gitmoji
 
 alias v="nvim.sh"
@@ -24,16 +24,16 @@ alias e="explorer.exe"
 zle -N git-branch
 zle -N git-reflog
 zle -N git-log-preview-rebase
-zle -N git-status
+zle -N git-pickup-files
 zle -N gitmoji
 
-bindkey '^G^B' git-branch
+bindkey '^Gs' git-pickup-files
+bindkey '^Gm' gitmoji
+bindkey '^Gb' git-branch
+bindkey '^Gr' git-reflog
 bindkey '^G^G' git-log-preview-rebase
-bindkey '^G^R' git-reflog
 bindkey '^U' backward-kill-line
 bindkey '^[[Z' reverse-menu-complete
-bindkey '^G^T' git-status
-bindkey '^M^J' gitmoji
 
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose yes
