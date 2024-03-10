@@ -3,10 +3,11 @@
 [credential "https://gist.github.com"]
   helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [core]
-	editor = nvim
-	quotepath = false
+  editor = nvim
+  quotepath = false
+  pager = delta
 [sequence]
-	editor = nvim
+  editor = nvim
 [rebase]
   autoSquash = true
   autoStash = true
@@ -18,3 +19,8 @@
   default = simple
 [user]
   useConfigOnly = true
+[alias]
+  ss = status
+  co = commit -m
+  push = push
+  log = log --graph --pretty=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --abbrev-commit --date=relative --color=always

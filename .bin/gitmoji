@@ -2,7 +2,7 @@ local json_dir emoji
 json_dir="${XDG_DATA_HOME}/git/emoji.json"
 emoji=$(cat $json_dir \
   | jq -r '.gitmojis[] | [.code,.description] | @tsv' \
-  | fzf --preview "cat $json_dir | jq -r '.gitmojis[] | [.emoji,.code,.description] | @tsv' | grep {} | cut -f1" \
+  | fzf --preview "cat $json_dir | jq -r '.gitmojis[] | [.emoji,.code,.description] | @tsv' | grep {} | cut -f1 | emojify" \
   | cut -f1 \
 )
 

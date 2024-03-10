@@ -31,5 +31,7 @@ packages:
   - name: BurntSushi/ripgrep@14.1.0
   - name: sharkdp/fd@v9.0.0
   - name: dandavison/delta@0.16.5
+  - name: mrowa44/emojify@2.2.0
+    registry: local
   - name: tstack/lnav@v0.11.2
     registry: local
