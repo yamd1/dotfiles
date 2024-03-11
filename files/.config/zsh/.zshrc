@@ -6,10 +6,11 @@ autoload -Uz git-reflog
 autoload -Uz git-log-preview-rebase
 autoload -Uz git-status-pickup-files
 autoload -Uz gitmoji
+autoload -Uz edit-command-line
 
 alias v="nvim.sh"
 alias vim="nvim.sh"
-alias devc="devcontainer up --working-dir ."
+alias devc="devcontainer up --workspace-folder . --dotfiles-repository https://github.com/yamd1/dotfiles --dotfiles-install-command './.bin/install.sh' --build-no-cache"
 alias de="docker exec -it"
 alias ls=" eza -lago --icons"
 alias tmp='cd "$(mktemp -d)"'
@@ -27,6 +28,7 @@ zle -N git-reflog
 zle -N git-log-preview-rebase
 zle -N git-status-pickup-files
 zle -N gitmoji
+zle -N edit-command-line
 
 bindkey '^Gs' git-status-pickup-files
 bindkey '^Gm' gitmoji
@@ -35,6 +37,7 @@ bindkey '^Gr' git-reflog
 bindkey '^G^G' git-log-preview-rebase
 bindkey '^U' backward-kill-line
 bindkey '^[[Z' reverse-menu-complete
+bindkey '^O' edit-command-line
 
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose yes
