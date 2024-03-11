@@ -107,6 +107,7 @@ return packer.startup(function(use)
     use({ "nvim-lualine/lualine.nvim" })
     use({ "akinsho/bufferline.nvim" })
     use({ 'ap/vim-buftabline' })
+    use({ 'CRAG666/code_runner.nvim' })
 
     use({ 'github/copilot.vim' })
 
