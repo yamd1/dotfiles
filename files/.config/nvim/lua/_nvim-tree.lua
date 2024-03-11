@@ -24,10 +24,9 @@ if pcall(require, 'nvim-tree') then
             }
         },
         actions = {
-          change_dir = {
-            enable = false
-          }
+            change_dir = {
+                enable = false
+            }
         },
     }
 end
-
