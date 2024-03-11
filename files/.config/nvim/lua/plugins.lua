@@ -81,7 +81,6 @@ return packer.startup(function(use)
 
     -- Formatter
     use({ "MunifTanjim/prettier.nvim" })
-    use({ "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } })
     use({ "ntpeters/vim-better-whitespace" })
 
     use({
