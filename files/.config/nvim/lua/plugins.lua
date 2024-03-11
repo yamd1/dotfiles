@@ -64,6 +64,7 @@ return packer.startup(function(use)
         'hrsh7th/nvim-cmp',
         requires = {
             'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/vim-vsnip'
         }
     }
 

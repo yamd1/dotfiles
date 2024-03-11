@@ -34,11 +34,14 @@ local builtin = require("telescope.builtin")
 vim.keymap.set('n', '<Leader>p', ":Telescope find_files hidden=true<CR>", {})
 vim.keymap.set('n', '<Leader>d', builtin.git_status, {
     noremap = true
-}) -- different
+})
 vim.keymap.set('n', '<Leader>b', builtin.buffers, {
     noremap = true
 })
 vim.keymap.set('n', '<Leader><Leader>', builtin.help_tags, {
+    noremap = true
+})
+vim.keymap.set('n', '<Leader>g', builtin.live_grep, {
     noremap = true
 })
 
