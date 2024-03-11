@@ -15,6 +15,7 @@ local plugins = {
     { "nvim-lua/plenary.nvim" },
     { "MunifTanjim/nui.nvim" },
     { "nvim-telescope/telescope.nvim" },
+    { "junegunn/fzf.vim" },
     {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make'
@@ -48,13 +49,9 @@ local plugins = {
     { 'saadparwaiz1/cmp_luasnip' },
     { "L3MON4D3/LuaSnip" },
 
-    { "junegunn/fzf.vim" },
-
-
     -- Formatter
     { "MunifTanjim/prettier.nvim" },
     { "ntpeters/vim-better-whitespace" },
-
     {
         'numToStr/Comment.nvim',
         config = function()
