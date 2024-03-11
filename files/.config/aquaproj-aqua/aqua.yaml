@@ -35,3 +35,4 @@ packages:
     registry: local
   - name: tstack/lnav@v0.11.2
     registry: local
+  - name: go-swagger/go-swagger@v0.30.5
