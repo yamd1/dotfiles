@@ -53,6 +53,8 @@ vim.keymap.set('n', '<C-e>', ':NvimTreeToggle<CR>', {
     silent = true
 })
 
+vim.keymap.set('n', '<leader>r', ':RunCode<CR>', { noremap = true, silent = false })
+
 -- Move splited window
 vim.keymap.set('n', '<Leader>h', '<C-w>h', {
     noremap = true
