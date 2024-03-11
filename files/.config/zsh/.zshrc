@@ -22,6 +22,7 @@ alias rb="git rebase"
 alias bd="git-branch-bulk-delete"
 alias nrb="navi --query rb"
 alias e="explorer.exe"
+alias gd="ghq-cd.sh"
 
 zle -N git-branch
 zle -N git-reflog

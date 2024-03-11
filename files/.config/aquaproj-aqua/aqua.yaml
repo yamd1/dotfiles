@@ -36,3 +36,5 @@ packages:
   - name: tstack/lnav@v0.11.2
     registry: local
   - name: go-swagger/go-swagger@v0.30.5
+  - name: gesquive/git-user@v2.0.6
+  - name: x-motemen/ghq@v1.5.0
