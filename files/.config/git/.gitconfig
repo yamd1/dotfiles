@@ -23,7 +23,8 @@
   ss = status
   co = commit -m
   pushf = push --force-with-lease --force-if-includes
-  log = log --graph --pretty=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --abbrev-commit --date=relative --color=always
+  logg = log --graph --pretty=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --abbrev-commit --date=relative --color=always
+  users = user --config ~/.config/git/profies
 [diff]
   indentHeuristic = true
   colorMoved = default
@@ -42,3 +43,6 @@
   side-by-side = true
 [interactive]
   diffFilter = delta
+[ghq]
+  user = "yamd1"
+  root = ~/.ghq
