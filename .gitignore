@@ -16,3 +16,4 @@ files/.config/nvim/plugin/**
 files/.config/starship.toml
 files/.local/share/delta/**
 files/.config/git/profiles
+files/.config/wslu/**
