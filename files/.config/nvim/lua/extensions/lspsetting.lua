@@ -14,6 +14,7 @@ require("mason-lspconfig").setup {
         "bashls",
         "jsonls",
         "marksman",
+        "intelephense",
     },
 }
 
@@ -25,6 +26,12 @@ require('mason-lspconfig').setup_handlers {
         }
     end,
 }
+
+
+require("mason-null-ls").setup({
+    handlers = {}
+})
+
 
 local cmp = require 'cmp'
 cmp.setup({

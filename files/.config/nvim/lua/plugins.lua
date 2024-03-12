@@ -50,6 +50,26 @@ local plugins = {
     { "L3MON4D3/LuaSnip" },
 
     -- Formatter
+    {
+        'nvimtools/none-ls.nvim',
+        dependencies = 'nvim-lua/plenary.nvim',
+        config = function()
+            local none_ls = require("none-ls")
+            none_ls.setup {
+                sources = {
+                    none_ls.builtins.diagnostics.phpstan
+                }
+            }
+        end
+    },
+    {
+        'jay-babu/mason-null-ls.nvim',
+        event = { 'BufReadPre', 'BufNewFile' },
+        dependencies = {
+            'williamboman/mason.nvim',
+            'nvimtools/none-ls.nvim',
+        },
+    },
     { "MunifTanjim/prettier.nvim" },
     { "ntpeters/vim-better-whitespace" },
     {
