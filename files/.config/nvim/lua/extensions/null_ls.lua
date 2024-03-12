@@ -10,9 +10,8 @@ null_ls.setup({
             command = "/opt/app/vendor/bin/pint"
         }),
         null_ls.builtins.formatting.prettier.with({
-            filetypes = { "js", "json", "yaml", "yml", "md" },
+            filetypes = { "js", "ts", "json", "yaml", "yml", "md" },
             prefer_local = "node_modules/.bin"
         }),
-        null_ls.builtins.completion.spell,
     },
 })
