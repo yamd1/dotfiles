@@ -49,18 +49,9 @@ local plugins = {
     { 'saadparwaiz1/cmp_luasnip' },
     { "L3MON4D3/LuaSnip" },
 
-    -- Formatter
     {
         'nvimtools/none-ls.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
-        config = function()
-            local none_ls = require("none-ls")
-            none_ls.setup {
-                sources = {
-                    none_ls.builtins.diagnostics.phpstan
-                }
-            }
-        end
     },
     {
         'jay-babu/mason-null-ls.nvim',
@@ -70,13 +61,10 @@ local plugins = {
             'nvimtools/none-ls.nvim',
         },
     },
-    { "MunifTanjim/prettier.nvim" },
     { "ntpeters/vim-better-whitespace" },
     {
         'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
+        config = true
     },
 
     { 'lewis6991/gitsigns.nvim' },
@@ -85,9 +73,7 @@ local plugins = {
     { 'rbong/vim-flog' },
     {
         "akinsho/toggleterm.nvim",
-        config = function()
-            require("toggleterm").setup()
-        end
+        config = true
     },
     { 'nvim-tree/nvim-tree.lua' },
     { 'nvim-tree/nvim-web-devicons' },

@@ -17,3 +17,9 @@ files/.config/starship.toml
 files/.local/share/delta/**
 files/.config/git/profiles
 files/.config/wslu/**
+files/.config/.nlav/**
+files/.config/composer/**
+files/.config/gh/**
+files/.config/github-copilot
+files/.local/share/composer/**
+files/.local/share/gh/**
