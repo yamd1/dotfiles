@@ -21,7 +21,10 @@ local plugins = {
         build = 'make'
     },
     { "nvim-telescope/telescope-file-browser.nvim" },
-    { "nvim-treesitter/nvim-treesitter" },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate"
+    },
     {
         "rebelot/kanagawa.nvim",
         lazy = true,
@@ -49,14 +52,22 @@ local plugins = {
     { 'saadparwaiz1/cmp_luasnip' },
     { "L3MON4D3/LuaSnip" },
 
-    -- Formatter
-    { "MunifTanjim/prettier.nvim" },
+    {
+        'nvimtools/none-ls.nvim',
+        dependencies = 'nvim-lua/plenary.nvim',
+    },
+    {
+        'jay-babu/mason-null-ls.nvim',
+        event = { 'BufReadPre', 'BufNewFile' },
+        dependencies = {
+            'williamboman/mason.nvim',
+            'nvimtools/none-ls.nvim',
+        },
+    },
     { "ntpeters/vim-better-whitespace" },
     {
         'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
+        config = true
     },
 
     { 'lewis6991/gitsigns.nvim' },
@@ -65,9 +76,7 @@ local plugins = {
     { 'rbong/vim-flog' },
     {
         "akinsho/toggleterm.nvim",
-        config = function()
-            require("toggleterm").setup()
-        end
+        config = true
     },
     { 'nvim-tree/nvim-tree.lua' },
     { 'nvim-tree/nvim-web-devicons' },
