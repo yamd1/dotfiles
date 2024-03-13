@@ -30,41 +30,7 @@ local plugins = {
         lazy = true,
         priority = 1000,
     },
-    { "neoclide/coc.nvim" },
-    -- {
-    --     'williamboman/mason.nvim',
-    --     dependencies = {
-    --         'williamboman/mason-lspconfig.nvim',
-    --         'neovim/nvim-lspconfig',
-    --         'hrsh7th/cmp-nvim-lsp'
-    --     }
-    -- },
-    -- {
-    --     'hrsh7th/nvim-cmp',
-    --     dependencies = {
-    --         'hrsh7th/cmp-nvim-lsp',
-    --         'hrsh7th/vim-vsnip'
-    --     }
-    -- },
-    --
-    -- { 'hrsh7th/cmp-buffer' },
-    -- { 'hrsh7th/cmp-path' },
-    -- { 'hrsh7th/cmp-cmdline' },
-    -- { 'saadparwaiz1/cmp_luasnip' },
-    -- { "L3MON4D3/LuaSnip" },
-    --
-    -- {
-    --     'nvimtools/none-ls.nvim',
-    --     dependencies = 'nvim-lua/plenary.nvim',
-    -- },
-    -- {
-    --     'jay-babu/mason-null-ls.nvim',
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    --     dependencies = {
-    --         'williamboman/mason.nvim',
-    --         'nvimtools/none-ls.nvim',
-    --     },
-    -- },
+    { 'neoclide/coc.nvim', branch = 'master', build = 'npm ci' },
     { "ntpeters/vim-better-whitespace" },
     {
         'numToStr/Comment.nvim',
@@ -88,6 +54,7 @@ local plugins = {
     { 'CRAG666/code_runner.nvim' },
     { 'github/copilot.vim' },
 }
+
 local opts = {
     checker = {
         enabled = true
