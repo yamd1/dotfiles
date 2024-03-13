@@ -21,7 +21,10 @@ local plugins = {
         build = 'make'
     },
     { "nvim-telescope/telescope-file-browser.nvim" },
-    { "nvim-treesitter/nvim-treesitter" },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate"
+    },
     {
         "rebelot/kanagawa.nvim",
         lazy = true,
@@ -60,16 +63,12 @@ local plugins = {
             'williamboman/mason.nvim',
             'nvimtools/none-ls.nvim',
         },
-        opts = {
-            handlers = {}
-        }
     },
     { "ntpeters/vim-better-whitespace" },
     {
         'numToStr/Comment.nvim',
         config = true
     },
-    { "elentok/format-on-save.nvim" },
 
     { 'lewis6991/gitsigns.nvim' },
     { "sindrets/diffview.nvim" },
