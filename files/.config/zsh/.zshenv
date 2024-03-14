@@ -22,7 +22,6 @@ path=(
 
 fpath=(
   "$HOME/.local/share/zsh/site-functions"(N-/)
-  "$DOT_DIR/.bin"(N-/)
   "$fpath[@]"
 )
 

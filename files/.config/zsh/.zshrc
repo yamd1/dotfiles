@@ -7,6 +7,7 @@ autoload -Uz git-log-preview-rebase
 autoload -Uz git-status-pickup-files
 autoload -Uz gitmoji
 autoload -Uz edit-command-line
+autoload -Uz gd
 
 alias v="nvim.sh"
 alias vim="nvim.sh"
@@ -22,7 +23,6 @@ alias rb="git rebase"
 alias bd="git-branch-bulk-delete"
 alias nrb="navi --query rb"
 alias e="explorer.exe"
-alias gd="ghq-cd.sh"
 
 zle -N git-branch
 zle -N git-reflog

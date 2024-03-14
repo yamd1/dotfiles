@@ -55,10 +55,7 @@ local plugins = {
     { 'github/copilot.vim' },
 }
 
-local opts = {
-    checker = {
-        enabled = true
-    }
-}
+-- SEE: https://github.com/folke/lazy.nvim?tab=readme-ov-file#%EF%B8%8F-configuration
+local opts = {}
 
 require("lazy").setup(plugins, opts)
