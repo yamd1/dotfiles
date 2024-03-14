@@ -1,0 +1,32 @@
+{
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.noselect": false,
+  "suggest.minTriggerInputLength": 2,
+  "suggest.acceptSuggestionOnCommitCharacter": true,
+  "suggest.snippetIndicator": " ►",
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "md", "js", "ts", "tsx"],
+  "eslint.filetypes": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+  ],
+  "[php]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "languageserver": {
+    "intelephense": {
+      "command": "intelephense",
+      "args": ["--stdio"],
+      "filetypes": ["php"]
+    }
+  },
+  "phpstan.toolPath":  "/opt/app/vendor/bin/phpstan",
+  "phpstan.configuration": "/opt/app/phpstan.neon",
+  "phpstan.memoryLimit": "-1",
+  "php-cs-fixer.activateTool": "pint",
+  "php-cs-fixer.toolPath": "/opt/app/vendor/bin/pint",
+  "prettier.documentSelectors": ["**/*.{js,json,yaml,yml,md}"],
+  "prettier.configPath": "/opt/app/.prettierrc.json",
+  "prettier.prettierPath": "/opt/app/node_modules/.bin"
+}

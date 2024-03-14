@@ -1,1 +1,9 @@
-{"dependencies":{}}
+{
+  "dependencies": {
+    "coc-phpls": ">=2.2.4",
+    "coc-json": ">=1.9.2",
+    "coc-php-cs-fixer": ">=0.7.9",
+    "@yaegassy/coc-phpstan": ">=0.5.1",
+    "coc-prettier": ">=9.3.2"
+  }
+}
