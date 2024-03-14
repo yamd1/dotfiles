@@ -11,8 +11,7 @@ files/.config/zsh/.zshrc.local
 files/.config/zsh/.zshenv.local
 files/.local/bin/**
 files/.local/lib/**
-files/.config/coc/extensions/**
-!files/.config/coc/extensions/package.json
+files/.config/coc/extensions/node_modules
 files/.config/nvim/plugin/**
 files/.config/starship.toml
 files/.local/share/delta/**
