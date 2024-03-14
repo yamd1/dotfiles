@@ -21,6 +21,7 @@
       "filetypes": ["php"]
     }
   },
+  "intelephense.licenceKey": "$INTELEPHENSE_LICENCE_KEY",
   "phpstan.toolPath":  "/opt/app/vendor/bin/phpstan",
   "phpstan.configuration": "/opt/app/phpstan.neon",
   "phpstan.memoryLimit": "-1",
