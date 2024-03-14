@@ -1,5 +1,4 @@
 export AWS_DEFAULT_PROFILE=y-yamada
-export INTELEPHENSE_LICENCE_KEY="licence key"
 
 cdpath=(
   "$HOME/develop"(N-/)
