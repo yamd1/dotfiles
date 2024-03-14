@@ -44,5 +44,4 @@
 [interactive]
   diffFilter = delta
 [ghq]
-  user = "yamd1"
-  root = ~/.ghq
+  root = ~/ghq
