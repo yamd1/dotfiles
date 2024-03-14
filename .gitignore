@@ -24,3 +24,4 @@ files/.config/gh/**
 files/.config/github-copilot
 files/.local/share/composer/**
 files/.local/share/gh/**
+files/.config/intelephense/licence.txt
