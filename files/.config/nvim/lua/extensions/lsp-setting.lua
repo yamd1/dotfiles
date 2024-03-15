@@ -13,7 +13,6 @@ require("mason-lspconfig").setup {
         "tsserver",
         "bashls",
         "jsonls",
-        "marksman",
         "intelephense",
     },
 }
