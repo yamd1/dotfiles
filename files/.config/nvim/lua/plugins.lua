@@ -30,7 +30,7 @@ local plugins = {
         lazy = true,
         priority = 1000,
     },
-    { 'neoclide/coc.nvim', branch = 'master', build = 'npm ci' },
+    { 'neoclide/coc.nvim', branch = 'master', build = 'npm install' },
     { "ntpeters/vim-better-whitespace" },
     {
         'numToStr/Comment.nvim',
