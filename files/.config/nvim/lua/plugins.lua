@@ -17,42 +17,77 @@ local plugins = {
     { "nvim-telescope/telescope.nvim" },
     { "junegunn/fzf.vim" },
     {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'make'
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
     },
     { "nvim-telescope/telescope-file-browser.nvim" },
     {
         "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate"
+        build = ":TSUpdate",
     },
     {
         "rebelot/kanagawa.nvim",
         lazy = true,
         priority = 1000,
     },
-    { 'neoclide/coc.nvim', branch = 'master', build = 'npm install' },
-    { "ntpeters/vim-better-whitespace" },
+
     {
-        'numToStr/Comment.nvim',
-        config = true
+        "williamboman/mason.nvim",
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim",
+            "neovim/nvim-lspconfig",
+            "hrsh7th/cmp-nvim-lsp",
+        },
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/vim-vsnip",
+        },
     },
 
-    { 'lewis6991/gitsigns.nvim' },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-cmdline" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "L3MON4D3/LuaSnip" },
+
+    {
+        "nvimtools/none-ls.nvim",
+        dependencies = "nvim-lua/plenary.nvim",
+    },
+    {
+        "jay-babu/mason-null-ls.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            "williamboman/mason.nvim",
+            "nvimtools/none-ls.nvim",
+        },
+    },
+
+    { "ntpeters/vim-better-whitespace" },
+    {
+        "numToStr/Comment.nvim",
+        config = true,
+    },
+
+    { "lewis6991/gitsigns.nvim" },
     { "sindrets/diffview.nvim" },
-    { 'tpope/vim-fugitive' },
-    { 'rbong/vim-flog' },
+    { "tpope/vim-fugitive" },
+    { "rbong/vim-flog" },
     {
         "akinsho/toggleterm.nvim",
-        config = true
+        config = true,
     },
-    { 'nvim-tree/nvim-tree.lua' },
-    { 'nvim-tree/nvim-web-devicons' },
+    { "nvim-tree/nvim-tree.lua" },
+    { "nvim-tree/nvim-web-devicons" },
     { "lukas-reineke/indent-blankline.nvim" },
     { "nvim-lualine/lualine.nvim" },
     { "akinsho/bufferline.nvim" },
-    { 'ap/vim-buftabline' },
-    { 'CRAG666/code_runner.nvim' },
-    { 'github/copilot.vim' },
+    { "ap/vim-buftabline" },
+    { "CRAG666/code_runner.nvim" },
+    { "github/copilot.vim" },
 }
 
 -- SEE: https://github.com/folke/lazy.nvim?tab=readme-ov-file#%EF%B8%8F-configuration

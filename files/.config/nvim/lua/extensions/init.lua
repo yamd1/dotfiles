@@ -1,7 +1,7 @@
 require("extensions/colorscheme")
 require("extensions/toggleterm")
 require("extensions/telescope")
-require("extensions/lspsetting")
+require("extensions/lsp-setting")
 require("extensions/gitsigns")
 require("extensions/nvim-tree")
 require("extensions/indent-blankline")
