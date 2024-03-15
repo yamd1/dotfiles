@@ -9,9 +9,7 @@ ln -snf $DOT_DIR/files/.local $HOME
 [[ -d "$HOME/.config" ]] && rm -rf "$HOME/.config"
 ln -snf $DOT_DIR/files/.config $HOME
 
-if "${IS_CONTAINER:-false}"; then
-  cp $DOT_DIR/files/.config/starship/remote_starship.toml $HOME/.config/starship.toml
-else
+if ! "${IS_CONTAINER}"; then
   cp $DOT_DIR/files/.config/starship/host_starship.toml $HOME/.config/starship.toml
 fi
 
