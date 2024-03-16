@@ -11,7 +11,6 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
         "tsserver",
-        "bashls",
         "jsonls",
         "intelephense",
     },
@@ -21,6 +20,13 @@ require("mason-lspconfig").setup_handlers({
     function(server_name)
         require("lspconfig")[server_name].setup({
             capabilities = require("cmp_nvim_lsp").default_capabilities(),
+        })
+        require("lspconfig").intelephense.setup({
+            default_config = {
+                init_options = {
+                    licenceKey = vim.env.XDG_CONFIG_HOME .. '/intelephense/licence.txt'
+                }
+            }
         })
     end,
 })
@@ -50,7 +56,6 @@ cmp.setup({
         ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-        { name = "nvim_lsp" },
         { name = "vsnip" }, -- For vsnip users.
         { name = "luasnip" }, -- For luasnip users.
     }, {
