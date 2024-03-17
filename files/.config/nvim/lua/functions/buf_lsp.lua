@@ -1,10 +1,10 @@
-vim.cmd(":command -nargs=1 Lspbuf :lua LspAttachBuf(<f-args>)")
+vim.cmd(":command -nargs=1 BufLsp :lua BufLsp(<f-args>)")
 
-function _G.LspAttachBuf(lang)
+function _G.BufLsp(lang)
     if lang == "php" then
         vim.lsp.start({
             name = "intelephense",
-            cmd = { "intelephense", "--stdio" },
+            cmd = { "intelephense ", "--stdio" },
             root_dir = vim.fs.dirname(vim.fs.find({ ".composer" }, { upward = true })[1]),
         })
     elseif lang == "lua" then
