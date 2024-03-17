@@ -13,6 +13,13 @@ require("mason-lspconfig").setup({
         "tsserver",
         "jsonls",
         "intelephense",
+        "rust_analyzer",
+    },
+})
+
+require("mason-tool-installer").setup({
+    ensure_installed = {
+        "stylua",
     },
 })
 
@@ -24,9 +31,9 @@ require("mason-lspconfig").setup_handlers({
         require("lspconfig").intelephense.setup({
             default_config = {
                 init_options = {
-                    licenceKey = vim.env.XDG_CONFIG_HOME .. '/intelephense/licence.txt'
-                }
-            }
+                    licenceKey = vim.env.XDG_CONFIG_HOME .. "/intelephense/licence.txt",
+                },
+            },
         })
     end,
 })
@@ -40,7 +47,7 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            vim.fn["vsnip#anonymous"](args.body)     -- For `vsnip` users.
             require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
@@ -56,7 +63,7 @@ cmp.setup({
         ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-        { name = "vsnip" }, -- For vsnip users.
+        { name = "vsnip" },   -- For vsnip users.
         { name = "luasnip" }, -- For luasnip users.
     }, {
         { name = "buffer" },

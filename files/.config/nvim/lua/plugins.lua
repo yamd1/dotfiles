@@ -65,6 +65,12 @@ local plugins = {
             "nvimtools/none-ls.nvim",
         },
     },
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        dependencies = {
+            "williamboman/mason.nvim",
+        },
+    },
 
     { "ntpeters/vim-better-whitespace" },
     {
