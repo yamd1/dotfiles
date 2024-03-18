@@ -3,6 +3,7 @@ services:
     environment:
       IS_CONTAINER: true
       INTELEPHENSE_LICENCE_KEY: $INTELEPHENSE_LICENCE_KEY
+      GH_CONFIG_DIR: /home/appuser/.gh-config
       DISPLAY: $DISPLAY
       WAYLAND_DISPLAY: $WAYLAND_DISPLAY
       XDG_RUNTIME_DIR: /tmp
@@ -14,4 +15,7 @@ services:
       - type: bind
         source: ${XDG_RUNTIME_DIR}/wayland-0
         target: /tmp/wayland-0
+      - type: bind
+        source: ${HOME}/.config/gh
+        target: /home/appuser/.gh-config
 
