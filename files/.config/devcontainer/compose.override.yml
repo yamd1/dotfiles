@@ -2,6 +2,7 @@ services:
   app:
     environment:
       IS_CONTAINER: true
+      INTELEPHENSE_LICENCE_KEY: $INTELEPHENSE_LICENCE_KEY
       DISPLAY: $DISPLAY
       WAYLAND_DISPLAY: $WAYLAND_DISPLAY
       XDG_RUNTIME_DIR: /tmp
