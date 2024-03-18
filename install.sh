@@ -44,4 +44,4 @@ if [[ -n "$WAYLAND_DISPLAY" ]]; then
   done < <(ls /etc/*release | grep -o '\/.*[_-]release' | sed "s/\/etc\/\(.*\)[_-]release/\1/g")
 fi
 
-$(which zsh)
+exec $(which zsh)
