@@ -4,7 +4,7 @@ function _G.BufLsp(lang)
     if lang == "php" then
         vim.lsp.start({
             name = "intelephense",
-            cmd = { "intelephense ", "--stdio" },
+            cmd = { "intelephense", "--stdio" },
             root_dir = vim.fs.dirname(vim.fs.find({ ".composer" }, { upward = true })[1]),
         })
     elseif lang == "lua" then
@@ -14,6 +14,6 @@ function _G.BufLsp(lang)
             root_dir = vim.fs.dirname(vim.fs.find({ ".luarc.json" }, { upward = true })[1]),
         })
     else
-        print("Don't setup already. See" .. vim.cmd(":luafiles %"))
+        print("Don't setup already. See buf_lsp.lua")
     end
 end
