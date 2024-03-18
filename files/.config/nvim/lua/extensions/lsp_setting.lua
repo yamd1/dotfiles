@@ -17,12 +17,6 @@ require("mason-lspconfig").setup({
     },
 })
 
-require("mason-tool-installer").setup({
-    ensure_installed = {
-        "stylua",
-    },
-})
-
 require("mason-lspconfig").setup_handlers({
     function(server_name)
         require("lspconfig")[server_name].setup({
@@ -47,7 +41,7 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            vim.fn["vsnip#anonymous"](args.body)     -- For `vsnip` users.
             require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
@@ -63,7 +57,8 @@ cmp.setup({
         ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-        { name = "vsnip" }, -- For vsnip users.
+        { name = "nvim_lsp" },
+        { name = "vsnip" },   -- For vsnip users.
         { name = "luasnip" }, -- For luasnip users.
     }, {
         { name = "buffer" },
@@ -98,4 +93,10 @@ cmp.setup.cmdline(":", {
     }, {
         { name = "cmdline" },
     }),
+})
+
+require("mason-tool-installer").setup({
+    ensure_installed = {
+        "stylua",
+    },
 })
