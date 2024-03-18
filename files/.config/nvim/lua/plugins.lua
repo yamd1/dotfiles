@@ -23,7 +23,7 @@ local plugins = {
     { "nvim-telescope/telescope-file-browser.nvim" },
     {
         "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate :TSUpdate lua",
+        build = ":TSUpdate",
     },
     {
         "rebelot/kanagawa.nvim",
