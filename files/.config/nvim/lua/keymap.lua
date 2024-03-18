@@ -10,7 +10,7 @@ vim.keymap.set("n", "<Esc>", ":nohl<Esc>")
 vim.keymap.set("n", "<C-s>", ":w<CR>")
 vim.keymap.set("n", "<C-q>", ":q<CR>")
 vim.keymap.set("n", "<C-Q>", ":q!<CR>")
-vim.keymap.set("n", "<C-w>", ":bd")
+vim.keymap.set("n", "<C-w>", ":bd<CR>")
 vim.keymap.set("n", "<Leader>ee", ":enew<CR>")
 
 vim.keymap.set("i", "jk", "<Esc>", opts)
