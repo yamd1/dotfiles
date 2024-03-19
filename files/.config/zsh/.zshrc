@@ -9,8 +9,8 @@ autoload -Uz gitmoji
 autoload -Uz edit-command-line
 autoload -Uz gd
 
-alias v="nvim.sh"
-alias vim="nvim.sh"
+alias v="nvim"
+alias vim="nvim"
 alias devc="devcontainer up --workspace-folder . --dotfiles-repository https://github.com/yamd1/dotfiles --dotfiles-install-command 'install.sh'"
 alias de="docker exec -it"
 alias ls=" eza -lago --icons"

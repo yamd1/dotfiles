@@ -1,4 +1,4 @@
-require('nvim-tree').setup {
+require("nvim-tree").setup({
     hijack_cursor = true,
     diagnostics = {
         enable = true,
@@ -7,24 +7,25 @@ require('nvim-tree').setup {
             hint = "",
             info = "",
             warning = "",
-            error = ""
-        }
+            error = "",
+        },
     },
     view = {
         width = 35,
-        side = 'left',
-        signcolumn = 'yes'
+        side = "left",
+        signcolumn = "yes",
+        preserve_window_proportions = true, -- SEE: https://github.com/nvim-tree/nvim-tree.lua/issues/1347
     },
     log = {
         enable = true,
         truncate = true,
         types = {
             --    diagnostics = true,
-        }
+        },
     },
     actions = {
         change_dir = {
-            enable = false
-        }
+            enable = false,
+        },
     },
-}
+})
