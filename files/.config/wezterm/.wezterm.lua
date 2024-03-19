@@ -1,4 +1,4 @@
-local wezterm = require "wezterm"
+local wezterm = require("wezterm")
 
 local act = wezterm.action
 
@@ -12,7 +12,7 @@ local config = {}
 config.default_domain = "WSL:Ubuntu"
 config.wsl_domains = wsl_domains
 
-config.color_scheme = 'Kanagawa (Gogh)'
+config.color_scheme = "Kanagawa (Gogh)"
 config.colors = {
     foreground = "#dcd7ba",
     background = "#181616",
@@ -64,98 +64,115 @@ config.use_fancy_tab_bar = false
 
 config.leader = { key = "t", mods = "CTRL" }
 config.keys = {
-    { key = "v", mods = "CTRL",   action = act.PasteFrom 'Clipboard' },
+    { key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
     {
-        key = 'c',
-        mods = 'CTRL',
+        key = "c",
+        mods = "CTRL",
         action = wezterm.action_callback(function(window, pane)
             selection_text = window:get_selection_text_for_pane(pane)
             is_selection_active = string.len(selection_text) ~= 0
             if is_selection_active then
-                window:perform_action(wezterm.action.CopyTo('ClipboardAndPrimarySelection'), pane)
+                window:perform_action(wezterm.action.CopyTo("ClipboardAndPrimarySelection"), pane)
             else
-                window:perform_action(wezterm.action.SendKey { key = 'c', mods = 'CTRL' }, pane)
+                window:perform_action(wezterm.action.SendKey({ key = "c", mods = "CTRL" }), pane)
             end
         end),
     },
 
     { key = "r", mods = "LEADER", action = wezterm.action.ReloadConfiguration },
-    { key = "v", mods = "LEADER", action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain", cwd = "~" } } },
-    { key = "'", mods = "LEADER", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain", cwd = "~" } } },
-    { key = "h", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Left" } },
-    { key = "j", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Down" } },
-    { key = "k", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Up" } },
-    { key = "l", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Right" } },
-    { key = "c", mods = "LEADER", action = wezterm.action { SpawnTab = "CurrentPaneDomain" } },
-    { key = "n", mods = "LEADER", action = wezterm.action { ActivateTabRelative = 1 } },
-    { key = "p", mods = "LEADER", action = wezterm.action { ActivateTabRelative = -1 } },
+    {
+        key = "v",
+        mods = "LEADER",
+        action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain", cwd = "~" } }),
+    },
+    {
+        key = "'",
+        mods = "LEADER",
+        action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain", cwd = "~" } }),
+    },
+    {
+        key = "c",
+        mods = "LEADER",
+        action = wezterm.action({ SpawnCommandInNewTab = { domain = "CurrentPaneDomain", cwd = "~" } }),
+    },
+    {
+        key = "t",
+        mods = "CTRL|SHIFT",
+        action = wezterm.action({ SpawnCommandInNewTab = { domain = "CurrentPaneDomain", cwd = "~" } }),
+    },
+    { key = "h", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
+    { key = "j", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
+    { key = "k", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
+    { key = "l", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
+    { key = "n", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = 1 }) },
+    { key = "p", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = -1 }) },
     { key = "[", mods = "LEADER", action = "ActivateCopyMode" },
-    { key = "]", mods = "LEADER", action = act.PasteFrom 'Clipboard' },
+    { key = "]", mods = "LEADER", action = act.PasteFrom("Clipboard") },
     {
         key = "<",
         mods = "LEADER|SHIFT",
-        action = wezterm.action.Multiple {
-            wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
-            wezterm.action.AdjustPaneSize { "Left", 1 },
-        }
+        action = wezterm.action.Multiple({
+            wezterm.action.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
+            wezterm.action.AdjustPaneSize({ "Left", 1 }),
+        }),
     },
     {
         key = ">",
         mods = "LEADER|SHIFT",
-        action = wezterm.action.Multiple {
-            wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
-            wezterm.action.AdjustPaneSize { "Right", 1 },
-        }
+        action = wezterm.action.Multiple({
+            wezterm.action.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
+            wezterm.action.AdjustPaneSize({ "Right", 1 }),
+        }),
     },
     {
         key = "+",
         mods = "LEADER|SHIFT",
-        action = wezterm.action.Multiple {
-            wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
-            wezterm.action.AdjustPaneSize { "Up", 1 },
-        }
+        action = wezterm.action.Multiple({
+            wezterm.action.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
+            wezterm.action.AdjustPaneSize({ "Up", 1 }),
+        }),
     },
     {
         key = "-",
         mods = "LEADER",
-        action = wezterm.action.Multiple {
-            wezterm.action.ActivateKeyTable { name = "resize_pane", one_shot = false },
-            wezterm.action.AdjustPaneSize { "Down", 1 },
-        }
+        action = wezterm.action.Multiple({
+            wezterm.action.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
+            wezterm.action.AdjustPaneSize({ "Down", 1 }),
+        }),
     },
     {
         key = "q",
         mods = "LEADER",
-        action = wezterm.action.PaneSelect {
-            alphabet = "1234567890"
-        }
+        action = wezterm.action.PaneSelect({
+            alphabet = "1234567890",
+        }),
     },
 }
 config.key_tables = {
     copy_mode = {
-        { key = "Escape", mods = "NONE",  action = wezterm.action.CopyMode "Close" },
+        { key = "Escape", mods = "NONE", action = wezterm.action.CopyMode("Close") },
         {
             key = "Enter",
             mods = "NONE",
-            action = wezterm.action.Multiple {
+            action = wezterm.action.Multiple({
                 { CopyTo = "ClipboardAndPrimarySelection" },
                 wezterm.action.ClearSelection,
                 { CopyMode = "Close" },
-            },
+            }),
         },
-        { key = "0",      mods = "NONE",  action = wezterm.action.CopyMode "MoveToStartOfLine" },
-        { key = "$",      mods = "SHIFT", action = wezterm.action.CopyMode "MoveToEndOfLineContent" },
-        { key = "h",      mods = "NONE",  action = wezterm.action.CopyMode "MoveLeft" },
-        { key = "j",      mods = "NONE",  action = wezterm.action.CopyMode "MoveDown" },
-        { key = "k",      mods = "NONE",  action = wezterm.action.CopyMode "MoveUp" },
-        { key = "l",      mods = "NONE",  action = wezterm.action.CopyMode "MoveRight" },
-        { key = "w",      mods = "NONE",  action = wezterm.action.CopyMode "MoveForwardWord" },
-        { key = "b",      mods = "NONE",  action = wezterm.action.CopyMode "MoveBackwardWord" },
-        { key = "e",      mods = "NONE",  action = wezterm.action.CopyMode "MoveForwardWordEnd" },
-        { key = "Space",  mods = "NONE",  action = wezterm.action.CopyMode { SetSelectionMode = "Cell" } },
-        { key = "v",      mods = "NONE",  action = wezterm.action.CopyMode { SetSelectionMode = "Cell" } },
-        { key = "v",      mods = "CTRL",  action = wezterm.action.CopyMode { SetSelectionMode = "Block" } },
-        { key = "V",      mods = "SHIFT", action = wezterm.action.CopyMode { SetSelectionMode = "Line" } },
+        { key = "0", mods = "NONE", action = wezterm.action.CopyMode("MoveToStartOfLine") },
+        { key = "$", mods = "SHIFT", action = wezterm.action.CopyMode("MoveToEndOfLineContent") },
+        { key = "h", mods = "NONE", action = wezterm.action.CopyMode("MoveLeft") },
+        { key = "j", mods = "NONE", action = wezterm.action.CopyMode("MoveDown") },
+        { key = "k", mods = "NONE", action = wezterm.action.CopyMode("MoveUp") },
+        { key = "l", mods = "NONE", action = wezterm.action.CopyMode("MoveRight") },
+        { key = "w", mods = "NONE", action = wezterm.action.CopyMode("MoveForwardWord") },
+        { key = "b", mods = "NONE", action = wezterm.action.CopyMode("MoveBackwardWord") },
+        { key = "e", mods = "NONE", action = wezterm.action.CopyMode("MoveForwardWordEnd") },
+        { key = "Space", mods = "NONE", action = wezterm.action.CopyMode({ SetSelectionMode = "Cell" }) },
+        { key = "v", mods = "NONE", action = wezterm.action.CopyMode({ SetSelectionMode = "Cell" }) },
+        { key = "v", mods = "CTRL", action = wezterm.action.CopyMode({ SetSelectionMode = "Block" }) },
+        { key = "V", mods = "SHIFT", action = wezterm.action.CopyMode({ SetSelectionMode = "Line" }) },
     },
 }
 
