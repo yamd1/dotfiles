@@ -1,4 +1,4 @@
-local actions = require "telescope.actions"
+local actions = require("telescope.actions")
 require("telescope").setup({
     defaults = {
         mappings = {
@@ -6,7 +6,7 @@ require("telescope").setup({
                 ["<M-v>"] = actions.select_vertical,
                 ["<M-s>"] = actions.select_horizontal,
                 ["<M-t>"] = actions.select_tab,
-            }
+            },
         },
         file_ignore_patterns = {
             "^.git/",
@@ -24,7 +24,7 @@ require("telescope").setup({
             "--line-number",
             "--column",
             "--smart-case",
-            "-uu",
+            "-u",
         },
     },
     extensions = {
