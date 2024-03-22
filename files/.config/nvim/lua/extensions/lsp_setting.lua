@@ -14,20 +14,31 @@ require("mason-lspconfig").setup({
         "jsonls",
         "intelephense",
         "rust_analyzer",
+        "eslint",
     },
 })
 
+local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require("mason-lspconfig").setup_handlers({
     function(server_name)
         require("lspconfig")[server_name].setup({
-            capabilities = require("cmp_nvim_lsp").default_capabilities(),
+            capabilities = capabilities,
         })
-        require("lspconfig").intelephense.setup({
-            default_config = {
-                init_options = {
-                    licenceKey = vim.env.INTTELEPHENSE_LICENCE_KEY,
-                },
+    end,
+    ["intelephense"] = function()
+        default_config = {
+            init_options = {
+                licenceKey = vim.env.INTTELEPHENSE_LICENCE_KEY,
             },
+        }
+    end,
+    ["eslint"] = function()
+        lspconfig.eslint.setup({
+            capabilities = capabilities,
+            handlers = handlers,
+            on_attach = require("extensions.lsp.eslint").on_attach,
+            settings = require("extensions.lsp.eslint").settings,
         })
     end,
 })
