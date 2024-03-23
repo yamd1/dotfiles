@@ -31,6 +31,7 @@ zle -N git-status-pickup-files
 zle -N gitmoji
 zle -N edit-command-line
 
+bindkey -e
 bindkey '^Gs' git-status-pickup-files
 bindkey '^Gm' gitmoji
 bindkey '^Gb' git-branch
