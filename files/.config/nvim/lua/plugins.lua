@@ -94,6 +94,14 @@ local plugins = {
     { "ap/vim-buftabline" },
     { "CRAG666/code_runner.nvim" },
     { "github/copilot.vim" },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function()
+            vim.fn["mkdp#util#install"]()
+        end,
+    },
 }
 
 -- SEE: https://github.com/folke/lazy.nvim?tab=readme-ov-file#%EF%B8%8F-configuration

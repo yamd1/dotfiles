@@ -11,6 +11,7 @@ services:
       WAYLAND_DISPLAY: $WAYLAND_DISPLAY
       XDG_RUNTIME_DIR: /tmp
       PULSE_SERVER: $PLUSE_SERVER
+      BROWSER: wslview
     volumes:
       - type: bind
         source: .
@@ -24,4 +25,7 @@ services:
       - type: bind
         source: ${HOME}/.config/gh
         target: /home/appuser/.gh-config
+      - type: bind
+        source: /usr/bin/wslview
+        target: /usr/bin/wslview
     tty: true
