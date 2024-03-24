@@ -1,0 +1,4 @@
+autoload -Uz edit-command-line
+
+# https://github.com/zsh-users/zsh/blob/ea5a5d6ec430cad1a73f3179fcc018c90a315c35/Functions/Zle/edit-command-line#L11
+TMPSUFFIX=.zsh edit-command-line

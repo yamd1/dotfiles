@@ -21,6 +21,7 @@ path=(
 
 fpath=(
   "$HOME/.local/share/zsh/site-functions"(N-/)
+  "$HOME/.local/share/zsh/functions"(N-/)
   "$fpath[@]"
 )
 
