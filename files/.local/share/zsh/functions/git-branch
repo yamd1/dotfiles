@@ -1,13 +1,13 @@
 local branches branch list resolved
 
 branches=$(git branch -vv -a)
-echo $branches | while read item; do
+while read item; do
   if echo "$item" | grep -q 'gone]'; then
     resolved="${resolved} $(printf "\033[0;31m%s\033[0m" "$item")\n"
   else
     resolved="${resolved} ${item}\n"
   fi
-done
+done < <(echo $branches | sed 's/remotes\/\(.*\)/\1/g')
 
 branch=$(echo "$resolved" | fzf -m)
 list=$(echo "$branch" | awk '{print $1}' | sed "s/.* //" | tr "\n" " ")
