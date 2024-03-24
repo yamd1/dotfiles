@@ -8,3 +8,5 @@ emoji=$(cat $json_dir \
 
 BUFFER="${BUFFER}${emoji}"
 CURSOR="${#BUFFER}"
+
+zle .reset-prompt
