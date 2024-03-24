@@ -1,0 +1,12 @@
+case $BUFFER in
+  git\ push\ (-f|--force))
+    BUFFER='git push --force-with-lease --force-if-includes '
+    CURSOR=${#BUFFER}
+    ;;
+  *)
+    zle _expand_alias
+    zle .self-insert
+    ;;
+esac
+
+zle .reset-prompt
