@@ -8,6 +8,7 @@ autoload -Uz git-status-pickup-files
 autoload -Uz gitmoji
 autoload -Uz better-edit-command-line
 autoload -Uz gd
+autoload -Uz self-insert-with-expand-alias
 
 alias v="nvim"
 alias vim="nvim"
@@ -30,6 +31,7 @@ zle -N git-log-preview-rebase
 zle -N git-status-pickup-files
 zle -N gitmoji
 zle -N better-edit-command-line
+zle -N self-insert-with-expand-alias
 
 bindkey -e
 bindkey '^Gs' git-status-pickup-files
@@ -40,6 +42,7 @@ bindkey '^G^G' git-log-preview-rebase
 bindkey '^U' backward-kill-line
 bindkey '^[[Z' reverse-menu-complete
 bindkey '^O' better-edit-command-line
+bindkey ' ' self-insert-with-expand-alias
 
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose yes
