@@ -12,6 +12,7 @@ null_ls.setup({
         null_ls.builtins.formatting.prettier.with({
             command = "/opt/app/node_modules/.bin/prettier",
             args = { "$FILENAME" },
+            filetypes = { "js", "ts" },
         }),
     },
     on_attach = function(client, bufnr)
