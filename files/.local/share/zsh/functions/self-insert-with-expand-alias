@@ -1,4 +1,10 @@
 case $BUFFER in
+  sw|'git switch')
+    # ブランチを選択するときにはoriginのブランチであることを表示したいが、switchするときには"origin/"が不要なのでfzfで選択したあとにsedで削除
+    local branch=$(git branch -vv -a | sed 's/remotes\/\(.*\)/\1/g' | fzf -m | sed 's/origin\/\(.*\)/\1/g' | awk '{print $1}')
+    BUFFER="git switch ${branch}"
+    CURSOR=${#BUFFER}
+    ;;
   git\ push\ (-f|--force))
     BUFFER='git push --force-with-lease --force-if-includes '
     CURSOR=${#BUFFER}
@@ -10,3 +16,4 @@ case $BUFFER in
 esac
 
 zle .reset-prompt
+zle autosuggest-fetch
