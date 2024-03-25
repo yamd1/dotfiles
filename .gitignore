@@ -9,7 +9,6 @@ files/.local/share/direnv/**
 files/.config/configstore/**
 files/.config/zsh/.zshrc.local
 files/.config/zsh/.zshenv.local
-files/.local/bin/**
 files/.local/lib/**
 files/.config/coc/extensions/node_modules
 files/.config/coc/extensions/coc-json-data
@@ -25,3 +24,4 @@ files/.config/github-copilot
 files/.local/share/composer/**
 files/.local/share/gh/**
 files/.config/intelephense/licence.txt
+files/.config/gh-copilot/**

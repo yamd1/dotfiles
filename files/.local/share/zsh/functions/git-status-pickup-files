@@ -1,6 +1,6 @@
 local files
 
-files=$(git-status.sh)
+files=$(git-status)
 
 BUFFER="${BUFFER}$files"
 CURSOR="${#BUFFER}"

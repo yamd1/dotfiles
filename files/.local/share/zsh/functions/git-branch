@@ -13,5 +13,6 @@ branch=$(echo "$resolved" | fzf -m)
 list=$(echo "$branch" | awk '{print $1}' | sed "s/.* //" | tr "\n" " ")
 
 BUFFER="$BUFFER $list"
-
 CURSOR=${#BUFFER}
+
+zle .reset-prompt
