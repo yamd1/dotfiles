@@ -1,0 +1,6 @@
+# vim:ft=zsh
+
+BUFFER="${BUFFER}$(gitmoji)"
+CURSOR="${#BUFFER}"
+
+zle .reset-prompt

@@ -5,7 +5,7 @@ autoload -Uz git-branch
 autoload -Uz git-reflog
 autoload -Uz git-log-preview-rebase
 autoload -Uz git-status-pickup-files
-autoload -Uz gitmoji
+autoload -Uz git-emoji-select
 autoload -Uz better-edit-command-line
 autoload -Uz gd
 autoload -Uz self-insert-with-expand-alias
@@ -28,13 +28,13 @@ zle -N git-branch
 zle -N git-reflog
 zle -N git-log-preview-rebase
 zle -N git-status-pickup-files
-zle -N gitmoji
+zle -N git-emoji-select
 zle -N better-edit-command-line
 zle -N self-insert-with-expand-alias
 
 bindkey -e
 bindkey '^Gs' git-status-pickup-files
-bindkey '^Gm' gitmoji
+bindkey '^Gm' git-emoji-select
 bindkey '^Gb' git-branch
 bindkey '^Gr' git-reflog
 bindkey '^G^G' git-log-preview-rebase
