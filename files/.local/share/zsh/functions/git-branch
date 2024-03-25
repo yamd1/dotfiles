@@ -1,3 +1,5 @@
+# vim:ft=zsh
+
 local branches branch list resolved
 
 branches=$(git branch -vv -a)

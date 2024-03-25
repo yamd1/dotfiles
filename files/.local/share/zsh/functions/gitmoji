@@ -1,3 +1,4 @@
+# vim:ft=zsh
 local json_dir emoji
 json_dir="${XDG_DATA_HOME}/git/emoji.json"
 emoji=$(cat $json_dir \

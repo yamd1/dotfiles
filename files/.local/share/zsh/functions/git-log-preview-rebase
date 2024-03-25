@@ -1,3 +1,5 @@
+# vim:ft=zsh
+
 local commitHash
 
 commitHash="$(git log --color=always --graph --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" \
