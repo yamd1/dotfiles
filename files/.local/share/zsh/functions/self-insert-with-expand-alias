@@ -11,6 +11,25 @@ case $BUFFER in
     BUFFER='git push --force-with-lease --force-if-includes '
     CURSOR=${#BUFFER}
     ;;
+  add|'git add')
+    BUFFER="git add $(git-status)"
+    CURSOR=${#BUFFER}
+    ;;
+  co\ -m|'git commit -m')
+    local json_dir="${XDG_DATA_HOME}/git/emoji.json"
+    local emoji=$(cat $json_dir \
+      | jq -r '.gitmojis[] | [.code,.description] | @tsv' \
+      | fzf --preview "cat $json_dir | jq -r '.gitmojis[] | [.emoji,.code,.description] | @tsv' | grep {} | cut -f1 | emojify" \
+      | cut -f1 \
+    )
+    BUFFER="git commit -m '$emoji '"
+    CURSOR="${#BUFFER} - 1"
+    ;;
+  de|'docker exec')
+    local container=$(docker ps --format '{{ .Names }}' | fzf -m)
+    BUFFER="docker exec -it ${container} /bin/zsh"
+    CURSOR=${#BUFFER}
+    ;;
   *)
     zle _expand_alias
     zle .self-insert
