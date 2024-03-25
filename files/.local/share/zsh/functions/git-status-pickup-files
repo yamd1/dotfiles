@@ -1,3 +1,5 @@
+# vim:ft=zsh
+
 local files
 
 files=$(git-status)

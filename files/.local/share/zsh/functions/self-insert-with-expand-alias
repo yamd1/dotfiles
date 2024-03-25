@@ -1,3 +1,5 @@
+# vim:ft=zsh
+
 case $BUFFER in
   sw|'git switch')
     # ブランチを選択するときにはoriginのブランチであることを表示したいが、switchするときには"origin/"が不要なのでfzfで選択したあとにsedで削除
