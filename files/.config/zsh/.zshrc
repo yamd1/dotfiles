@@ -16,7 +16,6 @@ alias devc="devcontainer up --workspace-folder . --dotfiles-repository https://g
 alias de="docker exec -it"
 alias ls=" eza -lago --icons"
 alias tmp='cd "$(mktemp -d)"'
-alias gadd="git-add"
 alias gss="git-status"
 alias co="git commit"
 alias sw="git switch"
