@@ -41,5 +41,5 @@ if [[ -n "$WAYLAND_DISPLAY" ]]; then
         :
         ;;
     esac
-  done < <(ls /etc/*release | sed "s/\/etc\/\(.*\)[_-]release/\1/g")
+  done < <(\ls /etc/*{release,version} | xargs -I{} basename {} | sed -E 's/(.*)[_-](release|version)/\1/g')
 fi
