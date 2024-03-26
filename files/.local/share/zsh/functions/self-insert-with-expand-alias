@@ -29,7 +29,7 @@ case $BUFFER in
     CURSOR=${#BUFFER}
     ;;
   'cargo new')
-    BUFFER="cargo-new"
+    BUFFER="cargo-new "
     CURSOR=${#BUFFER}
     ;;
   *)
