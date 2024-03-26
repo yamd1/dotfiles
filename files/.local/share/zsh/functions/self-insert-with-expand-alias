@@ -24,6 +24,10 @@ case $BUFFER in
     BUFFER="docker exec -it ${container} /bin/zsh"
     CURSOR=${#BUFFER}
     ;;
+  'cargo new')
+    BUFFER="cargo-new"
+    CURSOR=${#BUFFER}
+    ;;
   *)
     zle _expand_alias
     zle .self-insert
