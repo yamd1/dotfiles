@@ -1,0 +1,19 @@
+#!/bin/bash
+set -ue
+
+if [[ $# -lt 1 ]]; then
+    echo "Usage: cargo-new [cargo_opts...] <project_name>"
+    exit 1
+fi
+
+if [[ $1 == "--help" || $1 == "-h" ]]; then
+  cargo init $1
+    exit 0
+fi
+
+pname=${@:$#:1}
+opts=${@:1:($#-1)}
+
+ghq create "$pname"
+cd $(ghq list -p | grep "$pname")
+cargo init "$opts"
