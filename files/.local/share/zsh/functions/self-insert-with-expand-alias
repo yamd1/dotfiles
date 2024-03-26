@@ -1,7 +1,7 @@
 # vim:ft=zsh
 
 case $BUFFER in
-  'git switch')
+  sw|'git switch')
     # ブランチを選択するときにはoriginのブランチであることを表示したいが、switchするときには"origin/"が不要なのでfzfで選択したあとにsedで削除
     local branch=$(git branch -vv -a | sed 's/remotes\/\(.*\)/\1/g' | fzf -m | sed 's/origin\/\(.*\)/\1/g' | awk '{print $1}')
     BUFFER="git switch ${branch}"
@@ -15,9 +15,13 @@ case $BUFFER in
     BUFFER="git add $(git-status)"
     CURSOR=${#BUFFER}
     ;;
-  'git commit -m')
+  co\ -m|'git commit -m')
     BUFFER="git commit -m '$(gitmoji) '"
     CURSOR="${#BUFFER} - 1"
+    ;;
+  rb\ -i|'git rebase -i')
+    BUFFER="git rebase -i $(git-commit-preview | grep -oE '\b[a-f0-9]{7,8}\b')"
+    CURSOR=${#BUFFER}
     ;;
   de|'docker exec')
     local container=$(docker ps --format '{{ .Names }}' | fzf -m)
