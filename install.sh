@@ -26,7 +26,7 @@ if [[ "${1:-}" == "wsl" ]]; then
   $DOT_DIR/.bin/setup-windows.sh
 fi
 
-if [[ -n "$WAYLAND_DISPLAY" ]]; then
+if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
   while read os; do
     case "$os" in
       debian)
