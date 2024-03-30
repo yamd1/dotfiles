@@ -15,6 +15,7 @@ files/.config/coc/extensions/coc-json-data
 files/.config/nvim/plugin/**
 files/.config/starship.toml
 files/.local/share/delta/**
+files/.local/share/fonts/**
 files/.config/git/profiles
 files/.config/wslu/**
 files/.config/.nlav/**
