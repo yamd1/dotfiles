@@ -23,7 +23,7 @@ ln -snf $DOT_DIR/files/.config/.lnav $HOME
 $DOT_DIR/.bin/install-aqua.sh
 
 [[ ! -d "$HOME/.local/share/fonts" ]] && mkdir -p $HOME/.local/share/fonts
-curl -fsSL 'https://github.com/yuru7/udev-gothic/releases/download/v1.3.1/UDEVGothic_NF_v1.3.1.zip' | busybox unzip - -d $HOME/.local/share/fonts
+curl -fsSL https://github.com/yuru7/udev-gothic/releases/download/v1.3.1/UDEVGothic_NF_v1.3.1.zip | busybox unzip - -d $HOME/.local/share/fonts
 
 if [[ "${1:-}" == "wsl" ]]; then
   $DOT_DIR/.bin/setup-windows.sh
