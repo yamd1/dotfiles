@@ -12,7 +12,7 @@ autoload -Uz self-insert-with-expand-alias
 
 alias v="nvim"
 alias vim="nvim"
-alias devc="devcontainer up --workspace-folder . --dotfiles-repository https://github.com/yamd1/dotfiles --dotfiles-install-command 'install.sh'"
+alias devc="devcontainer up --workspace-folder . --dotfiles-repository yamd1/dotfiles --dotfiles-install-command 'install.sh'"
 alias de="docker exec -it"
 alias ls=" eza -lago --icons"
 alias tmp='cd "$(mktemp -d)"'
