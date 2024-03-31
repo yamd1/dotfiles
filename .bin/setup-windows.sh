@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -ue
 
 # Symbolic links don't work between WSL2 and Windows, so use cp instead
