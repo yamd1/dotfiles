@@ -18,3 +18,4 @@ vim.g.editorconfig = true
 vim.opt.list = true
 vim.o.clipboard = "unnamedplus"
 vim.opt.number = false
+vim.opt.splitright = true
