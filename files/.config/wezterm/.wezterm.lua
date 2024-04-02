@@ -7,11 +7,21 @@ for _, dom in ipairs(wsl_domains) do
     dom.default_cwd = "~"
 end
 
+local function split(str, ptr)
+    local splited = {}
+    for token in string.gmatch(str, string.format("[^%s]+", ptr)) do
+        table.insert(splited, token)
+    end
+
+    return splited
+end
+
 local function get_current_working_dir(tab)
     local current_dir = tab.active_pane and tab.active_pane.current_working_dir or { file_path = "" }
     local HOME_DIR = string.format("file://%s", os.getenv("HOME"))
+    local path = split(current_dir.file_path, "/")
 
-    return current_dir == HOME_DIR and "." or string.gsub(current_dir.file_path, "(.*[:]?[/\\])(.*)", "%2")
+    return current_dir == HOME_DIR and "." or path[#path]
 end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
@@ -101,7 +111,7 @@ config.use_fancy_tab_bar = false
 
 config.leader = { key = "t", mods = "CTRL" }
 config.keys = {
-    { key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
+    { key = "v", mods = "CTRL",   action = act.PasteFrom("Clipboard") },
     {
         key = "c",
         mods = "CTRL",
@@ -187,7 +197,7 @@ config.keys = {
 }
 config.key_tables = {
     copy_mode = {
-        { key = "Escape", mods = "NONE", action = wezterm.action.CopyMode("Close") },
+        { key = "Escape", mods = "NONE",  action = wezterm.action.CopyMode("Close") },
         {
             key = "Enter",
             mods = "NONE",
@@ -197,19 +207,19 @@ config.key_tables = {
                 { CopyMode = "Close" },
             }),
         },
-        { key = "0", mods = "NONE", action = wezterm.action.CopyMode("MoveToStartOfLine") },
-        { key = "$", mods = "SHIFT", action = wezterm.action.CopyMode("MoveToEndOfLineContent") },
-        { key = "h", mods = "NONE", action = wezterm.action.CopyMode("MoveLeft") },
-        { key = "j", mods = "NONE", action = wezterm.action.CopyMode("MoveDown") },
-        { key = "k", mods = "NONE", action = wezterm.action.CopyMode("MoveUp") },
-        { key = "l", mods = "NONE", action = wezterm.action.CopyMode("MoveRight") },
-        { key = "w", mods = "NONE", action = wezterm.action.CopyMode("MoveForwardWord") },
-        { key = "b", mods = "NONE", action = wezterm.action.CopyMode("MoveBackwardWord") },
-        { key = "e", mods = "NONE", action = wezterm.action.CopyMode("MoveForwardWordEnd") },
-        { key = "Space", mods = "NONE", action = wezterm.action.CopyMode({ SetSelectionMode = "Cell" }) },
-        { key = "v", mods = "NONE", action = wezterm.action.CopyMode({ SetSelectionMode = "Cell" }) },
-        { key = "v", mods = "CTRL", action = wezterm.action.CopyMode({ SetSelectionMode = "Block" }) },
-        { key = "V", mods = "SHIFT", action = wezterm.action.CopyMode({ SetSelectionMode = "Line" }) },
+        { key = "0",      mods = "NONE",  action = wezterm.action.CopyMode("MoveToStartOfLine") },
+        { key = "$",      mods = "SHIFT", action = wezterm.action.CopyMode("MoveToEndOfLineContent") },
+        { key = "h",      mods = "NONE",  action = wezterm.action.CopyMode("MoveLeft") },
+        { key = "j",      mods = "NONE",  action = wezterm.action.CopyMode("MoveDown") },
+        { key = "k",      mods = "NONE",  action = wezterm.action.CopyMode("MoveUp") },
+        { key = "l",      mods = "NONE",  action = wezterm.action.CopyMode("MoveRight") },
+        { key = "w",      mods = "NONE",  action = wezterm.action.CopyMode("MoveForwardWord") },
+        { key = "b",      mods = "NONE",  action = wezterm.action.CopyMode("MoveBackwardWord") },
+        { key = "e",      mods = "NONE",  action = wezterm.action.CopyMode("MoveForwardWordEnd") },
+        { key = "Space",  mods = "NONE",  action = wezterm.action.CopyMode({ SetSelectionMode = "Cell" }) },
+        { key = "v",      mods = "NONE",  action = wezterm.action.CopyMode({ SetSelectionMode = "Cell" }) },
+        { key = "v",      mods = "CTRL",  action = wezterm.action.CopyMode({ SetSelectionMode = "Block" }) },
+        { key = "V",      mods = "SHIFT", action = wezterm.action.CopyMode({ SetSelectionMode = "Line" }) },
     },
 }
 
