@@ -1,6 +1,7 @@
 [[ -f "$XDG_CONFIG_HOME/zsh/fzf.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/fzf.zsh"
 [[ -f "$XDG_CONFIG_HOME/zsh/.zshrc.local" ]] && source "$XDG_CONFIG_HOME/zsh/.zshrc.local"
 
+autoload -Uz add-zsh-hook
 autoload -Uz git-branch
 autoload -Uz git-reflog
 autoload -Uz git-log-preview-rebase
@@ -9,6 +10,7 @@ autoload -Uz git-emoji-select
 autoload -Uz better-edit-command-line
 autoload -Uz gd
 autoload -Uz self-insert-with-expand-alias
+autoload -Uz send-osc7
 
 alias v="nvim"
 alias vim="nvim"
@@ -23,6 +25,8 @@ alias rb="git rebase"
 alias bd="git-branch-bulk-delete"
 alias nrb="navi --query rb"
 alias e="explorer.exe"
+
+add-zsh-hook precmd send-osc7
 
 zle -N git-branch
 zle -N git-reflog
