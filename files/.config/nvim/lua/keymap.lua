@@ -37,7 +37,6 @@ vim.keymap.set("n", "<Leader>p", ":Telescope find_files hidden=true<CR>", {})
 vim.keymap.set("n", "<Leader>fn", ":Telescope find_files cwd=~/.config/nvim<CR>", {})
 vim.keymap.set("n", "<Leader>d", builtin.git_status, opts)
 vim.keymap.set("n", "<Leader>b", builtin.buffers, opts)
-vim.keymap.set("n", "<Leader>hh", builtin.help_tags, opts)
 vim.keymap.set("n", "<Leader>g", builtin.live_grep, opts)
 
 vim.keymap.set("n", "<Leader><Leader>", ":lua _terminal_toggle()<CR>", opts)
