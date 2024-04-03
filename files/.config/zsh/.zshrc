@@ -8,6 +8,7 @@ autoload -Uz git-log-preview-rebase
 autoload -Uz git-status-pickup-files
 autoload -Uz git-emoji-select
 autoload -Uz better-edit-command-line
+autoload -Uz git-branch-bulk-delete
 autoload -Uz gd
 autoload -Uz self-insert-with-expand-alias
 autoload -Uz send-osc7
