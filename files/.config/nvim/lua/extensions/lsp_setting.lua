@@ -15,6 +15,7 @@ require("mason-lspconfig").setup({
         "intelephense",
         "rust_analyzer",
         "eslint",
+        "typos_lsp",
     },
 })
 
@@ -25,6 +26,7 @@ require("mason-lspconfig").setup_handlers({
         require("lspconfig")[server_name].setup({
             capabilities = capabilities,
         })
+        require("lspconfig").typos_lsp.setup({})
     end,
     ["intelephense"] = function()
         default_config = {
@@ -41,7 +43,17 @@ require("mason-lspconfig").setup_handlers({
             settings = require("extensions.lsp.eslint").settings,
         })
     end,
+    ["typos_lsp"] = function()
+        lspconfig.typos_lsp.setup({
+            capabilities = capabilities,
+            init_options = {
+                language = "en",
+            },
+        })
+    end,
 })
+
+vim.lsp.set_log_level("debug")
 
 require("mason-null-ls").setup({
     handlers = {},
@@ -72,7 +84,7 @@ cmp.setup({
     }, {
         { name = "buffer" },
     }),
-    experimetal = {
+    experimental = {
         ghost_text = true,
     },
 })
@@ -107,6 +119,5 @@ cmp.setup.cmdline(":", {
 require("mason-tool-installer").setup({
     ensure_installed = {
         "stylua",
-        "cspell",
     },
 })
