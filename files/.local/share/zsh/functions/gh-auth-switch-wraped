@@ -1,0 +1,4 @@
+#vim:ft=zsh
+
+[[ ! -d "$HOME/.local/state/gh" ]] && mkdir -p $HOME/.local/state/gh
+gh auth switch 2>&1 | awk '{print $NF}' > $HOME/.local/state/gh/active-user
