@@ -15,7 +15,6 @@ require("mason-lspconfig").setup({
         "intelephense",
         "rust_analyzer",
         "eslint",
-        "typos_lsp",
     },
 })
 
@@ -26,7 +25,6 @@ require("mason-lspconfig").setup_handlers({
         require("lspconfig")[server_name].setup({
             capabilities = capabilities,
         })
-        require("lspconfig").typos_lsp.setup({})
     end,
     ["intelephense"] = function()
         default_config = {
@@ -41,14 +39,6 @@ require("mason-lspconfig").setup_handlers({
             handlers = handlers,
             on_attach = require("extensions.lsp.eslint").on_attach,
             settings = require("extensions.lsp.eslint").settings,
-        })
-    end,
-    ["typos_lsp"] = function()
-        lspconfig.typos_lsp.setup({
-            capabilities = capabilities,
-            init_options = {
-                language = "en",
-            },
         })
     end,
 })

@@ -55,7 +55,11 @@ local plugins = {
 
     {
         "nvimtools/none-ls.nvim",
-        dependencies = "nvim-lua/plenary.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvimtools/none-ls-extras.nvim",
+            "davidmh/cspell.nvim",
+        },
     },
     {
         "jay-babu/mason-null-ls.nvim",

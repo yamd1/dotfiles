@@ -12,7 +12,7 @@ autoload -Uz git-branch-bulk-delete
 autoload -Uz gd
 autoload -Uz self-insert-with-expand-alias
 autoload -Uz send-osc7
-autoload -Uz gh-auth-switch-wraped
+autoload -Uz gh-auth-switch-wrapped
 
 alias v="nvim"
 alias vim="nvim"
@@ -25,7 +25,7 @@ alias co="git commit"
 alias sw="git switch"
 alias rb="git rebase"
 alias bd="git-branch-bulk-delete"
-alias ghs="gh-auth-switch-wraped"
+alias ghs="gh-auth-switch-wrapped"
 
 add-zsh-hook precmd send-osc7
 
