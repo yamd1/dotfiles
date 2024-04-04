@@ -2,6 +2,7 @@ format = """
 [░▒▓](#a3aed2)\
 $directory\
 [](fg:#769ff0 bg:#394260)\
+${custom.gh_active_user}\
 $git_branch\
 $git_status\
 [](fg:#394260 bg:#212736)\
@@ -25,6 +26,12 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+
+[custom.gh_active_user]
+command = 'cat $HOME/.local/state/gh/active-user'
+style = "bg:#394260"
+when = true
+format = '[[ $output ](fg:#769ff0 bg:#394260)]($style)'
 
 [git_branch]
 symbol = ""
