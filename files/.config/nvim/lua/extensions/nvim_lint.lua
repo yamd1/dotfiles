@@ -1,5 +1,10 @@
+require("lint").linters.tflint = {
+    cmd = "tflint",
+}
+
 require("lint").linter_by_ft = {
-    zsh = { "cspell" },
+    terraform = { "tflint" },
+    args = { "--recursive" },
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {

@@ -15,6 +15,9 @@ require("mason-lspconfig").setup({
         "intelephense",
         "rust_analyzer",
         "eslint",
+        "terraformls",
+        "tflint",
+        "yamlls",
     },
 })
 
@@ -42,8 +45,6 @@ require("mason-lspconfig").setup_handlers({
         })
     end,
 })
-
-vim.lsp.set_log_level("debug")
 
 require("mason-null-ls").setup({
     handlers = {},
@@ -109,5 +110,6 @@ cmp.setup.cmdline(":", {
 require("mason-tool-installer").setup({
     ensure_installed = {
         "stylua",
+        "cspell",
     },
 })
