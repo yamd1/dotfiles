@@ -54,9 +54,6 @@ local plugins = {
     { "L3MON4D3/LuaSnip" },
 
     {
-        "mfussenegger/nvim-lint",
-    },
-    {
         "nvimtools/none-ls.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
