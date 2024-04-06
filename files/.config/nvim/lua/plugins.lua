@@ -60,6 +60,7 @@ local plugins = {
         "nvimtools/none-ls.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "davidmh/cspell.nvim",
         },
     },
     {
