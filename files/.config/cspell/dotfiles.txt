@@ -1,8 +1,10 @@
 Munif
 akinsho
+aquaproj-aqua
 bprev
 cappyzawa
 davidmh
+enew
 hrsh
 iamcco
 intelephense
@@ -10,6 +12,7 @@ jsonls
 junegunn
 kanagawa
 linehl
+lnav
 luasnip
 lukas
 mkdp
@@ -24,5 +27,8 @@ tflint
 tpope
 virt
 vsnip
+wezterm
+wslu
 yadm
+yamd
 yamlls

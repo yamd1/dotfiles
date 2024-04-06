@@ -1,12 +1,11 @@
 {
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
   "allowCompoundWords": true,
   "dictionaries": [
     "dotfiles",
-    "lua",
     "user",
     "vim"
   ],
-  "dictionary": "~/.config/cspell/dotfiles.txt",
   "dictionaryDefinitions": [
     {
       "addWords": true,
