@@ -1,8 +1,11 @@
 require("nvim-tree").setup({
-    hijack_cursor = true,
     diagnostics = {
         enable = true,
         show_on_dirs = true,
+        severity = {
+            min = vim.diagnostic.severity.WARN,
+            max = vim.diagnostic.severity.ERROR,
+        },
         icons = {
             hint = "",
             info = "",
@@ -14,7 +17,6 @@ require("nvim-tree").setup({
         width = 35,
         side = "left",
         signcolumn = "yes",
-        preserve_window_proportions = true, -- SEE: https://github.com/nvim-tree/nvim-tree.lua/issues/1347
     },
     log = {
         enable = true,
