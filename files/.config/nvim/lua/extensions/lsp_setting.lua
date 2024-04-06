@@ -32,7 +32,7 @@ require("mason-lspconfig").setup_handlers({
     ["intelephense"] = function()
         default_config = {
             init_options = {
-                licenceKey = vim.env.INTTELEPHENSE_LICENCE_KEY,
+                licenceKey = vim.env.INTELEPHENSE_LICENCE_KEY,
             },
         }
     end,
