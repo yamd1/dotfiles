@@ -1,5 +1,12 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local null_ls = require("null-ls")
+local cspell_config = {
+    config_file_preferred_name = "cspell.json",
+    on_add_to_dictionary = function(payload)
+        os.execute(string.format("sort %s -o %s", payload.dictionary_path, payload.dictionary_path))
+    end,
+}
+
 null_ls.setup({
     sources = {
         null_ls.builtins.diagnostics.phpstan.with({
@@ -13,6 +20,16 @@ null_ls.setup({
             command = "/opt/app/node_modules/.bin/prettier",
             args = { "$FILENAME" },
             filetypes = { "js", "ts" },
+        }),
+        null_ls.builtins.diagnostics.terraform_validate,
+        require("cspell").diagnostics.with({
+            config = cspell_config,
+            diagnostics_postprocess = function(diagnostic)
+                diagnostic.severity = vim.diagnostic.severity.INFO
+            end,
+        }),
+        require("cspell").code_actions.with({
+            config = cspell_config,
         }),
     },
     on_attach = function(client, bufnr)
@@ -35,3 +52,13 @@ null_ls.setup({
         end
     end,
 })
+
+if vim.fn.filereadable("~/.local/share/cspell/vim.txt.gz") ~= 1 then
+    local vim_dictionary_url = "https://github.com/iamcco/coc-spell-checker/raw/master/dicts/vim/vim.txt.gz"
+    io.popen("curl -fsSLo ~/.local/share/cspell/vim.txt.gz --create-dirs " .. vim_dictionary_url)
+end
+
+if vim.fn.filereadable("~/.local/share/cspell/user.txt") ~= 1 then
+    io.popen("mkdir -p ~/.local/share/cspell")
+    io.popen("touch ~/.local/share/cspell/user.txt")
+end

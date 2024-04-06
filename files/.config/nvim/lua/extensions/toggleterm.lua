@@ -1,8 +1,8 @@
-local Terminal  = require('toggleterm.terminal').Terminal
+local Terminal = require("toggleterm.terminal").Terminal
 local _terminal = Terminal:new({
     direction = "float",
     float_opts = {
-        border = "curved"
+        border = "curved",
     },
     -- function to run on opening the terminal
     on_open = function(term)
