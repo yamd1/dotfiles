@@ -13,16 +13,33 @@ require("nvim-tree").setup({
             error = "",
         },
     },
+    renderer = {
+        highlight_git = true,
+        highlight_opened_files = "name",
+        icons = {
+            glyphs = {
+                git = {
+                    unstaged = "!",
+                    renamed = "»",
+                    untracked = "?",
+                    deleted = "✘",
+                    staged = "✓",
+                    unmerged = "",
+                    ignored = "◌",
+                },
+            },
+        },
+    },
     view = {
         width = 35,
         side = "left",
-        signcolumn = "yes",
+        signcolumn = "no",
     },
     log = {
         enable = true,
         truncate = true,
         types = {
-            --    diagnostics = true,
+            diagnostics = true,
         },
     },
     actions = {
