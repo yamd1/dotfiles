@@ -44,27 +44,20 @@ vim.keymap.set("n", "<Leader>b", builtin.buffers, opts)
 vim.keymap.set("n", "<Leader>g", builtin.live_grep, opts)
 
 vim.keymap.set("n", "<Leader><Leader>", ":lua _terminal_toggle()<CR>", opts)
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n><cmd>lua _terminal_toggle()<CR>")
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("n", "<C-e>", ":NvimTreeToggle<CR>", opts)
 vim.keymap.set("n", "<leader>r", ":RunCode<CR>", opts)
 
--- Global mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
-        -- Enable completion triggered by <c-x><c-o>
         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-        -- Buffer local mappings.
-        -- See `:help vim.lsp.*` for documentation on any of the below functions
         local opts = { buffer = ev.buf }
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
