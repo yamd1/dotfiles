@@ -28,7 +28,7 @@ truncation_symbol = "…/"
 "Pictures" = " "
 
 [custom.gh_active_user]
-command = 'cat $HOME/.local/state/gh/active-user'
+command = '[[ -e "$HOME/.local/state/gh/active-user" ]] && cat $HOME/.local/state/gh/active-user || echo no-user'
 style = "bg:#394260"
 when = true
 format = '[[ $output ](fg:#769ff0 bg:#394260)]($style)'

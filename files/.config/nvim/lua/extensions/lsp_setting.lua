@@ -15,6 +15,9 @@ require("mason-lspconfig").setup({
         "intelephense",
         "rust_analyzer",
         "eslint",
+        "terraformls",
+        "tflint",
+        "yamlls",
     },
 })
 
@@ -72,7 +75,7 @@ cmp.setup({
     }, {
         { name = "buffer" },
     }),
-    experimetal = {
+    experimental = {
         ghost_text = true,
     },
 })

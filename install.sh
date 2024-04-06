@@ -10,9 +10,9 @@ ln -snf $DOT_DIR/files/.local $HOME
 ln -snf $DOT_DIR/files/.config $HOME
 
 if "${IS_CONTAINER:-false}"; then
-  export STARSHIP_CONFIG="$DOT_DIR/files/.config/starship/remote_starship.toml"
+  echo 'export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/remote_starship.toml"' > $DOT_DIR/files/.config/zsh/.zshenv.local
 else
-  export STARSHIP_CONFIG="$DOT_DIR/files/.config/starship/host_starship.toml"
+  echo 'export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/host_starship.toml"' > $DOT_DIR/files/.config/zsh/.zshenv.local
 fi
 
 ln -snf $DOT_DIR/files/.config/zsh/.zshrc $HOME
