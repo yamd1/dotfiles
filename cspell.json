@@ -46,5 +46,8 @@
         "vim"
       ]
     }
+  ],
+  "ignorePaths": [
+    "./NvimTree_1"
   ]
 }
