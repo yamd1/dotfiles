@@ -1,4 +1,5 @@
 Munif
+PLUSE
 akinsho
 aquaproj-aqua
 bprev
@@ -29,6 +30,7 @@ virt
 vsnip
 wezterm
 wslu
+wslview
 yadm
 yamd
 yamlls
