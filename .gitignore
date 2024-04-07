@@ -4,7 +4,7 @@ files/.local/state/**
 files/.local/share/nvim
 files/.local/share/aquaproj-aqua/**
 files/.local/share/sheldon/**
-files/.local/share/rtx/**
+files/.local/share/mise/**
 files/.local/share/direnv/**
 files/.local/share/cspell/**
 files/.config/configstore/**
@@ -19,7 +19,7 @@ files/.local/share/delta/**
 files/.local/share/fonts/**
 files/.config/git/profiles
 files/.config/wslu/**
-files/.config/.nlav/**
+files/.config/.lnav/**
 files/.config/composer/**
 files/.config/gh/**
 files/.config/github-copilot
