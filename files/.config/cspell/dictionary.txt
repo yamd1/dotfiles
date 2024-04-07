@@ -12,6 +12,7 @@ intelephense
 jsonls
 junegunn
 kanagawa
+licence
 linehl
 lnav
 luasnip
