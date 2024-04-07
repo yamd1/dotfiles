@@ -1,3 +1,4 @@
+DUPS
 Munif
 PLUSE
 akinsho
@@ -5,6 +6,7 @@ aquaproj-aqua
 bprev
 cappyzawa
 davidmh
+devc
 enew
 hrsh
 iamcco
@@ -12,12 +14,14 @@ intelephense
 jsonls
 junegunn
 kanagawa
+lago
 licence
 linehl
 lnav
 luasnip
 lukas
 mkdp
+navi
 nohl
 ntpeters
 numhl
@@ -35,3 +39,4 @@ wslview
 yadm
 yamd
 yamlls
+zstyle
