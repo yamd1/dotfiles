@@ -15,6 +15,15 @@ local plugins = {
     { "nvim-lua/plenary.nvim" },
     { "MunifTanjim/nui.nvim" },
     { "nvim-telescope/telescope.nvim" },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {},
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
+    },
     { "junegunn/fzf.vim" },
     {
         "nvim-telescope/telescope-fzf-native.nvim",

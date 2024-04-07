@@ -8,6 +8,7 @@ cappyzawa
 davidmh
 devc
 enew
+folke
 hrsh
 iamcco
 intelephense
@@ -23,9 +24,11 @@ lukas
 mkdp
 navi
 nohl
+noice
 ntpeters
 numhl
 rbong
+rcarriga
 rebelot
 saadparwaiz
 terraformls
