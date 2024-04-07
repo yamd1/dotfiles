@@ -56,7 +56,7 @@ if vim.fn.filereadable("~/.local/share/cspell/vim.txt.gz") ~= 1 then
     io.popen("curl -fsSLo ~/.local/share/cspell/vim.txt.gz --create-dirs " .. vim_dictionary_url)
 end
 
-if vim.fn.filereadable("~/.local/share/cspell/user.txt") ~= 1 then
+if vim.fn.filereadable("~/.local/share/cspell/local.txt") ~= 1 then
     io.popen("mkdir -p ~/.local/share/cspell")
-    io.popen("touch ~/.local/share/cspell/user.txt")
+    io.popen("touch ~/.local/share/cspell/local.txt")
 end
