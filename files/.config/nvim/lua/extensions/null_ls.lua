@@ -29,30 +29,14 @@ null_ls.setup({
             diagnostics_postprocess = function(diagnostic)
                 diagnostic.severity = vim.diagnostic.severity.WARN
             end,
-            filter = function(_)
-                return vim.bo.filetype ~= "NvimTree"
-            end,
         }),
         require("cspell").code_actions.with({
             config = cspell_config,
         }),
     },
-    on_attach = function(client, bufnr)
-        if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                group = augroup,
-                buffer = bufnr,
-                callback = function(client)
-                    vim.lsp.buf.format({
-                        filter = function(c)
-                            local disabled_format_clients = { "intelephense" }
-                            return not vim.tbl_contains(disabled_format_clients, c.name)
-                        end,
-                    })
-                end,
-            })
-        end
+    should_attach = function(bufnr)
+        -- NvimTreeにcspellがアタッチされないように
+        return not vim.api.nvim_buf_get_name(bufnr):match("NvimTree_1$")
     end,
 })
 

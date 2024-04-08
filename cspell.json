@@ -2,16 +2,16 @@
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
   "allowCompoundWords": true,
   "dictionaries": [
-    "dictionary",
+    "global",
     "local",
     "vim"
   ],
   "dictionaryDefinitions": [
     {
       "addWords": true,
-      "name": "dictionary",
-      "path": "~/.config/cspell/dictionary.txt",
-      "description": "About 'addWords' in https://github.com/davidmh/cspell.nvim/blob/2e65904243f41b9002618d1fe0d79def6c795eeb/lua/cspell/code_actions/init.lua#L132"
+      "name": "global",
+      "path": "~/.config/cspell/global.txt",
+      "description": "Global dictionary. About 'addWords' in https://github.com/davidmh/cspell.nvim/blob/2e65904243f41b9002618d1fe0d79def6c795eeb/lua/cspell/code_actions/init.lua#L132"
     },
     {
       "addWords": true,
@@ -46,8 +46,5 @@
         "vim"
       ]
     }
-  ],
-  "ignorePaths": [
-    "./NvimTree_1"
   ]
 }
