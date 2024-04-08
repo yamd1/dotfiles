@@ -1,7 +1,9 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local null_ls = require("null-ls")
 local cspell_config = {
-    config_file_preferred_name = "cspell.json",
+    find_json = function(_)
+        return vim.fn.expand("~/dotfiles/cspell.json")
+    end,
     on_add_to_dictionary = function(payload)
         os.execute(string.format("sort %s -o %s", payload.dictionary_path, payload.dictionary_path))
     end,
@@ -25,7 +27,10 @@ null_ls.setup({
         require("cspell").diagnostics.with({
             config = cspell_config,
             diagnostics_postprocess = function(diagnostic)
-                diagnostic.severity = vim.diagnostic.severity.INFO
+                diagnostic.severity = vim.diagnostic.severity.WARN
+            end,
+            filter = function(_)
+                return vim.bo.filetype ~= "NvimTree"
             end,
         }),
         require("cspell").code_actions.with({
