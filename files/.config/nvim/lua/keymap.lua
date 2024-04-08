@@ -24,6 +24,7 @@ vim.keymap.set("i", "jj", "<Esc>", opts)
 vim.keymap.set("i", "kk", "<Esc>", opts)
 vim.keymap.set("n", "<C-h>", ":bprev<CR>", opts)
 vim.keymap.set("n", "<C-l>", ":bnext<CR>", opts)
+vim.keymap.set("n", "<Leader>n", ":set number!<CR>", opts)
 
 vim.keymap.set("n", "<Leader>h", "<C-w>h", opts)
 vim.keymap.set("n", "<Leader>l", "<C-w>l", opts)
@@ -43,9 +44,9 @@ vim.keymap.set("n", "<Leader>d", builtin.git_status, opts)
 vim.keymap.set("n", "<Leader>b", builtin.buffers, opts)
 vim.keymap.set("n", "<Leader>g", builtin.live_grep, opts)
 
-vim.keymap.set("n", ";;", ":lua _terminal_toggle()<CR>", opts)
+vim.keymap.set("n", "]]", ":lua _terminal_toggle()<CR>", opts)
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
-vim.keymap.set("t", ";;", "<C-\\><C-n> :lua _terminal_toggle()<CR>", opts)
+vim.keymap.set("t", "]]", "<C-\\><C-n> :lua _terminal_toggle()<CR>", opts)
 vim.keymap.set("n", "<C-e>", ":NvimTreeToggle<CR>", opts)
 vim.keymap.set("n", "<leader>r", ":RunCode<CR>", opts)
 
@@ -59,17 +60,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(ev)
         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-        local opts = { buffer = ev.buf }
-        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "gh", vim.lsp.buf.hover, opts)
-        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-        vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, opts)
-        vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+        local ops = { buffer = ev.buf }
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, ops)
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, ops)
+        vim.keymap.set("n", "gh", vim.lsp.buf.hover, ops)
+        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, ops)
+        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, ops)
+        vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, ops)
+        vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, ops)
+        vim.keymap.set("n", "gr", vim.lsp.buf.references, ops)
         vim.keymap.set("n", "<space>f", function()
             vim.lsp.buf.format({ async = true })
-        end, opts)
+        end, ops)
     end,
 })
