@@ -10,6 +10,7 @@ devc
 enew
 folke
 gitmojis
+higroup
 hrsh
 iamcco
 intelephense
@@ -20,6 +21,7 @@ lago
 licence
 linehl
 lnav
+luarc
 luasnip
 lukas
 mkdp
