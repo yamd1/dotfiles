@@ -102,7 +102,7 @@ local plugins = {
     { "nvim-tree/nvim-web-devicons" },
     { "lukas-reineke/indent-blankline.nvim" },
     { "nvim-lualine/lualine.nvim" },
-    { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+    { "akinsho/bufferline.nvim",            version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
     { "cappyzawa/trim.nvim" },
     { "CRAG666/code_runner.nvim" },
     { "github/copilot.vim" },
