@@ -9,6 +9,7 @@ davidmh
 devc
 enew
 folke
+gitmojis
 hrsh
 iamcco
 intelephense
@@ -33,6 +34,7 @@ rebelot
 saadparwaiz
 terraformls
 tflint
+toset
 tpope
 virt
 vsnip
