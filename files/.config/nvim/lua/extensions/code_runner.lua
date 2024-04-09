@@ -3,6 +3,16 @@ require("code_runner").setup({
         php = {
             "php artisan tinker --ansi $fileName $XDG_CONFIG_HOME/php/exit.php",
         },
+        phpunit = {},
+        rust = {},
+        [""] = function()
+            local shebang = vim.api.nvim_buf_get_lines(0, 0, 1, 1)[1]
+            if shebang:match("<?php") then
+                vim.api.nvim_command("write! " .. ".tmp/" .. os.time() .. ".php")
+            elseif shebang:match("bash") then
+                vim.api.nvim_command("write! " .. "/tmp/" .. os.time() .. ".sh")
+            end
+            vim.api.nvim_command("RunCode")
+        end,
     },
-    temporaryFileName = "tempCodeRunnerFile",
 })
