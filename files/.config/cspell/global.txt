@@ -35,6 +35,7 @@ rcarriga
 rebelot
 saadparwaiz
 terraformls
+testdox
 tflint
 toset
 tpope
