@@ -29,13 +29,13 @@ require("mason-lspconfig").setup_handlers({
             capabilities = capabilities,
         })
     end,
-    ["intelephense"] = function()
-        default_config = {
-            init_options = {
-                licenceKey = vim.env.INTELEPHENSE_LICENCE_KEY,
-            },
-        }
-    end,
+    -- ["intelephense"] = function()
+    --     default_config = {
+    --         init_options = {
+    --             licenceKey = vim.env.INTELEPHENSE_LICENCE_KEY,
+    --         },
+    --     }
+    -- end,
     ["eslint"] = function()
         lspconfig.eslint.setup({
             capabilities = capabilities,
