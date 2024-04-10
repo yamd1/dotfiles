@@ -44,7 +44,9 @@ vim.keymap.set("n", "<Leader>g", builtin.live_grep, opts)
 
 vim.keymap.set("n", "][", ":lua _terminal_toggle()<CR>", opts)
 vim.keymap.set("t", "}}", "<C-\\><C-n>")
-vim.keymap.set("t", "][", "<C-\\><C-n> :lua _terminal_toggle()<CR>", opts)
+vim.keymap.set("t", "][", function()
+    _terminal_toggle()
+end, opts)
 vim.keymap.set("n", "<C-e>", ":NvimTreeToggle<CR>", opts)
 vim.keymap.set("n", "<leader>r", ":RunCode<CR>", opts)
 
