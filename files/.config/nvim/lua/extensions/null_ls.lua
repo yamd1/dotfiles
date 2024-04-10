@@ -33,6 +33,7 @@ null_ls.setup({
         require("cspell").code_actions.with({
             config = cspell_config,
         }),
+        null_ls.builtins.formatting.yamlfmt,
     },
     should_attach = function(bufnr)
         -- NvimTreeにcspellがアタッチされないように
