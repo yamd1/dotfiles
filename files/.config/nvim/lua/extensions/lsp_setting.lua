@@ -44,6 +44,12 @@ require("mason-lspconfig").setup_handlers({
             settings = require("extensions.lsp.eslint").settings,
         })
     end,
+    ["terraformls"] = function()
+        lspconfig.terraformls.setup({
+            capabilities = capabilities,
+            filetype = { "terraform", "terraform-vars", "hcl" },
+        })
+    end,
 })
 
 require("mason-null-ls").setup({
