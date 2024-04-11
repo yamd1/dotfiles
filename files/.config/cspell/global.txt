@@ -1,4 +1,5 @@
 DUPS
+FQIN
 Munif
 PLUSE
 akinsho
@@ -7,6 +8,7 @@ bprev
 cappyzawa
 davidmh
 devc
+ecspresso
 enew
 folke
 gitmojis
@@ -37,6 +39,7 @@ saadparwaiz
 terraformls
 testdox
 tflint
+tfstate
 toset
 tpope
 virt
