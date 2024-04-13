@@ -14,12 +14,14 @@ envrc
 folke
 gitmojis
 higroup
+hlslens
 hrsh
 iamcco
 intelephense
 jsonls
 junegunn
 kanagawa
+kevinhwang
 lago
 licence
 linehl
