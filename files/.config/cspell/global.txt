@@ -10,6 +10,7 @@ davidmh
 devc
 ecspresso
 enew
+envrc
 folke
 gitmojis
 higroup
