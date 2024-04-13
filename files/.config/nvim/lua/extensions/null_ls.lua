@@ -1,4 +1,3 @@
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local null_ls = require("null-ls")
 local cspell_config = {
     find_json = function(_)

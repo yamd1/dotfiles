@@ -23,10 +23,10 @@
   useConfigOnly = true
 [alias]
   ss = status
-  co = commit -m
-  pushf = push --force-with-lease --force-if-includes
+  co = commit
+  sw = switch
   logg = log --graph --pretty=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --abbrev-commit --date=relative --color=always
-  users = user --config ~/.config/git/profies
+  users = user --config ~/.config/git/profiles
 [diff]
   indentHeuristic = true
   colorMoved = default
