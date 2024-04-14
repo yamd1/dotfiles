@@ -6,6 +6,7 @@ vim.keymap.set("v", "x", '"_x', opts)
 vim.keymap.set("n", "s", '"_s', opts)
 vim.keymap.set("v", "s", '"_s', opts)
 vim.keymap.set("n", "<Esc>", ":nohl<Esc>", opts)
+vim.keymap.set("v", "p", '"_xP', opts)
 
 vim.keymap.set("n", "<C-s>", ":w!<CR>", opts)
 vim.keymap.set("n", "<C-q>", ":q<CR>", opts)
