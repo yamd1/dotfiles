@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+git:
+  parseEmoji: true
+gui:
+  showIcons: true
+customCommands:
+  - key: "<C-c>"
+    context: "files"
+    command: 'git commit -m "$(echo {{.Form.Row}} | cut -d" " -f1) {{.Form.Message}}"'
+    prompts:
+      - type: "input"
+        title: "Select gitmoji"
+        key: "Row"
+        suggestions:
+          command: 'cat "$XDG_DATA_HOME/git/emoji.json" | jq -r ".gitmojis[] | [.code,.name,.description] | @tsv" | sed "s/\t/ /g" | emojify'
+      - type: "input"
+        title: "Commit message"
+        key: "Message"

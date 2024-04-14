@@ -26,6 +26,7 @@ alias sw="git switch"
 alias rb="git rebase"
 alias bd="git-branch-bulk-delete"
 alias ghs="gh-auth-switch-wrapped"
+alias lg="lazygit"
 
 add-zsh-hook precmd send-osc7
 

@@ -11,9 +11,11 @@ cappyzawa
 davidmh
 devc
 ecspresso
+emojify
 enew
 envrc
 folke
+gitmoji
 gitmojis
 higroup
 hlslens
