@@ -1,6 +1,5 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/aqua-yaml.json
 # cspell: disable
----
 registries:
   - type: standard
     ref: v4.155.1 # renovate: depName=aquaproj/aqua-registry
@@ -32,3 +31,4 @@ packages:
   - name: gesquive/git-user@v2.0.6
   - name: x-motemen/ghq@v1.5.0
   - name: jdx/mise@v2024.4.0
+  - name: jesseduffield/lazygit@v0.41.0
