@@ -92,8 +92,6 @@ local plugins = {
 
     { "lewis6991/gitsigns.nvim" },
     { "sindrets/diffview.nvim" },
-    { "tpope/vim-fugitive" },
-    { "rbong/vim-flog" },
     {
         "akinsho/toggleterm.nvim",
         config = true,
