@@ -12,7 +12,7 @@ customCommands:
         title: "Select gitmoji"
         key: "Row"
         suggestions:
-          command: 'cat "$XDG_DATA_HOME/git/emoji.json" | jq -r ".gitmojis[] | [.code,.name,.description] | @tsv" | sed "s/\t/ /g" | sed "s/[\(\)]/ /g" | emojify'
+          command: 'cat "$XDG_DATA_HOME/git/emoji.json" | jq -r ".gitmojis[] | [.code,.name,.description] | @tsv" | sed "s/[\t\(\)]/ /g" | emojify'
       - type: "input"
         title: "Commit message"
         key: "Message"
