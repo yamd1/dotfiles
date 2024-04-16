@@ -16,3 +16,6 @@ customCommands:
       - type: "input"
         title: "Commit message"
         key: "Message"
+  - key: "p"
+    context: "global"
+    command: 'git pull --rebase'
