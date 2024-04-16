@@ -1,17 +1,15 @@
 local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "x", '"_x', opts)
-vim.keymap.set("v", "x", '"_x', opts)
-vim.keymap.set("n", "s", '"_s', opts)
-vim.keymap.set("v", "s", '"_s', opts)
+vim.keymap.set({ "n", "v" }, "x", '"_x', opts)
+vim.keymap.set({ "n", "v" }, "s", '"_s', opts)
 vim.keymap.set("v", "p", '"_xP', opts)
 vim.keymap.set("n", "<Esc>", "<Cmd>nohl<CR><Esc>", opts)
 
 vim.keymap.set("n", "<C-s>", "<Cmd>w!<CR>", opts)
 vim.keymap.set("n", "<C-q>", "<Cmd>q<CR>", opts)
 vim.keymap.set("n", "<C-Q>", "<Cmd>q!<CR>", opts)
-vim.keymap.set("n", "<Leader>bd", "<Cmd>bd<CR>", opts)
+vim.keymap.set("n", "<Leader>q", "<Cmd>bp|vsp|bn|bd<CR>")
 vim.keymap.set("n", "<Leader>ee", "<Cmd>enew<CR>", opts)
 vim.keymap.set("n", "<C-Right>", "<C-w>>", opts)
 vim.keymap.set("n", "<C-Left>", "<C-w><", opts)
@@ -53,7 +51,7 @@ vim.keymap.set("n", "<leader>r", "<Cmd>RunCode<CR>", opts)
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+vim.keymap.set("n", "<Leader><space>q", vim.diagnostic.setloclist)
 
 vim.api.nvim_set_keymap(
     "n",
