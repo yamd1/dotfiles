@@ -33,6 +33,10 @@ null_ls.setup({
             config = cspell_config,
         }),
         null_ls.builtins.formatting.yamlfmt,
+        null_ls.builtins.formatting.biome.with({
+            command = vim.loop.cwd() .. "/node_modules/.bin/biome",
+            args = { "format", "--write", "--config-path", vim.loop.cwd(), "$FILENAME" },
+        }),
     },
     should_attach = function(bufnr)
         -- NvimTreeにcspellがアタッチされないように

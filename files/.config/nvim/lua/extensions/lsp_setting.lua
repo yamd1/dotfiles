@@ -28,26 +28,38 @@ require("mason-lspconfig").setup_handlers({
         lspconfig[server_name].setup({
             capabilities = capabilities,
         })
-    end,
-    -- ["intelephense"] = function()
-    --     default_config = {
-    --         init_options = {
-    --             licenceKey = vim.env.INTELEPHENSE_LICENCE_KEY,
-    --         },
-    --     }
-    -- end,
-    ["eslint"] = function()
+
+        lspconfig.terraformls.setup({
+            capabilities = capabilities,
+            filetype = { "terraform", "terraform-vars", "hcl" },
+        })
+
         lspconfig.eslint.setup({
             capabilities = capabilities,
             handlers = handlers,
             on_attach = require("extensions.lsp.eslint").on_attach,
             settings = require("extensions.lsp.eslint").settings,
         })
-    end,
-    ["terraformls"] = function()
-        lspconfig.terraformls.setup({
+
+        lspconfig.biome.setup({
             capabilities = capabilities,
-            filetype = { "terraform", "terraform-vars", "hcl" },
+            cmd = {
+                vim.loop.cwd() .. "/node_modules/.bin/biome",
+                "lsp-proxy",
+                "--config-path",
+                vim.loop.cwd() .. "/biome.json",
+            },
+            filetype = {
+                "javascript",
+                "javascriptreact",
+                "json",
+                "jsonc",
+                "typescript",
+                "typescript.tsx",
+                "typescriptreact",
+                "svelte",
+                "vue",
+            },
         })
     end,
 })
