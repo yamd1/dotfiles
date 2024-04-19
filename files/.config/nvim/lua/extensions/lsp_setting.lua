@@ -61,6 +61,19 @@ require("mason-lspconfig").setup_handlers({
                 "vue",
             },
         })
+
+        lspconfig.jsonnet_ls.setup({
+            capabilities = vim.lsp.protocol.make_client_capabilities(),
+            flags = {
+                debounce_text_changes = 150,
+            },
+            cmd = { "jsonnet-language-server", "--lint" },
+            settings = {
+                formatting = {
+                    UseImplicitPlus = true,
+                },
+            },
+        })
     end,
 })
 
