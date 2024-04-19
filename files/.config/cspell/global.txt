@@ -1,14 +1,18 @@
 DUPS
+FCGI
 FQIN
 Munif
 NFLG
+NOPASSWD
 PLUSE
 UDEV
 akinsho
 aquaproj-aqua
 bprev
+buildx
 cappyzawa
 davidmh
+deno
 devc
 ecspresso
 emojify
@@ -27,6 +31,8 @@ junegunn
 kanagawa
 kevinhwang
 lago
+libfcgi
+libonig
 licence
 linehl
 lnav
@@ -37,8 +43,11 @@ mkdp
 navi
 nohl
 noice
+nproc
 ntpeters
 numhl
+opcache
+pecl
 rbong
 rcarriga
 rebelot
@@ -49,6 +58,7 @@ tflint
 tfstate
 toset
 tpope
+uroot
 virt
 vsnip
 wezterm
