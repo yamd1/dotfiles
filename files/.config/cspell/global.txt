@@ -5,8 +5,10 @@ Munif
 NFLG
 NOPASSWD
 PLUSE
+TMPSUFFIX
 UDEV
 akinsho
+aquaproj
 aquaproj-aqua
 bprev
 buildx
@@ -18,12 +20,15 @@ ecspresso
 emojify
 enew
 envrc
+esac
 folke
+fpath
 gitmoji
 gitmojis
 higroup
 hlslens
 hrsh
+hscroll
 iamcco
 intelephense
 jsonls
@@ -59,6 +64,7 @@ tfstate
 toset
 tpope
 uroot
+vcpu
 virt
 vsnip
 wezterm
