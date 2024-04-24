@@ -8,7 +8,7 @@ require("code_runner").setup({
             return "php artisan tinker --ansi .tmp/$fileName $XDG_CONFIG_HOME/php/exit.php"
         end,
         bash = function(...)
-            local fname = vim.fn.expand("%:t")
+            local fname = vim.fn.expand("%:p")
             if fname ~= "" then
                 return "bash " .. fname
             end
