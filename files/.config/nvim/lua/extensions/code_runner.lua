@@ -7,6 +7,16 @@ require("code_runner").setup({
             end
             return "php artisan tinker --ansi .tmp/$fileName $XDG_CONFIG_HOME/php/exit.php"
         end,
+        bash = function(...)
+            local fname = vim.fn.expand("%:t")
+            if fname ~= "" then
+                return "bash " .. fname
+            end
+
+            local new_fname = "/tmp/" .. os.time() .. ".sh"
+            vim.api.nvim_command("write! " .. new_fname)
+            return "bash " .. new_fname
+        end,
         rust = {},
         [""] = function()
             local shebang = vim.api.nvim_buf_get_lines(0, 0, 1, 1)[1]
