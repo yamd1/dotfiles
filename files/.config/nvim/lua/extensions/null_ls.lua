@@ -20,7 +20,7 @@ null_ls.setup({
         null_ls.builtins.formatting.prettier.with({
             command = "/opt/app/node_modules/.bin/prettier",
             args = { "$FILENAME" },
-            filetypes = { "js", "ts" },
+            filetypes = { "js", "ts", "yml", "yaml" },
         }),
         null_ls.builtins.diagnostics.terraform_validate,
         require("cspell").diagnostics.with({
@@ -32,7 +32,6 @@ null_ls.setup({
         require("cspell").code_actions.with({
             config = cspell_config,
         }),
-        null_ls.builtins.formatting.yamlfmt,
         null_ls.builtins.formatting.biome.with({
             command = vim.loop.cwd() .. "/node_modules/.bin/biome",
             args = { "format", "--write", "--config-path", vim.loop.cwd(), "$FILENAME" },
@@ -42,6 +41,7 @@ null_ls.setup({
         -- NvimTreeにcspellがアタッチされないように
         return not vim.api.nvim_buf_get_name(bufnr):match("NvimTree_1$")
     end,
+    temp_dir = "/tmp",
 })
 
 if vim.fn.filereadable("~/.local/share/cspell/vim.txt.gz") ~= 1 then
