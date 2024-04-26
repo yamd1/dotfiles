@@ -13,6 +13,7 @@ aquaproj-aqua
 bprev
 buildx
 cappyzawa
+clippy
 davidmh
 deno
 devc
@@ -31,6 +32,7 @@ hrsh
 hscroll
 iamcco
 intelephense
+jsonlfmt
 jsonls
 junegunn
 kanagawa
@@ -45,6 +47,7 @@ luarc
 luasnip
 lukas
 mkdp
+mrcjkb
 navi
 nohl
 noice
@@ -56,6 +59,7 @@ pecl
 rbong
 rcarriga
 rebelot
+rustaceanvim
 saadparwaiz
 terraformls
 testdox
