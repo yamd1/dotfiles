@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json
+services:
+  app:
+    environment:
+      IS_CONTAINER: true
+      DISPLAY: $DISPLAY
+      XDG_RUNTIME_DIR: /tmp
+      GH_CONFIG_DIR: /home/appuser/.gh-config
+      WAYLAND_DISPLAY: $WAYLAND_DISPLAY
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
+    volumes:
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
+      - type: bind
+        source: ${XDG_RUNTIME_DIR}/wayland-0
+        target: /tmp/wayland-0
+      - type: bind
+        source: ${HOME}/.config/gh
+        target: /home/appuser/.gh-config
+      - type: bind
+        source: ${HOME}/.aws
+        target: /home/appuser/.aws
+      - type: bind
+        source: ${HOME}/dotfiles/files/.config/intelephense
+        target: /home/appuser/intelephense
+      - type: volume
+        source: zsh-history
+        target: /home/appuser/history
+volumes:
+  zsh-history:

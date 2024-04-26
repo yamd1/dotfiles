@@ -29,6 +29,13 @@ require("mason-lspconfig").setup_handlers({
             capabilities = capabilities,
         })
 
+        lspconfig.rust_analyzer.setup({
+            capabilities = capabilities,
+            checkOnSave = {
+                command = "clippy",
+            },
+        })
+
         lspconfig.terraformls.setup({
             capabilities = capabilities,
             filetype = { "terraform", "terraform-vars", "hcl" },
