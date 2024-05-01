@@ -2,7 +2,7 @@ require("code_runner").setup({
     filetype = {
         php = function(...)
             local fname = vim.fn.expand("%:t")
-            if fname ~= "" then
+            if fname == "" then
                 vim.api.nvim_command("write! " .. ".tmp/" .. os.time() .. ".php")
             elseif fname:match("Test.php$") then
                 return "php artisan test --testdox $file"
