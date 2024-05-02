@@ -7,17 +7,20 @@ require("code_runner").setup({
             elseif fname:match("Test.php$") then
                 return "php artisan test --testdox $file"
             end
-            return "php artisan tinker --ansi .tmp/$fileName $XDG_CONFIG_HOME/php/exit.php"
+
+            -- 保存したファイル名を再取得する
+            local fname = vim.fn.expand("%:t")
+            return "php artisan tinker --ansi .tmp/" .. fname .. " $XDG_CONFIG_HOME/php/exit.php"
         end,
         bash = function(...)
-            local fname = vim.fn.expand("%:p")
-            if fname ~= "" then
-                return "bash " .. fname
+            local fname = vim.fn.expand("%:t")
+            if fname == "" then
+                vim.api.nvim_command("write! " .. "/tmp/" .. os.time() .. ".sh")
             end
 
-            local new_fname = "/tmp/" .. os.time() .. ".sh"
-            vim.api.nvim_command("write! " .. new_fname)
-            return "bash " .. new_fname
+            -- 保存したファイル名をフルパスで再取得する
+            local fname = vim.fn.expand("%:p")
+            return "bash " .. fname
         end,
         rust = {},
         [""] = function()
