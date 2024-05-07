@@ -12,7 +12,7 @@ null_ls.setup({
     sources = {
         null_ls.builtins.diagnostics.phpstan.with({
             command = "/opt/app/vendor/bin/phpstan",
-            args = { "analyze", "--error-format", "json", "--no-progress", "--memory-limit=-1", "$FILENAME" },
+            args = { "analyze", "--error-format", "json", "--no-progress", "--memory-limit=-1" },
         }),
         null_ls.builtins.formatting.pint.with({
             command = "/opt/app/vendor/bin/pint",
