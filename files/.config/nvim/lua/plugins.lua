@@ -85,6 +85,21 @@ local plugins = {
             "williamboman/mason.nvim",
         },
     },
+    {
+        "nvimdev/lspsaga.nvim",
+        config = function()
+            require("lspsaga").setup({
+                symbol_in_winbar = {
+                    enable = false,
+                    show_file = false,
+                },
+            })
+        end,
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter", -- optional
+            "nvim-tree/nvim-web-devicons", -- optional
+        },
+    },
 
     { "ntpeters/vim-better-whitespace" },
     {
@@ -111,6 +126,7 @@ local plugins = {
     { "kevinhwang91/nvim-hlslens" },
     { "norcalli/nvim-colorizer.lua" },
     { "CRAG666/code_runner.nvim" },
+    { "monaqa/dial.nvim" },
     { "github/copilot.vim" },
     {
         "iamcco/markdown-preview.nvim",
