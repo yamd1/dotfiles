@@ -1,5 +1,4 @@
--- cspell:disable
-
+-- cspell: disable
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -16,14 +15,11 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     { "nvim-lua/plenary.nvim" },
     { "MunifTanjim/nui.nvim" },
-    { "nvim-telescope/telescope.nvim" },
     {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        opts = {},
+        "nvim-telescope/telescope.nvim",
         dependencies = {
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
+            "nvim-lua/plenary.nvim",
+            "jonarrien/telescope-cmdline.nvim",
         },
     },
     { "junegunn/fzf.vim" },
@@ -85,6 +81,13 @@ local plugins = {
             "williamboman/mason.nvim",
         },
     },
+    {
+        "nvimdev/lspsaga.nvim",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter", -- optional
+            "nvim-tree/nvim-web-devicons", -- optional
+        },
+    },
 
     { "ntpeters/vim-better-whitespace" },
     {
@@ -111,6 +114,7 @@ local plugins = {
     { "kevinhwang91/nvim-hlslens" },
     { "norcalli/nvim-colorizer.lua" },
     { "CRAG666/code_runner.nvim" },
+    { "monaqa/dial.nvim" },
     { "github/copilot.vim" },
     {
         "iamcco/markdown-preview.nvim",
