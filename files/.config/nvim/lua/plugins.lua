@@ -22,6 +22,15 @@ local plugins = {
             "jonarrien/telescope-cmdline.nvim",
         },
     },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {},
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
+    },
     { "junegunn/fzf.vim" },
     {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -81,13 +90,13 @@ local plugins = {
             "williamboman/mason.nvim",
         },
     },
-    {
-        "nvimdev/lspsaga.nvim",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter", -- optional
-            "nvim-tree/nvim-web-devicons", -- optional
-        },
-    },
+    -- {
+    --     "nvimdev/lspsaga.nvim",
+    --     dependencies = {
+    --         "nvim-treesitter/nvim-treesitter", -- optional
+    --         "nvim-tree/nvim-web-devicons", -- optional
+    --     },
+    -- },
 
     { "ntpeters/vim-better-whitespace" },
     {
@@ -112,6 +121,7 @@ local plugins = {
     },
     { "cappyzawa/trim.nvim" },
     { "kevinhwang91/nvim-hlslens" },
+
     { "norcalli/nvim-colorizer.lua" },
     { "CRAG666/code_runner.nvim" },
     { "monaqa/dial.nvim" },
