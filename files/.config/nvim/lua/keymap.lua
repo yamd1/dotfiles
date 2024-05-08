@@ -114,5 +114,3 @@ end)
 vim.keymap.set("v", "g<C-x>", function()
     require("dial.map").manipulate("decrement", "gvisual")
 end)
-
-vim.api.nvim_set_keymap("n", ":", ":Telescope cmdline<CR>", { noremap = true, desc = "Cmdline" })
