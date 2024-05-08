@@ -64,6 +64,11 @@ local plugins = {
     { "L3MON4D3/LuaSnip" },
 
     {
+        "stevearc/conform.nvim",
+        opts = {},
+    },
+
+    {
         "nvimtools/none-ls.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
