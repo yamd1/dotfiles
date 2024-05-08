@@ -15,13 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     { "nvim-lua/plenary.nvim" },
     { "MunifTanjim/nui.nvim" },
-    {
-        "nvim-telescope/telescope.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "jonarrien/telescope-cmdline.nvim",
-        },
-    },
+    { "nvim-telescope/telescope.nvim" },
     {
         "folke/noice.nvim",
         event = "VeryLazy",
@@ -90,13 +84,6 @@ local plugins = {
             "williamboman/mason.nvim",
         },
     },
-    -- {
-    --     "nvimdev/lspsaga.nvim",
-    --     dependencies = {
-    --         "nvim-treesitter/nvim-treesitter", -- optional
-    --         "nvim-tree/nvim-web-devicons", -- optional
-    --     },
-    -- },
 
     { "ntpeters/vim-better-whitespace" },
     {
