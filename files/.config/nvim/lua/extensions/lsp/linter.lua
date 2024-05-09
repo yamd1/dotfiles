@@ -14,8 +14,6 @@ null_ls.setup({
             command = "vendor/bin/phpstan",
             args = {
                 "analyse",
-                "-c",
-                "phpstan.neon",
                 "--error-format",
                 "json",
                 "--no-progress",
@@ -38,7 +36,6 @@ null_ls.setup({
         -- NvimTreeにcspellがアタッチされないように
         return not vim.api.nvim_buf_get_name(bufnr):match("NvimTree_1$")
     end,
-    temp_dir = "/tmp",
 })
 
 if vim.fn.filereadable("~/.local/share/cspell/vim.txt.gz") ~= 1 then
