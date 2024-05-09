@@ -11,16 +11,15 @@ local cspell_config = {
 null_ls.setup({
     sources = {
         null_ls.builtins.diagnostics.phpstan.with({
-            command = "/opt/app/vendor/bin/phpstan",
-            args = { "analyze", "--error-format", "json", "--no-progress", "--memory-limit=-1" },
-        }),
-        null_ls.builtins.formatting.pint.with({
-            command = "/opt/app/vendor/bin/pint",
-        }),
-        null_ls.builtins.formatting.prettier.with({
-            command = "/opt/app/node_modules/.bin/prettier",
-            args = { "$FILENAME" },
-            filetypes = { "js", "ts", "yml", "yaml", "markdown" },
+            command = "vendor/bin/phpstan",
+            args = {
+                "analyse",
+                "--error-format",
+                "json",
+                "--no-progress",
+                "--memory-limit=-1",
+                "$FILENAME",
+            },
         }),
         null_ls.builtins.diagnostics.terraform_validate,
         require("cspell").diagnostics.with({
@@ -31,10 +30,6 @@ null_ls.setup({
         }),
         require("cspell").code_actions.with({
             config = cspell_config,
-        }),
-        null_ls.builtins.formatting.biome.with({
-            command = vim.loop.cwd() .. "/node_modules/.bin/biome",
-            args = { "format", "--write", "--config-path", vim.loop.cwd(), "$FILENAME" },
         }),
     },
     should_attach = function(bufnr)
