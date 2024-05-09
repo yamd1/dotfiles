@@ -14,6 +14,8 @@ null_ls.setup({
             command = "vendor/bin/phpstan",
             args = {
                 "analyse",
+                "-c",
+                "phpstan.neon",
                 "--error-format",
                 "json",
                 "--no-progress",
