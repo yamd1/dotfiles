@@ -33,3 +33,4 @@ packages:
   - name: jdx/mise@v2024.4.0
   - name: jesseduffield/lazygit@v0.41.0
   - name: golang/go@go1.22.2
+  - name: awslabs/amazon-ecr-credential-helper@v0.7.1
