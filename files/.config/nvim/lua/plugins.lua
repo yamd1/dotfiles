@@ -19,7 +19,6 @@ local plugins = {
     {
         "folke/noice.nvim",
         event = "VeryLazy",
-        opts = {},
         dependencies = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
@@ -87,6 +86,13 @@ local plugins = {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         dependencies = {
             "williamboman/mason.nvim",
+        },
+    },
+    {
+        "nvimdev/lspsaga.nvim",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons",
         },
     },
 
