@@ -125,6 +125,15 @@ local plugins = {
     { "CRAG666/code_runner.nvim" },
     { "monaqa/dial.nvim" },
     { "github/copilot.vim" },
+    { "ixru/nvim-markdown" },
+    {
+        "MeanderingProgrammer/markdown.nvim",
+        name = "render-markdown",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        config = function()
+            require("render-markdown").setup({})
+        end,
+    },
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
