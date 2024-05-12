@@ -12,6 +12,7 @@ require("extensions/nvim_treesitter")
 require("extensions/hlslens")
 require("extensions/noice")
 require("extensions/nvim_colorizer")
+require("extensions/which_key")
 
 require("extensions/lsp/lsp_setting")
 require("extensions/lsp/linter")

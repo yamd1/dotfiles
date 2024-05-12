@@ -89,12 +89,20 @@ local plugins = {
         },
     },
 
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+    },
     { "ntpeters/vim-better-whitespace" },
     {
         "numToStr/Comment.nvim",
         config = true,
     },
-
+    { "monaqa/dial.nvim" },
     { "lewis6991/gitsigns.nvim" },
     { "sindrets/diffview.nvim" },
     {
