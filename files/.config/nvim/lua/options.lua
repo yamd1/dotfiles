@@ -24,3 +24,5 @@ vim.opt.smartcase = true
 vim.diagnostic.config({ severity_sort = true })
 vim.opt.foldenable = true
 vim.opt.foldmethod = "manual"
+vim.opt.laststatus = 3
+vim.opt.cmdheight = 0
