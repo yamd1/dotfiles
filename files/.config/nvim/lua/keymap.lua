@@ -48,11 +48,6 @@ end, opts)
 vim.keymap.set("n", "<C-e>", "<Cmd>NvimTreeToggle<CR>", opts)
 vim.keymap.set("n", "<leader>r", "<Cmd>RunCode<CR>", opts)
 
-vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<Leader><space>q", vim.diagnostic.setloclist)
-
 vim.api.nvim_set_keymap(
     "n",
     "n",
@@ -80,13 +75,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, ops)
         vim.keymap.set("n", "gh", vim.lsp.buf.hover, ops)
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, ops)
-        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, ops)
-        vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, ops)
-        vim.keymap.set({ "n", "v" }, "<space>ca", "<Cmd>Lspsaga code_action<CR>", ops)
+        vim.keymap.set("n", "gk", vim.lsp.buf.signature_help, ops)
+        vim.keymap.set("n", "gn", vim.lsp.buf.rename, ops)
+        vim.keymap.set({ "n", "v" }, "ga", vim.lsp.buf.code_action, ops)
         vim.keymap.set("n", "gr", vim.lsp.buf.references, ops)
-        vim.keymap.set("n", "<space>f", function()
+        vim.keymap.set("n", "gf", function()
             vim.lsp.buf.format({ async = true })
         end, ops)
+        vim.keymap.set("n", "g[", vim.diagnostic.goto_prev, ops)
+        vim.keymap.set("n", "g]", vim.diagnostic.goto_next, ops)
+        vim.keymap.set("n", "ge", vim.diagnostic.open_float)
+        vim.keymap.set("n", "<Leader><space>q", vim.diagnostic.setloclist)
     end,
 })
 
