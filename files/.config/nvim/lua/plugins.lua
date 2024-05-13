@@ -121,6 +121,11 @@ local plugins = {
     { "cappyzawa/trim.nvim" },
     { "kevinhwang91/nvim-hlslens" },
 
+    {
+        "kylechui/nvim-surround",
+        version = "*",
+        event = "VeryLazy",
+    },
     { "norcalli/nvim-colorizer.lua" },
     { "CRAG666/code_runner.nvim" },
     { "monaqa/dial.nvim" },
