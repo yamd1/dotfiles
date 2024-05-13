@@ -15,6 +15,7 @@ require("extensions/nvim_colorizer")
 require("extensions/which_key")
 require("extensions/nvim_surround")
 require("extensions/incline")
+require("extensions/treesj")
 
 require("extensions/lsp/lsp_setting")
 require("extensions/lsp/linter")

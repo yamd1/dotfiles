@@ -113,3 +113,5 @@ end)
 vim.keymap.set("v", "g<C-x>", function()
     require("dial.map").manipulate("decrement", "gvisual")
 end)
+
+vim.keymap.set("n", "<Leader>m", require("treesj").toggle, opts)
