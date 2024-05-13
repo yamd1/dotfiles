@@ -120,7 +120,10 @@ local plugins = {
     },
     { "cappyzawa/trim.nvim" },
     { "kevinhwang91/nvim-hlslens" },
-
+    {
+        "b0o/incline.nvim",
+        event = "VeryLazy",
+    },
     {
         "kylechui/nvim-surround",
         version = "*",
