@@ -130,6 +130,10 @@ local plugins = {
         version = "*",
         event = "VeryLazy",
     },
+    {
+        "Wansmer/treesj",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+    },
     { "norcalli/nvim-colorizer.lua" },
     { "CRAG666/code_runner.nvim" },
     { "monaqa/dial.nvim" },
