@@ -4,6 +4,10 @@ require("nvim-treesitter.configs").setup({
         "jsonnet",
         "markdown",
         "markdown_inline",
+        "sql",
+        "php",
+        "rust",
+        "php_only",
     },
     highlight = {
         enable = true,
