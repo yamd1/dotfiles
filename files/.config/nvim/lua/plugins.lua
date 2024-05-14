@@ -141,6 +141,7 @@ local plugins = {
         "Wansmer/treesj",
         dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
+    { "kazhala/close-buffers.nvim" },
     { "norcalli/nvim-colorizer.lua" },
     { "CRAG666/code_runner.nvim" },
     { "monaqa/dial.nvim" },
