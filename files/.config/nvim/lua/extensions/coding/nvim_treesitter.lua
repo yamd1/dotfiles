@@ -5,11 +5,5 @@ require("nvim-treesitter.configs").setup({
         "markdown",
         "markdown_inline",
         "sql",
-        "php",
-        "rust",
-        "php_only",
-    },
-    highlight = {
-        enable = true,
     },
 })
