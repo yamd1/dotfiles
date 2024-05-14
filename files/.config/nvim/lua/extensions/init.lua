@@ -17,6 +17,7 @@ require("extensions/coding/trim")
 require("extensions/coding/nvim_treesitter")
 require("extensions/coding/nvim_surround")
 require("extensions/coding/treesj")
+require("extensions/coding/close_buffers")
 
 require("extensions/lsp/lsp_setting")
 require("extensions/lsp/linter")
