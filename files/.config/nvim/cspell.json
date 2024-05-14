@@ -10,18 +10,18 @@
     {
       "addWords": true,
       "name": "global",
-      "path": "~/.config/cspell/global.txt",
+      "path": "./cspell/global.txt",
       "description": "Global dictionary. About 'addWords' in https://github.com/davidmh/cspell.nvim/blob/2e65904243f41b9002618d1fe0d79def6c795eeb/lua/cspell/code_actions/init.lua#L132"
     },
     {
       "addWords": true,
       "name": "local",
-      "path": "~/.local/share/cspell/local.txt",
+      "path": "./cspell/local.txt",
       "description": "Local dictionary. About 'addWords' in https://github.com/davidmh/cspell.nvim/blob/2e65904243f41b9002618d1fe0d79def6c795eeb/lua/cspell/code_actions/init.lua#L132"
     },
     {
       "name": "vim",
-      "path": "~/.local/share/cspell/vim.txt.gz",
+      "path": "./cspell/vim.txt.gz",
       "description": "Vim Script Language dictionary"
     }
   ],

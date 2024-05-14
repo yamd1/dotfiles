@@ -1,7 +1,8 @@
 local null_ls = require("null-ls")
+local nvim_path = vim.fn.stdpath("config")
 local cspell_config = {
     find_json = function(_)
-        return vim.fn.expand("~/dotfiles/cspell.json")
+        return vim.fn.expand(nvim_path .. "/cspell.json")
     end,
     on_add_to_dictionary = function(payload)
         os.execute(string.format("sort %s -o %s", payload.dictionary_path, payload.dictionary_path))
@@ -38,12 +39,13 @@ null_ls.setup({
     end,
 })
 
-if vim.fn.filereadable("~/.local/share/cspell/vim.txt.gz") ~= 1 then
+local vim_dict_path = nvim_path .. "/cspell/vim.txt.gz"
+if vim.fn.filereadable(vim_dict_path) ~= 1 then
     local vim_dictionary_url = "https://github.com/iamcco/coc-spell-checker/raw/master/dicts/vim/vim.txt.gz"
-    io.popen("curl -fsSLo ~/.local/share/cspell/vim.txt.gz --create-dirs " .. vim_dictionary_url)
+    io.popen("curl -fsSLo " .. vim_dict_path .. " --create-dirs " .. vim_dictionary_url)
 end
 
-if vim.fn.filereadable("~/.local/share/cspell/local.txt") ~= 1 then
-    io.popen("mkdir -p ~/.local/share/cspell")
-    io.popen("touch ~/.local/share/cspell/local.txt")
+local local_dict_path = nvim_path .. "/cspell/local.txt"
+if vim.fn.filereadable(local_dict_path) ~= 1 then
+    io.popen("touch " .. local_dict_path)
 end
