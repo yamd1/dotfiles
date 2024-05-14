@@ -73,12 +73,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         local ops = { buffer = ev.buf }
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, ops)
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, ops)
-        vim.keymap.set("n", "gh", vim.lsp.buf.hover, ops)
+        vim.keymap.set("n", "gd", "<Cmd>Lspsaga goto_definition<CR>", ops)
+        vim.keymap.set("n", "gh", "<Cmd>Lspsaga hover_doc<CR>", ops)
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, ops)
         vim.keymap.set("n", "gk", vim.lsp.buf.signature_help, ops)
-        vim.keymap.set("n", "gn", vim.lsp.buf.rename, ops)
-        vim.keymap.set({ "n", "v" }, "ga", vim.lsp.buf.code_action, ops)
+        vim.keymap.set("n", "gn", "<Cmd>Lspsaga rename<CR>", ops)
+        vim.keymap.set({ "n", "v" }, "ga", "<Cmd>Lspsaga code_action<CR>", ops)
         vim.keymap.set("n", "gr", vim.lsp.buf.references, ops)
         vim.keymap.set("n", "gf", function()
             vim.lsp.buf.format({ async = true })
