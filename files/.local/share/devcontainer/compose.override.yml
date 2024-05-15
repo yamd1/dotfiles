@@ -20,9 +20,6 @@ services:
         source: ${HOME}/.config/gh
         target: /home/appuser/.gh-config
       - type: bind
-        source: ${HOME}/.aws
-        target: /home/appuser/.aws
-      - type: bind
         source: ${HOME}/dotfiles/files/.config/intelephense
         target: /home/appuser/intelephense
       - type: volume

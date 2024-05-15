@@ -25,7 +25,7 @@ files/.config/gh/**
 files/.config/github-copilot
 files/.local/share/composer/**
 files/.local/share/gh/**
-files/.config/intelephense/licence.txt
+files/.config/intelephense/**
+!files/.config/intelephense/.keep
 files/.config/gh-copilot/**
 files/.config/psysh/psysh_history
-files/.config/intelephense/**
