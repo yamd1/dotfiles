@@ -4,7 +4,11 @@ vim.g.mapleader = " "
 vim.keymap.set({ "n", "v" }, "x", '"_x', opts)
 vim.keymap.set({ "n", "v" }, "s", '"_s', opts)
 vim.keymap.set("v", "p", '"_xP', opts)
+
 vim.keymap.set("n", "<Esc>", "<Cmd>nohl<CR><Esc>", opts)
+vim.keymap.set("i", "jk", "<Cmd>nohl<CR><Esc>", opts)
+vim.keymap.set("i", "jj", "<Cmd>nohl<CR><Esc>", opts)
+vim.keymap.set("i", "kk", "<Cmd>nohl<CR><Esc>", opts)
 
 vim.keymap.set("n", "<C-s>", "<Cmd>w!<CR>", opts)
 vim.keymap.set("n", "<C-q>", "<Cmd>q<CR>", opts)
@@ -15,9 +19,6 @@ vim.keymap.set("n", "<Leader>ee", "<Cmd>enew<CR>", opts)
 vim.keymap.set("n", "<C-Right>", "<C-w>>", opts)
 vim.keymap.set("n", "<C-Left>", "<C-w><", opts)
 
-vim.keymap.set("i", "jk", "<Esc>", opts)
-vim.keymap.set("i", "jj", "<Esc>", opts)
-vim.keymap.set("i", "kk", "<Esc>", opts)
 vim.keymap.set("n", "<C-h>", "<Cmd>bprev<CR>", opts)
 vim.keymap.set("n", "<C-l>", "<Cmd>bnext<CR>", opts)
 vim.keymap.set("n", "<C-w>e", "<Cmd>NvimTreeFocus<CR>", opts)
