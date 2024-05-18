@@ -6,18 +6,18 @@ require("kanagawa").setup({
     keywordStyle = { italic = true },
     statementStyle = { bold = true },
     typeStyle = {},
-    transparent = false,   -- do not set background color
-    dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
-    terminalColors = true, -- define vim.g.terminal_color_{0,17}
-    colors = {             -- add/modify theme and palette colors
+    transparent = false,
+    dimInactive = false,
+    terminalColors = true,
+    colors = {
         palette = {},
         theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
     },
-    overrides = function(colors) -- add/modify highlights
+    overrides = function(_)
         return {}
     end,
-    theme = "dragon", -- Load "wave" theme when 'background' option is not set
-    background = {    -- map the value of 'background' option to a theme
+    theme = "dragon",
+    background = {
         dark = "dragon",
         light = "lotus",
     },
