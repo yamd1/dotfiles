@@ -30,10 +30,7 @@ local plugins = {
         build = "make",
     },
     { "nvim-telescope/telescope-file-browser.nvim" },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-    },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", lazy = false, branch = "main" },
     {
         "rebelot/kanagawa.nvim",
         lazy = true,
@@ -119,7 +116,7 @@ local plugins = {
     },
     { "nvim-tree/nvim-tree.lua" },
     { "nvim-tree/nvim-web-devicons" },
-    { "lukas-reineke/indent-blankline.nvim" },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     { "nvim-lualine/lualine.nvim" },
     {
         "akinsho/bufferline.nvim",
