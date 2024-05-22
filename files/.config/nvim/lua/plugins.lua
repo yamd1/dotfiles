@@ -60,11 +60,7 @@ local plugins = {
     { "f3fora/cmp-spell" },
     { "L3MON4D3/LuaSnip" },
 
-    {
-        "stevearc/conform.nvim",
-        opts = {},
-    },
-
+    { "stevearc/conform.nvim" },
     {
         "nvimtools/none-ls.nvim",
         dependencies = {
