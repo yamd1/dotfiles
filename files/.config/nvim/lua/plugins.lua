@@ -30,7 +30,7 @@ local plugins = {
         build = "make",
     },
     { "nvim-telescope/telescope-file-browser.nvim" },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", lazy = false, branch = "main" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", lazy = false },
     {
         "rebelot/kanagawa.nvim",
         lazy = true,
