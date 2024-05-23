@@ -84,6 +84,7 @@ local plugins = {
     },
     {
         "nvimdev/lspsaga.nvim",
+        commit = "ad61778283f26a9fa2c5a8d2f0aca52ba49f32f3",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
             "nvim-tree/nvim-web-devicons",
@@ -112,7 +113,7 @@ local plugins = {
     },
     { "nvim-tree/nvim-tree.lua" },
     { "nvim-tree/nvim-web-devicons" },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, lazy = false },
     { "nvim-lualine/lualine.nvim" },
     {
         "akinsho/bufferline.nvim",
