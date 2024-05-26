@@ -30,7 +30,8 @@ local plugins = {
         build = "make",
     },
     { "nvim-telescope/telescope-file-browser.nvim" },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", lazy = false },
+    -- { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", lazy = false },
+    { "nvim-treesitter/nvim-treesitter", lazy = false },
     {
         "rebelot/kanagawa.nvim",
         lazy = true,
@@ -86,7 +87,7 @@ local plugins = {
         "nvimdev/lspsaga.nvim",
         commit = "ad61778283f26a9fa2c5a8d2f0aca52ba49f32f3",
         dependencies = {
-            "nvim-treesitter/nvim-treesitter",
+            -- "nvim-treesitter/nvim-treesitter",
             "nvim-tree/nvim-web-devicons",
         },
     },
@@ -133,7 +134,7 @@ local plugins = {
     },
     {
         "Wansmer/treesj",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        -- dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
     { "kazhala/close-buffers.nvim" },
     { "norcalli/nvim-colorizer.lua" },
@@ -144,7 +145,7 @@ local plugins = {
     {
         "MeanderingProgrammer/markdown.nvim",
         name = "render-markdown",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        -- dependencies = { "nvim-treesitter/nvim-treesitter" },
         config = function()
             require("render-markdown").setup({})
         end,
