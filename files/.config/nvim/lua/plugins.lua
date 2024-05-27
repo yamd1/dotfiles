@@ -30,8 +30,29 @@ local plugins = {
         build = "make",
     },
     { "nvim-telescope/telescope-file-browser.nvim" },
-    -- { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", lazy = false },
-    { "nvim-treesitter/nvim-treesitter", lazy = false },
+
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter-textobjects",
+        },
+        main = "nvim-treesitter.configs",
+        opts = {
+            highlight = { enable = true },
+            ensure_installed = {
+                "lua",
+                "jsonnet",
+                "markdown",
+                "markdown_inline",
+                "sql",
+            },
+        },
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        event = "CursorMoved",
+    },
     {
         "rebelot/kanagawa.nvim",
         lazy = true,

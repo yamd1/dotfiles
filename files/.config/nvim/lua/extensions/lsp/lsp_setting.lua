@@ -21,7 +21,6 @@ require("mason-lspconfig").setup({
     },
 })
 
--- local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require("mason-lspconfig").setup_handlers({
     function(server_name)
@@ -39,13 +38,6 @@ require("mason-lspconfig").setup_handlers({
         require("lspconfig").terraformls.setup({
             capabilities = capabilities,
             filetype = { "terraform", "terraform-vars", "hcl" },
-        })
-
-        require("lspconfig").eslint.setup({
-            capabilities = capabilities,
-            handlers = handlers,
-            on_attach = require("extensions.lsp.eslint").on_attach,
-            settings = require("extensions.lsp.eslint").settings,
         })
 
         require("lspconfig").biome.setup({
@@ -66,19 +58,6 @@ require("mason-lspconfig").setup_handlers({
                 "typescriptreact",
                 "svelte",
                 "vue",
-            },
-        })
-
-        require("lspconfig").jsonnet_ls.setup({
-            capabilities = vim.lsp.protocol.make_client_capabilities(),
-            flags = {
-                debounce_text_changes = 150,
-            },
-            cmd = { "jsonnet-language-server", "--lint" },
-            settings = {
-                formatting = {
-                    UseImplicitPlus = true,
-                },
             },
         })
     end,
