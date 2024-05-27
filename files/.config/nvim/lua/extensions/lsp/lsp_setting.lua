@@ -21,34 +21,26 @@ require("mason-lspconfig").setup({
     },
 })
 
-local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require("mason-lspconfig").setup_handlers({
     function(server_name)
-        lspconfig[server_name].setup({
+        require("lspconfig")[server_name].setup({
             capabilities = capabilities,
         })
 
-        lspconfig.rust_analyzer.setup({
+        require("lspconfig").rust_analyzer.setup({
             capabilities = capabilities,
             checkOnSave = {
                 command = "clippy",
             },
         })
 
-        lspconfig.terraformls.setup({
+        require("lspconfig").terraformls.setup({
             capabilities = capabilities,
             filetype = { "terraform", "terraform-vars", "hcl" },
         })
 
-        lspconfig.eslint.setup({
-            capabilities = capabilities,
-            handlers = handlers,
-            on_attach = require("extensions.lsp.eslint").on_attach,
-            settings = require("extensions.lsp.eslint").settings,
-        })
-
-        lspconfig.biome.setup({
+        require("lspconfig").biome.setup({
             capabilities = capabilities,
             cmd = {
                 vim.loop.cwd() .. "/node_modules/.bin/biome",
@@ -66,19 +58,6 @@ require("mason-lspconfig").setup_handlers({
                 "typescriptreact",
                 "svelte",
                 "vue",
-            },
-        })
-
-        lspconfig.jsonnet_ls.setup({
-            capabilities = vim.lsp.protocol.make_client_capabilities(),
-            flags = {
-                debounce_text_changes = 150,
-            },
-            cmd = { "jsonnet-language-server", "--lint" },
-            settings = {
-                formatting = {
-                    UseImplicitPlus = true,
-                },
             },
         })
     end,

@@ -1,4 +1,3 @@
-local null_ls = require("null-ls")
 local nvim_path = vim.fn.stdpath("config")
 local cspell_config = {
     find_json = function(_)
@@ -9,9 +8,9 @@ local cspell_config = {
     end,
 }
 
-null_ls.setup({
+require("null-ls").setup({
     sources = {
-        null_ls.builtins.diagnostics.phpstan.with({
+        require("null-ls").builtins.diagnostics.phpstan.with({
             command = "vendor/bin/phpstan",
             args = {
                 "analyse",
@@ -22,7 +21,7 @@ null_ls.setup({
                 "$FILENAME",
             },
         }),
-        null_ls.builtins.diagnostics.terraform_validate,
+        require("null-ls").builtins.diagnostics.terraform_validate,
         require("cspell").diagnostics.with({
             config = cspell_config,
             diagnostics_postprocess = function(diagnostic)

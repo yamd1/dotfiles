@@ -9,9 +9,6 @@ require("conform").setup({
         biome = {
             command = "node_modules/.bin/biome",
         },
-        ["sql-formatter"] = {
-            command = "sql-formatter -l trino",
-        },
     },
     formatters_by_ft = {
         lua = { "stylua" },
