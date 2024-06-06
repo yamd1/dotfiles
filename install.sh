@@ -9,7 +9,7 @@ ln -snf $DOT_DIR/files/.local $HOME
 [[ -d "$HOME/.config" ]] && rm -rf "$HOME/.config"
 ln -snf $DOT_DIR/files/.config $HOME
 
-[[ ! -e "$DOT_DIR/files/.config/zsh/.zshenv.local" ]] && mkdir -p $DOT_DIR/files/.config/zsh/.zshenv.local
+[[ ! -e "$DOT_DIR/files/.config/zsh/.zshenv.local" ]] && touch $DOT_DIR/files/.config/zsh/.zshenv.local
 
 if "${IS_CONTAINER:-false}"; then
   echo 'export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/remote_starship.toml"' > $DOT_DIR/files/.config/zsh/.zshenv.local
