@@ -103,3 +103,4 @@ yamd
 yamlls
 zstyle
 Lspsaga
+chsh

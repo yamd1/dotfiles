@@ -31,11 +31,11 @@ if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
     case "$os" in
       debian)
         sudo apt-get update
-        sudo apt-get install -y wl-clipboard
+        sudo apt-get install -y zsh build-essential wl-clipboard
         ;;
       lsb) # Ubuntu
         sudo apt-get update
-        sudo apt-get install -y wl-clipboard
+        sudo apt-get install -y zsh build-essential wl-clipboard
         ;;
       *)
         :
@@ -43,3 +43,5 @@ if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
     esac
   done < <(\ls /etc/*{release,version} | xargs -I{} basename {} | sed -E 's/(.*)[_-](release|version)/\1/g')
 fi
+
+[[ -x "/usr/bin/zsh" ]] && chsh -s "/usr/bin/zsh"
