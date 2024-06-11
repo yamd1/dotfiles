@@ -34,24 +34,17 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter-textobjects",
-        },
         main = "nvim-treesitter.configs",
-        opts = {
-            highlight = { enable = true },
-            ensure_installed = {
-                "lua",
-                "jsonnet",
-                "markdown",
-                "markdown_inline",
-                "sql",
-            },
-        },
-    },
-    {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        event = "CursorMoved",
+        -- opts = {
+        --     highlight = { enable = true },
+        --     ensure_installed = {
+        --         "lua",
+        --         "jsonnet",
+        --         "markdown",
+        --         "markdown_inline",
+        --         "sql",
+        --     },
+        -- },
     },
     {
         "rebelot/kanagawa.nvim",
@@ -59,6 +52,7 @@ local plugins = {
         priority = 1000,
     },
 
+    { "neovim/nvim-lspconfig" },
     {
         "williamboman/mason.nvim",
         dependencies = {
@@ -135,7 +129,7 @@ local plugins = {
     },
     { "nvim-tree/nvim-tree.lua" },
     { "nvim-tree/nvim-web-devicons" },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, lazy = false },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", lazy = false },
     { "nvim-lualine/lualine.nvim" },
     {
         "akinsho/bufferline.nvim",
