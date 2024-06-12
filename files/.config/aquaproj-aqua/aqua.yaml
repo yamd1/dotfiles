@@ -17,7 +17,7 @@ packages:
   - name: go-task/task@v3.31.0
   - name: starship/starship@v1.16.0
   - name: rossmacarthur/sheldon@0.7.4
-  - name: neovim/neovim@v0.9.5
+  - name: neovim/neovim@v0.10.0
   - name: stedolan/jq@jq-1.7.1
   - name: direnv/direnv@v2.33.0
   - name: BurntSushi/ripgrep@14.1.0
