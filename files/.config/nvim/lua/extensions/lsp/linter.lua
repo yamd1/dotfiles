@@ -20,6 +20,7 @@ require("null-ls").setup({
                 "--memory-limit=-1",
                 "$FILENAME",
             },
+            temp_dir = "/tmp",
         }),
         require("null-ls").builtins.diagnostics.terraform_validate,
         require("cspell").diagnostics.with({
