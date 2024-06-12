@@ -17,6 +17,7 @@ fi
 
 ln -snf $DOT_DIR/files/.config/zsh/.zshrc $HOME
 ln -snf $DOT_DIR/files/.config/zsh/.zshenv $HOME
+ln -snf $DOT_DIR/files/.config/bash/.bash_profile $HOME
 ln -snf $DOT_DIR/files/.config/git/.gitconfig $HOME
 ln -snf $DOT_DIR/files/.config/.lnav $HOME
 
