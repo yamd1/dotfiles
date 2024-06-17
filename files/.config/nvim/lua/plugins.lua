@@ -82,7 +82,7 @@ local plugins = {
     { "f3fora/cmp-spell" },
     { "L3MON4D3/LuaSnip" },
 
-    { "stevearc/conform.nvim", commit = "7159a23d19fb982269dae2e8147ebbe34965095b" },
+    { "stevearc/conform.nvim" },
     {
         "nvimtools/none-ls.nvim",
         dependencies = {
