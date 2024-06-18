@@ -5,22 +5,22 @@ when = true
 format = '[[ $output ](fg:#e3e5e5 bg:#394260)]($style)'
 
 [deno]
-format = "via [$symbol]($style)"
+format = "[$symbol]($style)"
 
 [golang]
-format = 'via [$symbol]($style)'
+format = '[$symbol]($style)'
 
 [lua]
-format = 'via [$symbol]($style)'
+format = '[$symbol]($style)'
 
 [nodejs]
-format = 'via [$symbol]($style)'
+format = '[$symbol]($style)'
 
 [php]
-format = 'via [$symbol]($style)'
+format = '[$symbol]($style)'
 
 [python]
-format = 'via [$symbol]($style)'
+format = '[$symbol]($style)'
 
 [rust]
-format = 'via [$symbol]($style)'
+format = '[$symbol]($style)'
