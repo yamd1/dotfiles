@@ -9,6 +9,8 @@ services:
       WAYLAND_DISPLAY: $WAYLAND_DISPLAY
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
+      HISTFILE: /home/appuser/history/.zsh_history
+      SHELL: /usr/bin/zsh
     volumes:
       - type: bind
         source: /tmp/.X11-unix
@@ -22,8 +24,6 @@ services:
       - type: bind
         source: ${HOME}/dotfiles/files/.config/intelephense
         target: /home/appuser/intelephense
-      - type: volume
-        source: zsh-history
+      - type: bind
+        source: ${HOME}/history
         target: /home/appuser/history
-volumes:
-  zsh-history:
