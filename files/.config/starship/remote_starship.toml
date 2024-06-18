@@ -2,19 +2,25 @@
 command = '[[ -e "$HOME/.local/state/gh/active-user" ]] && cat $HOME/.local/state/gh/active-user || echo no-user'
 style = "bg:#394260"
 when = true
-format = '[[ $output ](fg:#769ff0 bg:#394260)]($style)'
+format = '[[ $output ](fg:#e3e5e5 bg:#394260)]($style)'
+
+[deno]
+format = "via [$symbol]($style)"
+
+[golang]
+format = 'via [$symbol]($style)'
 
 [lua]
-format = '(via [$symbol($version )]($style))'
+format = 'via [$symbol]($style)'
 
 [nodejs]
-format = '(via [$symbol($version )]($style))'
+format = 'via [$symbol]($style)'
 
 [php]
-format = '(via [$symbol($version )]($style))'
+format = 'via [$symbol]($style)'
 
 [python]
-format = '(via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style))'
+format = 'via [$symbol]($style)'
 
 [rust]
-format = '(via [$symbol($version )]($style))'
+format = 'via [$symbol]($style)'
