@@ -19,6 +19,19 @@ local plugins = {
     {
         "folke/noice.nvim",
         event = "VeryLazy",
+        opts = {
+            lsp = {
+                progress = {
+                    enabled = false,
+                },
+            },
+            messages = {
+                enabled = false,
+            },
+            notify = {
+                enabled = false,
+            },
+        },
         dependencies = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
