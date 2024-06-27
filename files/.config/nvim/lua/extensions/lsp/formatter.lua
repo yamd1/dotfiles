@@ -18,6 +18,7 @@ require("conform").setup({
         javascript = { { "prettier", "biome" } },
         typescript = { { "prettier", "biome" } },
         yaml = { "prettier" },
+        yml = { "prettier" },
         markdown = { "prettier" },
     },
     format_on_save = {
