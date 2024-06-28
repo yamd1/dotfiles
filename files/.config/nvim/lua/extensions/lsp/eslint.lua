@@ -1,41 +1,19 @@
-local M = {}
-
-local on_attach = function(client, bufnr)
-    client.server_capabilities.documentFormattingProvider = true
-    local function buf_set_option(...)
-        vim.api.nvim_buf_set_option(bufnr, ...)
-    end
-
-    buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-end
-
-M.on_attach = on_attach
-
-M.settings = {
-    codeAction = {
-        disableRuleComment = {
+require("eslint").setup({
+    bin = "eslint",
+    code_actions = {
+        enable = true,
+        apply_on_save = {
             enable = true,
-            location = "separateLine",
+            types = { "directive", "problem", "suggestion", "layout" },
         },
-        showDocumentation = {
+        disable_rule_comment = {
             enable = true,
+            location = "separate_line", -- or `same_line`
         },
     },
-    codeActionOnSave = {
-        enable = false,
-        mode = "all",
+    diagnostics = {
+        enable = true,
+        report_unused_disable_directives = false,
+        run_on = "type", -- or `save`
     },
-    nodePath = "",
-    onIgnoredFiles = "off",
-    packageManager = "npm",
-    quiet = false,
-    rulesCustomizations = {},
-    run = "onType",
-    useESLintClass = false,
-    validate = "on",
-    workingDirectory = {
-        mode = "location",
-    },
-}
-
-return M
+})

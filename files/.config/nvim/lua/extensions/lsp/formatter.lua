@@ -9,20 +9,25 @@ require("conform").setup({
         biome = {
             command = "node_modules/.bin/biome",
         },
+        eslint = {
+            command = "node_modules/.bin/eslint",
+        },
     },
     formatters_by_ft = {
         lua = { "stylua" },
         php = { "pint" },
         sql = { "sql-formatter" },
 
-        javascript = { { "prettier", "biome" } },
-        typescript = { { "prettier", "biome" } },
+        javascript = { "prettier", "biome", "eslint" },
+        typescript = { "prettier", "biome", "eslint" },
+        typescriptreact = { "eslint", "prettier", "biome" },
+
         yaml = { "prettier" },
         yml = { "prettier" },
         markdown = { "prettier" },
     },
-    format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
-    },
+    -- format_on_save = {
+    --     timeout_ms = 500,
+    --     lsp_format = "fallback",
+    -- },
 })
