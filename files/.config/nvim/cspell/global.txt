@@ -104,3 +104,4 @@ yamlls
 zstyle
 Lspsaga
 chsh
+VITE
