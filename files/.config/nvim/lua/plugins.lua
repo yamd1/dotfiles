@@ -101,10 +101,8 @@ local plugins = {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "davidmh/cspell.nvim",
-            "MunifTanjim/eslint.nvim",
         },
     },
-    { "MunifTanjim/eslint.nvim" },
     {
         "jay-babu/mason-null-ls.nvim",
         event = { "BufReadPre", "BufNewFile" },
