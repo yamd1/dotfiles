@@ -30,6 +30,9 @@ require("mason-lspconfig").setup_handlers({
 
         require("lspconfig").rust_analyzer.setup({
             capabilities = capabilities,
+            on_attach = function(client, bufnr)
+                vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+            end,
             checkOnSave = {
                 command = "clippy",
             },
