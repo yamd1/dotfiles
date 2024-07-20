@@ -115,7 +115,6 @@ config.use_fancy_tab_bar = false
 
 config.leader = { key = "t", mods = "CTRL" }
 config.keys = {
-    { key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
     {
         key = "c",
         mods = "CTRL",
