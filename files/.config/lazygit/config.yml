@@ -20,3 +20,6 @@ customCommands:
   - key: "p"
     context: "global"
     command: 'git pull --rebase'
+  - key: "<C-l>"
+    context: "global"
+    command: "gh auth switch 2>&1 | awk '{print $NF}' > $HOME/.local/state/gh/active-user"
