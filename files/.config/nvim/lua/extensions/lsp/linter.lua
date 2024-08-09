@@ -37,7 +37,7 @@ require("null-ls").setup({
         -- NvimTreeにcspellがアタッチされないように
         return not vim.api.nvim_buf_get_name(bufnr):match("NvimTree_1$")
     end,
-    diagnostics_format = "#{m} (#{s}: #{c})",
+    diagnostics_format = "[#{c}] #{m} (#{s})",
 })
 
 local vim_dict_path = nvim_path .. "/cspell/vim.txt.gz"
