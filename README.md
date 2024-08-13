@@ -1,5 +1,8 @@
 # dotfiles
 
+![wallpaper](https://github.com/user-attachments/assets/cafebcd0-4502-40ad-ab9c-f19f2ce76b37)
+
+
 ## Install for Linux
 
 ```sh
