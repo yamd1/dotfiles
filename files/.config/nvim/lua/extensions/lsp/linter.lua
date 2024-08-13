@@ -18,6 +18,7 @@ require("null-ls").setup({
                 "json",
                 "--no-progress",
                 "--memory-limit=-1",
+                "-vvv",
                 "$FILENAME",
             },
             temp_dir = "/tmp",
