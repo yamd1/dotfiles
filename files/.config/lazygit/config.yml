@@ -18,7 +18,7 @@ customCommands:
         title: "Commit message"
         key: "Message"
   - key: "p"
-    context: "global"
+    context: "localBranches"
     command: 'git pull --rebase'
   - key: "<C-l>"
     context: "global"
