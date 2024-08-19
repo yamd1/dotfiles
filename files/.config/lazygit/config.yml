@@ -25,13 +25,16 @@ customCommands:
     command: "gh auth switch 2>&1 | awk '{print $NF}' > $HOME/.local/state/gh/active-user"
   - key: "<C-c>"
     context: "localBranches"
-    command: "gh pr create --title '{{.Form.Title}}' --body ''"
+    command: "gh pr create --title '{{.Form.Title}}' --body '{{.Form.Body}}'"
     prompts:
       - type: "input"
         title: "Select commit message"
         key: "Title"
         suggestions:
           command: 'git log "$(gh pr view --json baseRefName | jq -r .baseRefName)..HEAD" --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" | grep -o "[a-f0-9]\{7\}" | xargs -I{} git --no-pager log -1 {} --format="%s"'
+      - type: "input"
+        title: "Description"
+        key: "Body"
   - key: "<C-v>"
     context: "localBranches"
     command: "gh pr view --web"
