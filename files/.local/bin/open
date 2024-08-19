@@ -1,0 +1,4 @@
+#!/bin/bash
+set -ue
+
+echo "$1" >> "$BROWSER_PIPE"
