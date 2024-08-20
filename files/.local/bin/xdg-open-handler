@@ -6,4 +6,6 @@ if [[ ! -e $BROWSER_PIPE ]]; then
   mkfifo $BROWSER_PIPE
 fi
 
-echo "$1" >> "$BROWSER_PIPE"
+while read -r url < "$BROWSER_PIPE"; do
+  xdg-open $url || true
+done

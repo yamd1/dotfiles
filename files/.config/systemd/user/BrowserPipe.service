@@ -1,0 +1,12 @@
+[Unit]
+Description = demonize named pipe to xdg-open
+After=local-fs.target
+ConditionPathExists=/run/user/1000
+
+[Service]
+ExecStart=/run/user/1000/xdg-open-handler
+Restart=no
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

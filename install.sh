@@ -11,6 +11,8 @@ ln -snf $DOT_DIR/files/.local $HOME
 [[ -d "$HOME/.config" ]] && rm -rf "$HOME/.config"
 ln -snf $DOT_DIR/files/.config $HOME
 
+ln -snf "$DOT_DIR/files/.local/bin/xdg-open-handler" "$XDG_RUNTIME_DIR/xdg-open-handler"
+
 if "${IS_CONTAINER:-false}"; then
   echo 'export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/remote_starship.toml"' > $DOT_DIR/files/.config/zsh/.zshenv.local
 else
@@ -28,6 +30,8 @@ $DOT_DIR/.bin/install-mise.sh
 
 if [[ "${1:-}" == "wsl" ]]; then
   $DOT_DIR/.bin/setup-windows.sh
+  systemctl --user daemon-reload
+  systemctl --user start BrowserPipe.service
 fi
 
 if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then

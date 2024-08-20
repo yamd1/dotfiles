@@ -7,7 +7,7 @@ export AQUA_POLICY_CONFIG=$XDG_CONFIG_HOME/aquaproj-aqua/policy.yaml
 export FZF_DEFAULT_OPTS="--reverse --cycle --ansi --no-info --no-scrollbar --no-hscroll --no-sort --no-mouse"
 export DEVC_COMPOSE_OVERRIDE=$XDG_CONFIG_HOME/devcontainer/compose.override.yml
 export EDITOR=nvim
-export BROWSER_PIPE=/tmp/browser-pipe
+export GH_BROWSER=$HOME/.local/bin/open
 
 path=(
   "$HOME/bin"(N-/)

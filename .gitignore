@@ -29,3 +29,5 @@ files/.config/intelephense/**
 !files/.config/intelephense/.keep
 files/.config/gh-copilot/**
 files/.config/psysh/psysh_history
+files/.config/systemd/user/**
+!files/.config/systemd/user/BrowserPipe.service
