@@ -4,7 +4,7 @@ After=local-fs.target
 ConditionPathExists=/run/user/1000
 
 [Service]
-ExecStart=/run/user/1000/xdg-open-handler
+ExecStart=/run/user/1000/browser-pipe-handler
 Restart=no
 Type=simple
 
