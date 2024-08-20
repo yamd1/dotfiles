@@ -1,0 +1,10 @@
+#!/bin/bash
+set -ue
+
+if [[ ! -e "${BROWSER_PIPE}" ]]; then
+  mkfifo "${BROWSER_PIPE}"
+fi
+
+while read -r url < "${BROWSER_PIPE}"; do
+  xdg-open $url || true
+done

@@ -105,3 +105,5 @@ zstyle
 Lspsaga
 chsh
 VITE
+mkfifo
+wip
