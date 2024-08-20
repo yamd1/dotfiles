@@ -11,7 +11,7 @@ ln -snf $DOT_DIR/files/.local $HOME
 [[ -d "$HOME/.config" ]] && rm -rf "$HOME/.config"
 ln -snf $DOT_DIR/files/.config $HOME
 
-ln -snf "$DOT_DIR/files/.local/bin/xdg-open-handler" "$XDG_RUNTIME_DIR/xdg-open-handler"
+ln -snf "$DOT_DIR/files/.local/bin/browser-pipe-handler" "$XDG_RUNTIME_DIR/browser-pipe-handler"
 
 if "${IS_CONTAINER:-false}"; then
   echo 'export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/remote_starship.toml"' > $DOT_DIR/files/.config/zsh/.zshenv.local
