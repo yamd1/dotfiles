@@ -81,8 +81,6 @@ config.colors = {
 
 config.font = wezterm.font_with_fallback({
     { family = "UDEV Gothic 35NFLG", weight = 600 },
-    "Noto Color Emoji",
-    "JetBrains Mono",
 })
 config.font_size = 8
 config.line_height = 1.3
