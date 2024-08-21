@@ -22,7 +22,7 @@
     {
       "addWords": true,
       "name": "local bind",
-      "path": "./cspell/local.bind.txt",
+      "path": "./../../../local.bind.txt",
       "description": "Local dictionary. Bind by host"
     },
     {
