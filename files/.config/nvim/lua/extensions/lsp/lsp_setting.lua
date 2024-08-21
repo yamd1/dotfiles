@@ -12,7 +12,7 @@ require("mason-lspconfig").setup({
         "lua_ls",
         "tsserver",
         "jsonls",
-        "intelephense",
+        "intelephense@v1.11.0",
         "rust_analyzer",
         "eslint",
         "terraformls",
