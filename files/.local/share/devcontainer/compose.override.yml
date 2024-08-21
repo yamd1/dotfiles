@@ -34,5 +34,8 @@ services:
         source: ${HOME}/.aws
         target: /home/appuser/.aws
       - type: bind
-        source: /tmp/browser-pipe
+        source: ${XDG_RUNTIME_DIR}/browser-pipe
         target: /tmp/browser-pipe
+      - type: bind
+        source: ${HOME}/dotfiles/files/.config/nvim/cspell/local.txt
+        target: /home/appuser/.config/nvim/cspell/local.txt

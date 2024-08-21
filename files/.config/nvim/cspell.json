@@ -20,6 +20,12 @@
       "description": "Local dictionary. About 'addWords' in https://github.com/davidmh/cspell.nvim/blob/2e65904243f41b9002618d1fe0d79def6c795eeb/lua/cspell/code_actions/init.lua#L132"
     },
     {
+      "addWords": true,
+      "name": "local bind",
+      "path": "./cspell/local.bind.txt",
+      "description": "Local dictionary. Bind by host"
+    },
+    {
       "name": "vim",
       "path": "./cspell/vim.txt.gz",
       "description": "Vim Script Language dictionary"
