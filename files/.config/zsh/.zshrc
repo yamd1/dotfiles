@@ -69,6 +69,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 unsetopt BEEP
 
+eval "$(direnv hook zsh)"
 [[ -x "$(command -v vivid)" ]] && export LS_COLORS="$(vivid generate ayu)"
 [[ ! -x "$(command -v node)" && -x "$(command -v mise)" ]] && eval "$(mise activate zsh)" && eval "$(mise install --log-level warn)"
 [[ -x "$(command -v navi)" ]] && eval "$(navi widget zsh)"

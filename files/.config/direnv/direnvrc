@@ -3,7 +3,7 @@ set -euo pipefail
 
 use_gh() {
   local output
-  if ! output=$(gh auth switch --user $1 2>&1); then
+  if ! output=$(gh auth switch --user $1 2>&1 | awk '{print $NF}' > "$HOME/.local/state/gh/active-user"); then
     local exit_code=$?
 
     echo "failed to switch Account $1" >&2
