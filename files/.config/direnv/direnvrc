@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+use_gh() {
+  local output
+  if ! output=$(gh auth switch --user $1 2>&1); then
+    local exit_code=$?
+
+    echo "failed to switch Account $1" >&2
+
+    return $exit_code
+  fi
+}
