@@ -10,14 +10,31 @@ require("conform").setup({
                 ".prettierrc",
                 ".prettierrc.yml",
                 ".prettierrc.yaml",
+                ".prettierrc.json5",
+                ".prettierrc.js",
+                ".prettier.config.js",
+                ".prettierrc.mjs",
+                "prettierrc.config.mjs",
+                ".prettierrc.cjs",
+                "prettierrc.config.cjs",
+                ".prettierrc.toml",
             }),
             require_cwd = true,
         },
         biome = {
             command = "node_modules/.bin/biome",
+            cwd = require("conform.util").root_file({
+                "biome.json",
+                "biome.jsonc",
+            }),
+            require_cwd = true,
         },
         eslint = {
             command = "node_modules/.bin/eslint",
+            cwd = require("conform.util").root_file({
+                ".eslintrc.json",
+            }),
+            require_cwd = true,
         },
     },
     formatters_by_ft = {
