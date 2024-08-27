@@ -11,10 +11,11 @@ export GH_BROWSER=$HOME/.local/bin/open
 
 path=(
   "$HOME/bin"(N-/)
-  "$HOME/.local/bin"(N-/)
-  "$HOME/.local/share"(N-/)
   "$DOT_DIR/.bin"(N-/)
   "$AQUA_ROOT_DIR/bin"(N-/)
+  "$HOME/.local/share/mise/shims"(N-/)
+  "$HOME/.local/bin"(N-/)
+  "$HOME/.local/share"(N-/)
   "$HOME/.cargo/bin"(N-/)
   "$HOME/.local/share/zsh/site-functions"(N-/)
   "$path[@]"

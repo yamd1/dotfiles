@@ -3,6 +3,8 @@ set -euo pipefail
 
 use_gh() {
   local output
+
+  [[ ! -d "$HOME/.local/state/gh" ]] && mkdir -p $HOME/.local/state/gh
   if ! output=$(gh auth switch --user $1 2>&1 | awk '{print $NF}' > "$HOME/.local/state/gh/active-user"); then
     local exit_code=$?
 
