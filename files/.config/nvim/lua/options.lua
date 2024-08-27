@@ -21,6 +21,7 @@ vim.opt.list = true
 vim.o.clipboard = "unnamedplus"
 vim.opt.number = false
 vim.opt.splitright = true
+vim.opt.splitbelow = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.diagnostic.config({ severity_sort = true })
