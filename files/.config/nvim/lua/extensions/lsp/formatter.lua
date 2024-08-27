@@ -5,6 +5,13 @@ require("conform").setup({
         },
         prettier = {
             command = "node_modules/.bin/prettier",
+            cwd = require("conform.util").root_file({
+                ".prettierrc.json",
+                ".prettierrc",
+                ".prettierrc.yml",
+                ".prettierrc.yaml",
+            }),
+            require_cwd = true,
         },
         biome = {
             command = "node_modules/.bin/biome",
