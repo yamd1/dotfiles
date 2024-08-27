@@ -1,12 +1,12 @@
 [Unit]
 Description = demonize named pipe to xdg-open
 After=local-fs.target
-ConditionPathExists=/run/user/1000
+ConditionPathExists=/usr/local/bin
 
 [Service]
-ExecStart=/run/user/1000/browser-pipe-handler
+ExecStart=/usr/local/bin/browser-pipe-handler
 Restart=no
 Type=simple
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

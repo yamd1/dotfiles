@@ -11,7 +11,7 @@ ln -snf $DOT_DIR/files/.local $HOME
 [[ -d "$HOME/.config" ]] && rm -rf "$HOME/.config"
 ln -snf $DOT_DIR/files/.config $HOME
 
-ln -snf "$DOT_DIR/files/.local/bin/browser-pipe-handler" "$XDG_RUNTIME_DIR/browser-pipe-handler"
+sudo ln -snf "$DOT_DIR/files/.local/bin/browser-pipe-handler" "/usr/local/bin/browser-pipe-handler"
 
 if "${IS_CONTAINER:-false}"; then
   echo 'export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/remote_starship.toml"' > $DOT_DIR/files/.config/zsh/.zshenv.local
@@ -31,7 +31,8 @@ $DOT_DIR/.bin/install-mise.sh
 if [[ "${1:-}" == "wsl" ]]; then
   $DOT_DIR/.bin/setup-windows.sh
   systemctl --user daemon-reload
-  systemctl --user start BrowserPipe.service
+  systemctl --user enable BrowserPipe
+  systemctl --user start BrowserPipe
 fi
 
 if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
