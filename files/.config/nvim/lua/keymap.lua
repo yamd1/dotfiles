@@ -39,6 +39,7 @@ vim.keymap.set("n", "<Leader>s", "<C-w>s", opts)
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<Leader>p", "<Cmd>Telescope find_files hidden=true<CR>", opts)
+vim.keymap.set("n", "<Leader>P", "<Cmd>Telescope find_files hidden=true no_ignore=true<CR>", opts)
 vim.keymap.set("n", "<Leader>fn", "<Cmd>Telescope find_files cwd=~/.config/nvim<CR>", opts)
 vim.keymap.set("n", "<Leader>d", builtin.git_status, opts)
 vim.keymap.set("n", "<Leader>b", builtin.buffers, opts)
