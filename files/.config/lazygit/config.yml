@@ -31,7 +31,7 @@ customCommands:
         title: "Select commit message"
         key: "Title"
         suggestions:
-          command: "git log origin/HEAD..$(git show-branch --list | grep '\\*' | awk -F'[]~^[]' '{print $2}') --format='%C(auto)%h%d %s %C(black)%C(bold)%cr' | grep -oE '[a-f0-9]{7}' | xargs -I{} git --no-pager log -1 {} --format='%s'"
+          command: "git log origin/HEAD..$(git show-branch --list | grep '\\*' | awk -F'[]~^[]' '{print $2}') --format='%C(auto)%h%d %s %C(black)%C(bold)%cr' | grep -o '[a-f0-9]\\{7\\}' | xargs -I{} git --no-pager log -1 {} --format='%s'"
       - type: "input"
         title: "Description"
         key: "Body"
