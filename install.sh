@@ -11,7 +11,21 @@ ln -snf $DOT_DIR/files/.local $HOME
 [[ -d "$HOME/.config" ]] && rm -rf "$HOME/.config"
 ln -snf $DOT_DIR/files/.config $HOME
 
-sudo ln -snf "$DOT_DIR/files/.local/bin/browser-pipe-handler" "/usr/local/bin/browser-pipe-handler"
+# Since environment variables cannot be used in the service definition file, embed the path to the program to be run as a daemon in the install script.
+cat <<EOF > $HOME/.config/systemd/user/BrowserPipe.service
+[Unit]
+Description = demonize named pipe to xdg-open
+After=local-fs.target
+ConditionPathExists=$HOME/.local/bin
+
+[Service]
+ExecStart=$HOME/.local/bin/browser-pipe-handler
+Restart=no
+Type=simple
+
+[Install]
+WantedBy=default.target
+EOF
 
 if "${IS_CONTAINER:-false}"; then
   echo 'export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/remote_starship.toml"' > $DOT_DIR/files/.config/zsh/.zshenv.local
