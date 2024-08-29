@@ -84,7 +84,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gk", vim.lsp.buf.signature_help, ops)
         vim.keymap.set("n", "gn", "<Cmd>Lspsaga rename<CR>", ops)
         vim.keymap.set({ "n", "v" }, "ga", "<Cmd>Lspsaga code_action<CR>", ops)
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, ops)
+        vim.keymap.set("n", "gr", "<Cmd>Lspsaga incoming_calls<CR>", ops)
         vim.keymap.set("n", "gf", function()
             vim.lsp.buf.format({ async = true })
         end, ops)
