@@ -35,3 +35,4 @@ cdpath=(
 )
 
 [[ -f "$XDG_CONFIG_HOME/zsh/.zshenv.local" ]] && source "$XDG_CONFIG_HOME/zsh/.zshenv.local"
+. "$HOME/.cargo/env"
