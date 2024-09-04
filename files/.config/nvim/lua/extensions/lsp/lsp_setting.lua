@@ -18,9 +18,11 @@ require("mason-lspconfig").setup({
         "terraformls",
         "tflint",
         "yamlls",
+        "biome",
     },
 })
 
+local util = require("lspconfig.util")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require("mason-lspconfig").setup_handlers({
     function(server_name)
@@ -46,11 +48,11 @@ require("mason-lspconfig").setup_handlers({
         require("lspconfig").biome.setup({
             capabilities = capabilities,
             cmd = {
-                vim.loop.cwd() .. "/node_modules/.bin/biome",
+                "biome",
                 "lsp-proxy",
-                "--config-path",
-                vim.loop.cwd() .. "/biome.json",
             },
+            root_dir = util.root_pattern("biome.json", "biome.jsonc"),
+            single_file_support = false,
             filetype = {
                 "javascript",
                 "javascriptreact",
@@ -59,8 +61,6 @@ require("mason-lspconfig").setup_handlers({
                 "typescript",
                 "typescript.tsx",
                 "typescriptreact",
-                "svelte",
-                "vue",
             },
         })
     end,
