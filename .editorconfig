@@ -13,4 +13,3 @@ trim_trailing_whitespace = false
 
 [*.lua]
 indent_size = 4
-
