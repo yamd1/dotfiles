@@ -12,6 +12,7 @@ ln -snf $DOT_DIR/files/.local $HOME
 ln -snf $DOT_DIR/files/.config $HOME
 
 # Since environment variables cannot be used in the service definition file, embed the path to the program to be run as a daemon in the install script.
+[[ ! -d "$HOME/.donfig/systemd/user" ]] && mkdir -p "$HOME/.config/systemd/user"
 cat <<EOF > $HOME/.config/systemd/user/BrowserPipe.service
 [Unit]
 Description = demonize named pipe to xdg-open
