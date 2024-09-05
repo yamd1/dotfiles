@@ -15,6 +15,8 @@ vim.keymap.set("n", "<C-q>", "<Cmd>q<CR>", opts)
 vim.keymap.set("n", "<C-Q>", "<Cmd>q!<CR>", opts)
 vim.keymap.set("n", "<C-Right>", "<C-w>>", opts)
 vim.keymap.set("n", "<C-Left>", "<C-w><", opts)
+vim.keymap.set("n", "<C-Up>", "<C-w>+", opts)
+vim.keymap.set("n", "<C-Down>", "<C-w>-", opts)
 vim.keymap.set("n", "<C-h>", "<Cmd>bprev<CR>", opts)
 vim.keymap.set("n", "<C-l>", "<Cmd>bnext<CR>", opts)
 
