@@ -4,6 +4,11 @@ local _terminal = Terminal:new({
     float_opts = {
         border = "curved",
     },
+    highlights = {
+        FloatBorder = {
+            guifg = "#54546D",
+        },
+    },
     on_open = function(term)
         vim.cmd("startinsert!")
     end,

@@ -11,7 +11,16 @@ require("kanagawa").setup({
     terminalColors = true,
     colors = {
         palette = {},
-        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+        theme = {
+            wave = {},
+            lotus = {},
+            dragon = {},
+            all = {
+                ui = {
+                    gb_gutter = "none",
+                },
+            },
+        },
     },
     overrides = function(_)
         return {}
@@ -24,3 +33,6 @@ require("kanagawa").setup({
 })
 
 vim.cmd("colorscheme kanagawa")
+
+-- ウィンドウの境界線の色をオーバーライド
+vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#2A2A37", bg = "None" })
