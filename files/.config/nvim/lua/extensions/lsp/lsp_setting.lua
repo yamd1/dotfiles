@@ -10,7 +10,7 @@ require("mason").setup({
 require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
-        "tsserver",
+        "ts_ls",
         "jsonls",
         "intelephense@1.11.8",
         "rust_analyzer",
