@@ -8,6 +8,7 @@ export FZF_DEFAULT_OPTS="--reverse --cycle --ansi --no-info --no-scrollbar --no-
 export DEVC_COMPOSE_OVERRIDE=$XDG_CONFIG_HOME/devcontainer/compose.override.yml
 export EDITOR=nvim
 export GH_BROWSER=$HOME/.local/bin/open
+export SHELL=/usr/bin/zsh
 
 path=(
   "$HOME/bin"(N-/)
@@ -35,4 +36,4 @@ cdpath=(
 )
 
 [[ -f "$XDG_CONFIG_HOME/zsh/.zshenv.local" ]] && source "$XDG_CONFIG_HOME/zsh/.zshenv.local"
-. "$HOME/.cargo/env"
+[[ -e "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"

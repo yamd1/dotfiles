@@ -2,9 +2,8 @@
 set -ue
 
 # Symbolic links don't work between WSL2 and Windows, so use cp instead
-\ls /mnt/c/Users | fzf | xargs -I_ cp $DOT_DIR/files/.config/wezterm/.wezterm.lua /mnt/c/Users/_/.wezterm.lua
+\ls /mnt/c/Users | fzf | xargs -I_ cp $HOME/dotfiles/files/.config/wezterm/.wezterm.lua /mnt/c/Users/_/.wezterm.lua
 
 sudo apt-get update
 
-sudo apt-get install -y wl-clipboard ubuntu-wsl wslu
-
+sudo apt-get install -y wl-clipboard ubuntu-wsl wslu unzip
