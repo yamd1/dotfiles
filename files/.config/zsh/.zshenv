@@ -9,7 +9,7 @@ export DEVC_COMPOSE_OVERRIDE=$XDG_CONFIG_HOME/devcontainer/compose.override.yml
 export EDITOR=nvim
 export GH_BROWSER=$HOME/.local/bin/open
 export SHELL=/usr/bin/zsh
-export HISTFILE=$HOME/history/.zsh_history
+export HISTFILE=$HOME/.zsh_history
 
 path=(
   "$HOME/bin"(N-/)
