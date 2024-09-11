@@ -11,5 +11,5 @@ fi
 
 AQUA_CONFIG=$HOME/.config/aquaproj-aqua
 export AQUA_POLICY_CONFIG=$AQUA_CONFIG/policy.yaml
-$HOME/.local/share/aquaproj-aqua/bin/aqua allow policy
-$HOME/.local/share/aquaproj-aqua/bin/aqua -c $AQUA_CONFIG/aqua.yaml i
+$HOME/.local/share/aquaproj-aqua/bin/aqua policy allow
+$HOME/.local/share/aquaproj-aqua/bin/aqua -c $AQUA_CONFIG/aqua.yaml i --only-link
