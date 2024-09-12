@@ -62,5 +62,12 @@ require("nvim-tree").setup({
         vim.keymap.set("n", "<M-v>", api.node.open.vertical, opts("Open: Vertical Split"))
         vim.keymap.set("n", "<M-s>", api.node.open.horizontal, opts("Open: Horizontal Split"))
         vim.keymap.set("n", "<M-t>", api.node.open.tab, opts("Open: New Tab"))
+        vim.keymap.set("n", "<M-o>", function()
+            local node = api.tree.get_node_under_cursor()
+            if node then
+                local path = node.absolute_path
+                vim.fn.system("xdg-open " .. path)
+            end
+        end, opts("Open: Explorer"))
     end,
 })

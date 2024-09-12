@@ -10,7 +10,7 @@ require("mason").setup({
 require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
-        "tsserver",
+        "ts_ls",
         "jsonls",
         "intelephense@1.11.8",
         "rust_analyzer",
@@ -26,10 +26,6 @@ local util = require("lspconfig.util")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require("mason-lspconfig").setup_handlers({
     function(server_name)
-        if server_name == "tsserver" then
-            server_name = "ts_ls"
-        end
-
         require("lspconfig")[server_name].setup({
             capabilities = capabilities,
         })
