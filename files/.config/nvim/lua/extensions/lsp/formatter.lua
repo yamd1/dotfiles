@@ -22,7 +22,6 @@ require("conform").setup({
             require_cwd = true,
         },
         biome = {
-            command = "node_modules/.bin/biome",
             cwd = require("conform.util").root_file({
                 "biome.json",
                 "biome.jsonc",
@@ -42,9 +41,9 @@ require("conform").setup({
         php = { "pint" },
         sql = { "sql-formatter" },
 
-        javascript = { { "prettier", "biome", "eslint" } },
-        typescript = { { "prettier", "biome", "eslint" } },
-        typescriptreact = { { "prettier", "biome", "eslint" } },
+        javascript = { "prettier", "biome", "eslint", stop_after_first = true },
+        typescript = { "prettier", "biome", "eslint", stop_after_first = true },
+        typescriptreact = { "prettier", "biome", "eslint", stop_after_first = true },
 
         yaml = { "prettier" },
         yml = { "prettier" },
