@@ -62,12 +62,24 @@ require("nvim-tree").setup({
         vim.keymap.set("n", "<M-v>", api.node.open.vertical, opts("Open: Vertical Split"))
         vim.keymap.set("n", "<M-s>", api.node.open.horizontal, opts("Open: Horizontal Split"))
         vim.keymap.set("n", "<M-t>", api.node.open.tab, opts("Open: New Tab"))
-        vim.keymap.set("n", "<M-o>", function()
+        vim.keymap.set("n", "<C-o>", function()
             local node = api.tree.get_node_under_cursor()
-            if node then
-                local path = node.absolute_path
-                vim.fn.system("xdg-open " .. path)
+            if not node then
+                print("Can not open explorer")
+                return
             end
+
+            local dir_path = ""
+            if node.type == "directory" then
+                dir_path = node.absolute_path
+            elseif node.type == "file" then
+                dir_path = node.absolute_path:match("(.*/)")
+            else
+                print("Unknown type")
+                return
+            end
+
+            vim.fn.system("xdg-open " .. dir_path)
         end, opts("Open: Explorer"))
     end,
 })
