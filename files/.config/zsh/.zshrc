@@ -68,8 +68,31 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 unsetopt BEEP
 
+brace_start="%{$(echo -e '\e[30;48;5;31m')%}"
+brace_end="%{$(echo -e '\e[0m')%}"
+back_light_blue="%{$(echo -e '\e[30;48;5;31m')%}"
+text_white="%{$(echo -e '\e[38;5;255m')%}"
+text_light_blue="%{$(echo -e '\e[38;5;033m')%}"
+text_cyan="%{$(echo -e '\e[38;5;087m')%}"
+reset="%{$(echo -e '\e[0m')%}"
+local CHEVRON=$'\u276f'
+
+triangle="▶"
+
+dir_color="${brace_start}${text_light_blue}${brace_end}"
+triangle_color="${brace_start}${text_cyan}${brace_end}"
+dir="${dir_color}%~ ${reset}${triangle_color}${triangle}${reset}"
+
+branch_color="${brace_start}${text_white}${brace_end}"
+branch="${branch_color}$(git rev-parse --abbrev-ref HEAD 2>/dev/null)${reset}"
+
+first_line="${dir} ${branch}"
+second_line="${CHEVRON} "
+
+PS1="${first_line}"$'\n'"${second_line}"
+
 eval "$(direnv hook zsh)"
 [[ -x "$(command -v vivid)" ]] && export LS_COLORS="$(vivid generate ayu)"
 [[ -x "$(command -v navi)" ]] && eval "$(navi widget zsh)"
 [[ -x "$(command -v sheldon)" ]] && eval "$(sheldon source)"
-[[ -x "$(command -v starship)" ]] && eval "$(starship init zsh)"
+# [[ -x "$(command -v starship)" ]] && eval "$(starship init zsh)"
