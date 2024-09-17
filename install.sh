@@ -49,3 +49,21 @@ if [[ "${1:-}" == "wsl" ]]; then
   systemctl --user enable BrowserPipe
   systemctl --user start BrowserPipe
 fi
+
+if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
+  while read os; do
+    case "$os" in
+      debian)
+        sudo apt-get update
+        sudo apt-get install -y zsh wl-clipboard build-essential ubuntu-wsl wslu unzip
+        ;;
+      lsb) # Ubuntu
+        sudo apt-get update
+        sudo apt-get install -y zsh wl-clipboard build-essential ubuntu-wsl wslu unzip
+        ;;
+      *)
+        :
+        ;;
+    esac
+  done < <(\ls /etc/*{release,version} | xargs -I{} basename {} | sed -E 's/(.*)[_-](release|version)/\1/g')
+fi
