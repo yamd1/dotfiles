@@ -3,9 +3,9 @@ require("telescope").setup({
     defaults = {
         mappings = {
             i = {
-                ["<M-v>"] = actions.select_vertical,
-                ["<M-s>"] = actions.select_horizontal,
-                ["<M-t>"] = actions.select_tab,
+                ["<C-v>"] = actions.select_vertical,
+                ["<C-s>"] = actions.select_horizontal,
+                ["<C-t>"] = actions.select_tab,
             },
         },
         file_ignore_patterns = {
