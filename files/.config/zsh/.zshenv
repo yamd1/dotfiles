@@ -14,7 +14,6 @@ path=(
   "$HOME/bin"(N-/)
   "$DOT_DIR/.bin"(N-/)
   "$AQUA_ROOT_DIR/bin"(N-/)
-  "$HOME/.local/share/mise/bin"(N-/)
   "$HOME/.local/bin"(N-/)
   "$HOME/.local/share"(N-/)
   "$HOME/.cargo/bin"(N-/)
