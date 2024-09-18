@@ -55,11 +55,11 @@ if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
     case "$os" in
       debian)
         sudo apt-get update
-        sudo apt-get install -y zsh wl-clipboard build-essential ubuntu-wsl wslu unzip
+        sudo apt-get install -y zsh wl-clipboard build-essential unzip
         ;;
       lsb) # Ubuntu
         sudo apt-get update
-        sudo apt-get install -y zsh wl-clipboard build-essential ubuntu-wsl wslu unzip
+        sudo apt-get install -y zsh wl-clipboard build-essential unzip
         ;;
       *)
         :
