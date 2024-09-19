@@ -1,5 +1,7 @@
-export DOT_DIR=$HOME/dotfiles
+export DOTDIR=$HOME/dotfiles
 export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 export AQUA_ROOT_DIR=$HOME/.local/share/aquaproj-aqua
 export AQUA_GLOBAL_CONFIG=$XDG_CONFIG_HOME/aquaproj-aqua/aqua.yaml
@@ -12,7 +14,7 @@ export SHELL=/usr/bin/zsh
 
 path=(
   "$HOME/bin"(N-/)
-  "$DOT_DIR/.bin"(N-/)
+  "$DOTDIR/.bin"(N-/)
   "$AQUA_ROOT_DIR/bin"(N-/)
   "$HOME/.local/bin"(N-/)
   "$HOME/.local/share"(N-/)
@@ -30,7 +32,7 @@ fpath=(
 cdpath=(
   ..
   "$HOME"(N-/)
-  "$DOT_DIR"(N-/)
+  "$DOTDIR"(N-/)
   "$cdpath[@]"
 )
 

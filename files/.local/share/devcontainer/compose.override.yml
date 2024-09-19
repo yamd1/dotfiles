@@ -10,7 +10,7 @@ services:
       GH_BROWSER: /home/appuser/.local/bin/open
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
-      HISTFILE: /home/appuser/history/.zsh_history
+      ZHISTFILE: /home/appuser/history
       APP_USER_LOGIN_SHELL: /usr/bin/zsh
       SHELL: /usr/bin/zsh # SHELL変数はデフォルトでは設定されていない。ここで指定することでdevcontainerの中でtoggletermのデフォルトシェルとしてzshが起動する
 
@@ -28,7 +28,7 @@ services:
         source: ${HOME}/dotfiles/files/.config/intelephense
         target: /home/appuser/intelephense
       - type: bind
-        source: ${HOME}/history
+        source: ${HOME}/.devcontainer_history/history
         target: /home/appuser/history
       - type: bind
         source: ${HOME}/.aws
@@ -36,6 +36,3 @@ services:
       - type: bind
         source: ${XDG_RUNTIME_DIR}/browser-pipe
         target: /tmp/browser-pipe
-      - type: bind
-        source: ${HOME}/dotfiles/files/.config/nvim/cspell/local.txt
-        target: /home/appuser/.config/nvim/cspell/local.txt

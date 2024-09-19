@@ -3,7 +3,9 @@ set -ue
 
 DOT_DIR=$HOME/dotfiles
 
-[[ ! -d "$HOME/.docker_history" ]] && mkdir -p "$HOME/.docker_history"
+[[ ! -d "$HOME/.local/state/zsh" ]] && mkdir -p "$HOME/.local/state/zsh"
+[[ ! -d "$HOME/.devcontainer_history" ]] && mkdir -p "$HOME/.devcontainer_history"
+[[ ! -x "$HOME/.devcontainer_history/history" ]] && touch "$HOME/.devcontainer_history/history"
 
 [[ -d "$HOME/.local" ]] && rm -rf "$HOME/.local"
 ln -snf $DOT_DIR/files/.local $HOME
