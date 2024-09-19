@@ -108,3 +108,4 @@ VITE
 mkfifo
 wip
 gantt
+ZHISTFILE
