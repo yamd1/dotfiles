@@ -13,27 +13,28 @@ export GH_BROWSER=$HOME/.local/bin/open
 export SHELL=/usr/bin/zsh
 
 path=(
-  "$HOME/bin"(N-/)
-  "$DOTDIR/.bin"(N-/)
-  "$AQUA_ROOT_DIR/bin"(N-/)
-  "$HOME/.local/bin"(N-/)
-  "$HOME/.local/share"(N-/)
-  "$HOME/.cargo/bin"(N-/)
-  "$HOME/.local/share/zsh/site-functions"(N-/)
-  "$path[@]"
+  $HOME/bin(N-/)
+  $DOTDIR/.bin(N-/)
+  $AQUA_ROOT_DIR/bin(N-/)
+  $HOME/.local/share/mise/shims(N-/)
+  $HOME/.local/bin(N-/)
+  $HOME/.local/share(N-/)
+  $HOME/.cargo/bin(N-/)
+  $HOME/.local/share/zsh/site-functions(N-/)
+  $path
 )
 
 fpath=(
-  "$HOME/.local/share/zsh/site-functions"(N-/)
-  "$HOME/.local/share/zsh/functions"(N-/)
-  "$fpath[@]"
+  $HOME/.local/share/zsh/site-functions(N-/)
+  $HOME/.local/share/zsh/functions(N-/)
+  $fpath
 )
 
 cdpath=(
   ..
-  "$HOME"(N-/)
-  "$DOTDIR"(N-/)
-  "$cdpath[@]"
+  $HOME(N-/)
+  $DOTDIR(N-/)
+  $cdpath
 )
 
 [[ -f "$XDG_CONFIG_HOME/zsh/.zshenv.local" ]] && source "$XDG_CONFIG_HOME/zsh/.zshenv.local"
