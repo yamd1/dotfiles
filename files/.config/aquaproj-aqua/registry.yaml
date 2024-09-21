@@ -21,3 +21,7 @@ packages:
     files:
       - name: lnav
         src: lnav-{{trimV .Version}}/lnav
+  - type: github_release
+    repo_owner: yamd1
+    repo_name: testmate
+    asset: testmate
