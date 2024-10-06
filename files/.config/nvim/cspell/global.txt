@@ -109,3 +109,4 @@ mkfifo
 wip
 gantt
 ZHISTFILE
+wslutilities

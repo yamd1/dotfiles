@@ -53,19 +53,8 @@ if [[ "${1:-}" == "wsl" ]]; then
 fi
 
 if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
-  while read os; do
-    case "$os" in
-      debian)
-        sudo apt-get update
-        sudo apt-get install -y zsh wl-clipboard build-essential unzip
-        ;;
-      lsb) # Ubuntu
-        sudo apt-get update
-        sudo apt-get install -y zsh wl-clipboard build-essential unzip
-        ;;
-      *)
-        :
-        ;;
-    esac
-  done < <(\ls /etc/*{release,version} | xargs -I{} basename {} | sed -E 's/(.*)[_-](release|version)/\1/g')
+    sudo add-apt-repository ppa:wslutilities/wslu
+    sudo apt update
+    sudo apt-get update
+    sudo apt-get install -y zsh wl-clipboard build-essential unzip
 fi
