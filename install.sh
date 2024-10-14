@@ -52,9 +52,5 @@ if [[ "${1:-}" == "wsl" ]]; then
   systemctl --user start BrowserPipe
 fi
 
-if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
-    sudo add-apt-repository ppa:wslutilities/wslu
-    sudo apt update
-    sudo apt-get update
-    sudo apt-get install -y zsh wl-clipboard build-essential unzip
-fi
+sudo apt-get update
+sudo apt-get install -y zsh wl-clipboard build-essential unzip
