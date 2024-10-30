@@ -53,4 +53,4 @@ if [[ "${1:-}" == "wsl" ]]; then
 fi
 
 sudo apt-get update
-sudo apt-get install -y zsh wl-clipboard build-essential unzip
+sudo apt-get install -y zsh build-essential unzip
