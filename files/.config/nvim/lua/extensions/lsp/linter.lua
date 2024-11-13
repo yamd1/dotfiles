@@ -18,7 +18,7 @@ require("null-ls").setup({
                 "json",
                 "--no-progress",
                 "--memory-limit=-1",
-                "-vvv",
+                "--configuration=/opt/app/phpstan.neon", -- TODO: nvimを開いているパスから動的に算出する
                 "$FILENAME",
             },
             temp_dir = "/tmp",
