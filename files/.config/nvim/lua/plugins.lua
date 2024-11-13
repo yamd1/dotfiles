@@ -143,14 +143,13 @@ local plugins = {
     {
         "f-person/git-blame.nvim",
         event = "VeryLazy",
-        opts = {
-            enabled = true,
-            message_template = " <summary> • <date> • <author> • <<sha>>",
-            date_format = "%Y-%m-%d %H:%M:%S",
-            virtual_text_column = 1,
-        },
+        opts = {},
     },
 
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
     { "sindrets/diffview.nvim" },
     {
         "akinsho/toggleterm.nvim",
