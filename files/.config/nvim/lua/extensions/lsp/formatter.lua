@@ -48,7 +48,7 @@ require("conform").setup({
         yaml = { "prettier" },
         yml = { "prettier" },
         markdown = { "prettier" },
-        json = { "prettier" },
+        json = { "biome", "prettier", stop_after_first = true },
     },
     format_on_save = {
         -- These options will be passed to conform.format()
