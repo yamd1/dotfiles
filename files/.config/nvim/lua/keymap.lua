@@ -92,6 +92,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "g]", vim.diagnostic.goto_next, ops)
         vim.keymap.set("n", "ge", vim.diagnostic.open_float)
         vim.keymap.set("n", "<Leader><space>q", vim.diagnostic.setloclist)
+
+        vim.keymap.set("n", "gb", "<Cmd>GitBlameToggle<CR>")
     end,
 })
 
