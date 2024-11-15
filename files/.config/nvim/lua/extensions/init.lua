@@ -8,7 +8,6 @@ require("extensions/ui/nvim_colorizer")
 require("extensions/ui/which_key")
 require("extensions/ui/incline")
 require("extensions/ui/git_blame")
-require("extensions/ui/lualine")
 
 require("extensions/coding/gitsigns")
 require("extensions/coding/code_runner")
