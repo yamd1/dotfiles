@@ -19,6 +19,7 @@ require("mason-lspconfig").setup({
         "tflint",
         "yamlls",
         "biome",
+        "tsp-server",
     },
 })
 
