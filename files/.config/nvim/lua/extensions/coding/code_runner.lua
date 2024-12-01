@@ -4,13 +4,17 @@ require("code_runner").setup({
             local fname = vim.fn.expand("%:t")
             if fname == "" then
                 vim.api.nvim_command("write! " .. ".tmp/" .. os.time() .. ".php")
-            elseif fname:match("Test.php$") then
+            elseif fname:match("Test.php$") or fname:match("test.php$") then
                 return "php artisan test --testdox $file"
             end
 
             -- 保存したファイル名を再取得する
             local fname = vim.fn.expand("%:t")
             return "php artisan tinker --ansi .tmp/" .. fname .. " $XDG_CONFIG_HOME/php/exit.php"
+        end,
+        typescript = function(...)
+            local fname = vim.fn.expand("%:t")
+            return "deno run -A " .. fname
         end,
         bash = function(...)
             local fname = vim.fn.expand("%:t")
