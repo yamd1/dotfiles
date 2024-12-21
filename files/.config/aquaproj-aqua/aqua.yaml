@@ -19,7 +19,7 @@ packages:
   - name: rossmacarthur/sheldon@0.7.4
   - name: neovim/neovim@v0.10.0
   - name: stedolan/jq@jq-1.7.1
-  - name: direnv/direnv@v2.33.0
+  - name: direnv/direnv@v2.35.0
   - name: BurntSushi/ripgrep@14.1.0
   - name: sharkdp/fd@v9.0.0
   - name: dandavison/delta@0.16.5
