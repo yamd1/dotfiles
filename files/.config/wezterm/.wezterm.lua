@@ -83,7 +83,7 @@ config.font = wezterm.font_with_fallback({
     { family = "UDEV Gothic 35NFLG", weight = 600 },
     { family = "SauceCodePro NFM" },
 })
-config.font_size = 8
+config.font_size = 9
 config.line_height = 1.3
 
 -- SEE: https://wezfurlong.org/wezterm/config/lua/config/canonicalize_pasted_newlines.html
