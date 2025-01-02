@@ -53,4 +53,5 @@ if [[ "${1:-}" == "wsl" ]]; then
 fi
 
 sudo apt-get update
-sudo apt-get install -y zsh build-essential unzip
+sudo apt-get install -y zsh build-essential unzip xdg-utils
+xdg-settings set default-web-browser file-protocol-handler.desktop
