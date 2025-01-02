@@ -1,0 +1,8 @@
+# SEE: https://zenn.dev/ciffelia/articles/wsl-xdg-open
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=File Protocol Handler
+NoDisplay=true
+Exec=rundll32.exe url.dll,FileProtocolHandler
+MimeType=x-scheme-handler/unknown;x-scheme-handler/about;x-scheme-handler/https;x-scheme-handler/http;text/html;
