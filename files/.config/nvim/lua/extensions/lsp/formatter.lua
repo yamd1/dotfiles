@@ -4,7 +4,6 @@ require("conform").setup({
             command = "vendor/bin/pint",
         },
         prettier = {
-            command = "node_modules/.bin/prettier",
             cwd = require("conform.util").root_file({
                 ".prettierrc.json",
                 ".prettierrc",
