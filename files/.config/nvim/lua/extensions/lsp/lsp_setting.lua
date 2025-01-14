@@ -20,6 +20,7 @@ require("mason-lspconfig").setup({
         "yamlls",
         "biome",
         "tsp_server",
+        "prettier",
     },
 })
 
