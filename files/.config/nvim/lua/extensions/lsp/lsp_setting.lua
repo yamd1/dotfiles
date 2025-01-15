@@ -20,7 +20,6 @@ require("mason-lspconfig").setup({
         "yamlls",
         "biome",
         "tsp_server",
-        "prettier",
     },
 })
 
@@ -127,5 +126,6 @@ require("mason-tool-installer").setup({
         "stylua",
         "cspell",
         "sql-formatter",
+        "prettier",
     },
 })
