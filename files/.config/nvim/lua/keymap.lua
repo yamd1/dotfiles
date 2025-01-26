@@ -94,6 +94,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<Leader><space>q", vim.diagnostic.setloclist)
 
         vim.keymap.set("n", "gb", "<Cmd>GitBlameToggle<CR>")
+
+        vim.keymap.set(
+            "i",
+            "<Leader><Tab>",
+            'copilot#Accept("<CR>")',
+            { silent = true, expr = true, script = true, replace_keycodes = false }
+        )
+        vim.keymap.set("i", "<C-j>", "<Plug>(copilot-next)")
+        vim.keymap.set("i", "<C-k>", "<Plug>(copilot-previous)")
+        vim.keymap.set("i", "<C-o>", "<Plug>(copilot-dismiss)")
+        vim.keymap.set("i", "<C-s>", "<Plug>(copilot-suggest)")
     end,
 })
 
