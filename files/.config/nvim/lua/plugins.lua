@@ -178,7 +178,13 @@ local plugins = {
     { "norcalli/nvim-colorizer.lua" },
     { "CRAG666/code_runner.nvim" },
     { "monaqa/dial.nvim" },
-    { "github/copilot.vim" },
+    {
+        "github/copilot.vim",
+        config = function()
+            vim.g.copilot_no_tab_map = true
+        end,
+    },
+    -- { "zbirenbaum/copilot.lua" },
     { "ixru/nvim-markdown" },
     -- {
     --     -- Install markdown preview, use npx if available.
