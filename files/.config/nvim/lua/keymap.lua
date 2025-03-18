@@ -97,7 +97,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         vim.keymap.set(
             "i",
-            "<Leader><Tab>",
+            "<Tab>",
             'copilot#Accept("<CR>")',
             { silent = true, expr = true, script = true, replace_keycodes = false }
         )

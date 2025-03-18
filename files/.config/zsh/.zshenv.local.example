@@ -1,6 +1,7 @@
 export AWS_DEFAULT_PROFILE=y-yamada
 export INTELEPHENSE_LICENCE_KEY=licence_key
 export BROWSER=wslview
+export OPENAI_API_KEY=
 
 cdpath=(
   "$HOME/develop"(N-/)
