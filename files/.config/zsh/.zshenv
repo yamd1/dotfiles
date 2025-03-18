@@ -12,6 +12,7 @@ export EDITOR=nvim
 export GH_BROWSER=xdg-open
 export SHELL=/usr/bin/zsh
 export DIRENV_WARN_TIMEOUT=100s
+export STARSHIP_CONFIG=${STARSHIP_CONFIG:-$XDG_CONFIG_HOME/starship/host_starship.toml}
 
 path=(
   $HOME/bin(N-/)
