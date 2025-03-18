@@ -199,16 +199,15 @@ local plugins = {
         version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
         opts = {
             provider = "copilot",
-            auto_suggestions_provider = "copilot",
+            auto_suggestions_provider = "openai",
             behaviour = {
-                auto_suggestions = false,
+                auto_suggestions = true,
                 auto_set_highlight_group = true,
                 auto_set_keymaps = true,
                 auto_apply_diff_after_generation = false,
                 support_paste_from_clipboard = false,
                 minimize_diff = true,
             },
-
             windows = {
                 position = "right",
                 wrap = true,
