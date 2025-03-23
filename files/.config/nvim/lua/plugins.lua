@@ -198,11 +198,11 @@ local plugins = {
         event = "VeryLazy",
         version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
         opts = {
-            provider = "openai",
+            provider = "copilot",
             openai = {
                 model = "o3-mini",
             },
-            auto_suggestions_provider = "openai",
+            auto_suggestions_provider = "copilot",
             behaviour = {
                 auto_suggestions = true,
                 auto_set_highlight_group = true,
