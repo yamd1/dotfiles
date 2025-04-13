@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-vim.g.mapleader = ","
+vim.g.mapleader = "\\"
 vim.keymap.set({ "n", "v" }, "x", '"_x', opts)
 vim.keymap.set({ "n", "v" }, "s", '"_s', opts)
 vim.keymap.set("v", "p", '"_xP', opts)
