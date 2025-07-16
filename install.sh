@@ -41,6 +41,7 @@ ln -snf $DOT_DIR/files/.config/zsh/.zshenv $HOME
 ln -snf $DOT_DIR/files/.config/bash/.bash_profile $HOME
 ln -snf $DOT_DIR/files/.config/git/.gitconfig $HOME
 ln -snf $DOT_DIR/files/.config/.lnav $HOME
+ln -snf $DOT_DIR/files/.config/.claude $HOME
 
 $DOT_DIR/.bin/install-aqua.sh
 $DOT_DIR/.bin/install-mise.sh
