@@ -23,6 +23,7 @@ files/.config/.lnav/**
 files/.config/composer/**
 files/.config/gh/**
 files/.config/github-copilot
+files/.config/aquaproj-aqua/aqua-checksums.json
 files/.local/share/composer/**
 files/.local/share/gh/**
 files/.config/intelephense/**
@@ -31,3 +32,4 @@ files/.config/gh-copilot/**
 files/.config/psysh/psysh_history
 files/.config/systemd/user/**
 files/.local/bin/mise
+files/.local/share/karabiner/pid/**
