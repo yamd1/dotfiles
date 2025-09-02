@@ -1,8 +1,8 @@
 [credential "https://github.com"]
-	helper =
+	helper = osxkeychain
 	helper = !${AQUA_ROOT_DIR}/pkgs/github_release/github.com/cli/cli/v2.40.1/gh_2.40.1_linux_amd64.tar.gz/gh_2.40.1_linux_amd64/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper =
+	helper = osxkeychain
 	helper = !${AQUA_ROOT_DIR}/pkgs/github_release/github.com/cli/cli/v2.40.1/gh_2.40.1_linux_amd64.tar.gz/gh_2.40.1_linux_amd64/bin/gh auth git-credential
 [core]
   editor = nvim
