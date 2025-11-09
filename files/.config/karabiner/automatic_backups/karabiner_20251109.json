@@ -23,7 +23,7 @@
                                     "modifiers": { "optional": ["any"] },
                                     "simultaneous": [
                                         { "key_code": "x" },
-                                        { "key_code": "c" }
+                                        { "key_code": "z" }
                                     ]
                                 },
                                 "parameters": { "basic.simultaneous_threshold_milliseconds": 200 },
