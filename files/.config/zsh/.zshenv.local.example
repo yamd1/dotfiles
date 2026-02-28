@@ -2,6 +2,8 @@ export AWS_DEFAULT_PROFILE=y-yamada
 export INTELEPHENSE_LICENCE_KEY=licence_key
 export BROWSER=wslview
 export OPENAI_API_KEY=
+export GITHUB_PERSONAL_ACCESS_TOKEN="ghp_"
+export FIGMA_API_KEY="figd_"
 
 cdpath=(
   "$HOME/develop"(N-/)
