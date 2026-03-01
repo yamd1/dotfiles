@@ -30,7 +30,8 @@ require("mason-lspconfig").setup_handlers({
         require("lspconfig")[server_name].setup({
             capabilities = capabilities,
         })
-
+    end,
+    ["rust_analyzer"] = function()
         require("lspconfig").rust_analyzer.setup({
             capabilities = capabilities,
             on_attach = function(client, bufnr)
@@ -40,12 +41,14 @@ require("mason-lspconfig").setup_handlers({
                 command = "clippy",
             },
         })
-
+    end,
+    ["terraformls"] = function()
         require("lspconfig").terraformls.setup({
             capabilities = capabilities,
-            filetype = { "terraform", "terraform-vars", "hcl" },
+            filetypes = { "terraform", "terraform-vars", "hcl" },
         })
-
+    end,
+    ["biome"] = function()
         require("lspconfig").biome.setup({
             capabilities = capabilities,
             cmd = {
@@ -54,7 +57,7 @@ require("mason-lspconfig").setup_handlers({
             },
             root_dir = util.root_pattern("biome.json", "biome.jsonc"),
             single_file_support = false,
-            filetype = {
+            filetypes = {
                 "javascript",
                 "javascriptreact",
                 "json",
@@ -87,7 +90,6 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "copilot" },
         { name = "vsnip" }, -- For vsnip users.
         { name = "spell" },
     }, {
