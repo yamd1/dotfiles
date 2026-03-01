@@ -1,6 +1,6 @@
 -- cspell: disable
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
     vim.fn.system({
         "git",
         "clone",
@@ -177,7 +177,6 @@ local plugins = {
     { "kazhala/close-buffers.nvim" },
     { "norcalli/nvim-colorizer.lua" },
     { "CRAG666/code_runner.nvim" },
-    { "monaqa/dial.nvim" },
     { "ixru/nvim-markdown" },
     {
         "github/copilot.vim",
