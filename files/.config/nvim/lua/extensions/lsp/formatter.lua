@@ -1,10 +1,12 @@
+local is_windows = vim.fn.has("win32") == 1
+
 require("conform").setup({
     formatters = {
         pint = {
-            command = "vendor/bin/pint",
+            command = is_windows and "vendor/bin/pint.bat" or "vendor/bin/pint",
         },
         prettier = {
-            command = "node_modules/.bin/prettier",
+            command = is_windows and "node_modules/.bin/prettier.cmd" or "node_modules/.bin/prettier",
             cwd = require("conform.util").root_file({
                 ".prettierrc.json",
                 ".prettierrc",
@@ -29,7 +31,7 @@ require("conform").setup({
             require_cwd = true,
         },
         eslint = {
-            command = "node_modules/.bin/eslint",
+            command = is_windows and "node_modules/.bin/eslint.cmd" or "node_modules/.bin/eslint",
             cwd = require("conform.util").root_file({
                 ".eslintrc.json",
             }),

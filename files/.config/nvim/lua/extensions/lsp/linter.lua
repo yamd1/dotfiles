@@ -4,7 +4,15 @@ local cspell_config = {
         return vim.fn.expand(nvim_path .. "/cspell.json")
     end,
     on_add_to_dictionary = function(payload)
-        os.execute(string.format("sort %s -o %s", payload.dictionary_path, payload.dictionary_path))
+        if vim.fn.has("win32") == 1 then
+            os.execute(string.format(
+                'powershell -Command "Get-Content \'%s\' | Sort-Object | Set-Content \'%s\'"',
+                payload.dictionary_path,
+                payload.dictionary_path
+            ))
+        else
+            os.execute(string.format("sort %s -o %s", payload.dictionary_path, payload.dictionary_path))
+        end
     end,
 }
 
@@ -21,7 +29,7 @@ require("null-ls").setup({
                 "--configuration=/opt/app/phpstan.neon", -- TODO: nvimを開いているパスから動的に算出する
                 "$FILENAME",
             },
-            temp_dir = "/tmp",
+            temp_dir = vim.fn.has("win32") == 1 and vim.fn.stdpath("cache") or "/tmp",
         }),
         require("null-ls").builtins.diagnostics.terraform_validate,
         require("cspell").diagnostics.with({
@@ -49,5 +57,8 @@ end
 
 local local_dict_path = nvim_path .. "/cspell/local.txt"
 if vim.fn.filereadable(local_dict_path) ~= 1 then
-    vim.fn.system({ "touch", local_dict_path })
+    local f = io.open(local_dict_path, "w")
+    if f then
+        f:close()
+    end
 end

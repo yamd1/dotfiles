@@ -75,7 +75,7 @@ require("nvim-tree").setup({
                 return
             end
 
-            vim.fn.system("xdg-open " .. dir_path)
+            vim.ui.open(dir_path)
         end, opts("Open: Explorer"))
     end,
 })
