@@ -44,10 +44,10 @@ require("null-ls").setup({
 local vim_dict_path = nvim_path .. "/cspell/vim.txt.gz"
 if vim.fn.filereadable(vim_dict_path) ~= 1 then
     local vim_dictionary_url = "https://github.com/iamcco/coc-spell-checker/raw/master/dicts/vim/vim.txt.gz"
-    io.popen("curl -fsSLo " .. vim_dict_path .. " --create-dirs " .. vim_dictionary_url)
+    vim.fn.system({ "curl", "-fsSLo", vim_dict_path, "--create-dirs", vim_dictionary_url })
 end
 
 local local_dict_path = nvim_path .. "/cspell/local.txt"
 if vim.fn.filereadable(local_dict_path) ~= 1 then
-    io.popen("touch " .. local_dict_path)
+    vim.fn.system({ "touch", local_dict_path })
 end

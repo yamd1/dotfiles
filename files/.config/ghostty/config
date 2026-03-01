@@ -1,3 +1,14 @@
 font-family = UDEV Gothic 35NFLG
 font-size = 12
 confirm-close-surface = false
+
+# theme
+theme = Catppuccin Mocha
+
+macos-titlebar-style = transparent
+
+mouse-hide-while-typing = true
+
+# clipboard
+clipboard-read = allow
+clipboard-write = allow
