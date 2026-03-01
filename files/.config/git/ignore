@@ -1,3 +1,5 @@
 .env
 .null-ls*
 .envrc
+
+**/.claude/settings.local.json
