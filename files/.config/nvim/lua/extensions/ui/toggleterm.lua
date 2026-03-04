@@ -14,7 +14,7 @@ local _terminal = Terminal:new({
     end,
 
     on_close = function(term)
-        vim.cmd("startinsert!")
+        vim.cmd("stopinsert")
     end,
 })
 
