@@ -1,4 +1,12 @@
 {
+	"sandbox": {
+		"enabled": true
+	},
+	"statusLine": {
+		"type": "command",
+		"command": "~/.claude/statusline.sh",
+		"padding": 2
+	},
 	"permissions": {
 		"allow": [
 			"Bash(git status)",
