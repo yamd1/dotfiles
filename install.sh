@@ -61,9 +61,10 @@ ln -snf $DOT_DIR/files/.config/zsh/.zshenv $HOME
 ln -snf $DOT_DIR/files/.config/bash/.bash_profile $HOME
 ln -snf $DOT_DIR/files/.config/git/.gitconfig $HOME
 ln -snf $DOT_DIR/files/.config/.lnav $HOME
-ln -snf $DOT_DIR/files/.config/.claude $HOME
-ln -snf $DOT_DIR/files/.config/.claude/skills $HOME/.claude/
-ln -snf $DOT_DIR/files/.config/.claude/hooks $HOME/.claude/
+mkdir -p $HOME/.claude
+ln -snf $DOT_DIR/files/.config/.claude/skills $HOME/.claude/skills
+ln -snf $DOT_DIR/files/.config/.claude/hooks $HOME/.claude/hooks
+ln -snf $DOT_DIR/files/.config/.claude/settings.json $HOME/.claude/settings.json
 
 # Install packages for Linux
 install_linux_packages() {
