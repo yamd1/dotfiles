@@ -1,50 +1,78 @@
 {
-	"sandbox": {
-		"enabled": true
-	},
-	"statusLine": {
-		"type": "command",
-		"command": "~/.claude/statusline.sh",
-		"padding": 2
-	},
-	"permissions": {
-		"allow": [
-			"Bash(git status)",
-			"Bash(git log *)",
-			"Bash(git diff *)",
-			"Bash(git add *)",
-			"Bash(git branch *)",
-			"Bash(git stash *)",
-			"Bash(git commit *)",
-			"Bash(npm run *)",
-			"Bash(npm install *)",
-			"Bash(npm ci)",
-			"Bash(git checkout:*)",
-			"Bash(git switch:*)"
-		],
-		"ask": ["Bash(git push:*)"],
-		"deny": [
-			"Bash(sudo:*)",
-			"Bash(rm:*)",
-			"Bash(rm -rf:*)",
-			"Bash(git reset:*)",
-			"Bash(git rebase:*)",
-			"Read(.env.*)",
-			"Read(id_rsa)",
-			"Read(id_ed25519)",
-			"Read(**/*token*)",
-			"Read(**/*key*)",
-			"Write(.env*)",
-			"Write(**/secrets/**)",
-			"Bash(curl:*)",
-			"Bash(wget:*)",
-			"Bash(nc:*)",
-			"Bash(npm uninstall:*)",
-			"Bash(npm remove:*)",
-			"Bash(psql:*)",
-			"Bash(mysql:*)",
-			"Bash(mongod:*)",
-			"mcp__supabase__execute_sql"
-		]
-	}
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/format-file.sh",
+            "timeout": 30,
+            "statusMessage": "フォーマット中..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/post-gen-check.sh",
+            "timeout": 120,
+            "statusMessage": "型チェック・テスト実行中..."
+          }
+        ]
+      }
+    ]
+  },
+  "sandbox": {
+    "enabled": true
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.config/.claude/statusline.sh",
+    "padding": 2
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git add *)",
+      "Bash(git branch *)",
+      "Bash(git stash *)",
+      "Bash(git commit *)",
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(npm ci)",
+      "Bash(git checkout:*)",
+      "Bash(git switch:*)"
+    ],
+    "ask": ["Bash(git push:*)"],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(rm:*)",
+      "Bash(rm -rf:*)",
+      "Bash(git reset:*)",
+      "Bash(git rebase:*)",
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(id_rsa)",
+      "Read(id_ed25519)",
+      "Read(**/*token*)",
+      "Read(**/*key*)",
+      "Write(.env*)",
+      "Write(**/secrets/**)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(nc:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm remove:*)",
+      "Bash(psql:*)",
+      "Bash(mysql:*)",
+      "Bash(mongod:*)",
+      "mcp__supabase__execute_sql"
+    ]
+  }
 }
