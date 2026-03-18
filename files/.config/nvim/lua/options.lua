@@ -28,5 +28,10 @@ vim.diagnostic.config({ severity_sort = true })
 vim.opt.foldenable = true
 vim.opt.foldmethod = "manual"
 vim.opt.laststatus = 3
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 vim.opt.shortmess:append("W")
+
+local zsh = vim.fn.exepath("zsh")
+if zsh ~= "" then
+    vim.o.shell = zsh
+end
