@@ -62,6 +62,8 @@ ln -snf $DOT_DIR/files/.config/bash/.bash_profile $HOME
 ln -snf $DOT_DIR/files/.config/git/.gitconfig $HOME
 ln -snf $DOT_DIR/files/.config/.lnav $HOME
 ln -snf $DOT_DIR/files/.config/.claude $HOME
+ln -snf $DOT_DIR/files/.config/.claude/skills $HOME/.claude/
+ln -snf $DOT_DIR/files/.config/.claude/hooks $HOME/.claude/
 
 # Install packages for Linux
 install_linux_packages() {
@@ -83,15 +85,15 @@ install_macos_packages() {
     elif [[ -x "/usr/local/bin/brew" ]]; then
         BREW_CMD="/usr/local/bin/brew"
     fi
-    
+
     if [[ -z "$BREW_CMD" ]]; then
         echo "Homebrew is not installed. Installing Homebrew..."
         echo "This may require your password for sudo access."
         echo "Press Enter to continue or Ctrl+C to cancel..."
         read -r
-        
+
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        
+
         # Set BREW_CMD after installation
         if [[ -x "/opt/homebrew/bin/brew" ]]; then
             BREW_CMD="/opt/homebrew/bin/brew"
@@ -101,11 +103,11 @@ install_macos_packages() {
     else
         echo "Homebrew found at: $BREW_CMD"
     fi
-    
+
     # Install required packages
     echo "Installing required packages with Homebrew..."
     $BREW_CMD install zsh coreutils unzip openssl@3
-    
+
     # macOS doesn't use xdg-utils, so we skip that part
     echo "macOS package installation completed"
 }
@@ -136,7 +138,7 @@ show_daemon_instructions() {
 # Main execution
 main() {
     echo "Starting dotfiles installation for $OSTYPE..."
-    
+
     detect_os
     setup_directories
     setup_symlinks
@@ -145,7 +147,7 @@ main() {
     setup_wsl "$@"
     install_packages
     show_daemon_instructions
-    
+
     echo "Installation completed successfully!"
 }
 
