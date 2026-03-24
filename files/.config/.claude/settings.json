@@ -21,6 +21,13 @@
             "command": "bash ~/.claude/hooks/post-gen-check.sh",
             "timeout": 120,
             "statusMessage": "型チェック・テスト実行中..."
+          },
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/save-session-to-kioku.sh",
+            "timeout": 120,
+            "statusMessage": "会話をkiokuに保存中...",
+            "async": true
           }
         ]
       }
